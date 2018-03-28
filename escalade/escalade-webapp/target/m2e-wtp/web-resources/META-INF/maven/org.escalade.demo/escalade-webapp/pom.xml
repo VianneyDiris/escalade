@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+<!-- =============================================================== -->
+<!-- Informations du projet -->
+<!-- =============================================================== -->
+   <parent>
+    <groupId>org.escalade.demo</groupId>
+    <artifactId>escalade</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <!-- ===== Informations Maven ===== -->
+  <groupId>org.escalade.demo</groupId>
+  <artifactId>escalade-webapp</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <!-- ===== Informations générales ===== -->
+  <name>escalade-webapp Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+<!-- =============================================================== -->
+   <!-- Gestion des dépendances -->
+     <dependencies>
+     
+	  <!-- ===== Modules ===== -->
+	  <dependency>
+	  	<groupId>org.escalade.demo</groupId>
+	  	<artifactId>escalade-business</artifactId>
+	  </dependency>
+	  
+	  <dependency>
+	  	<groupId>org.escalade.demo</groupId>
+	  	<artifactId>escalade-model</artifactId>
+	  	
+	  </dependency>
+	  
+	  <!-- ===== Bibliothèques tierces ===== -->
+	   <dependency>
+	     <groupId>junit</groupId>
+	     <artifactId>junit</artifactId>
+	     <version>3.8.1</version>
+	     <scope>test</scope>
+	   </dependency>
+	    
+	   <dependency>
+	     <groupId>javax.servlet</groupId>
+	     <artifactId>javax.servlet-api</artifactId>
+	     <scope>provided</scope>
+	   </dependency>
+	 
+	  </dependencies>
+	  
+  <build>
+    <finalName>escalade-webapp</finalName>
+  </build>
+</project>
