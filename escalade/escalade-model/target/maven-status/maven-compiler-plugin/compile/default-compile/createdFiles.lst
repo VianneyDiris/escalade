@@ -1,0 +1,13 @@
+org\escalade\demo\model\bean\topo\Utilisateur.class
+org\escalade\demo\model\bean\spot\Cotation.class
+org\escalade\demo\model\bean\topo\Role.class
+org\escalade\demo\model\bean\spot\Ville.class
+org\escalade\demo\model\bean\spot\Spot.class
+org\escalade\demo\model\bean\topo\Commentaire.class
+org\escalade\demo\model\exception\NotFoundException.class
+org\escalade\demo\model\bean\spot\Secteur.class
+org\escalade\demo\model\bean\spot\Orientation.class
+org\escalade\demo\model\bean\topo\Reservation.class
+org\escalade\demo\model\bean\spot\Voie.class
+org\escalade\demo\model\bean\spot\Pays.class
+org\escalade\demo\model\bean\topo\Topo.class

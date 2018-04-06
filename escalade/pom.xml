@@ -39,25 +39,25 @@
 			<dependency>
 				<groupId>org.escalade.demo</groupId>
 				<artifactId>escalade-business</artifactId>
-				<version>0.0.1-snapshot</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.escalade.demo</groupId>
 				<artifactId>escalade-consumer</artifactId>
-				<version>0.0.1-snapshot</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.escalade.demo</groupId>
 				<artifactId>escalade-model</artifactId>
-				<version>0.0.1-snapshot</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.escalade.demo</groupId>
 				<artifactId>escalade-webapp</artifactId>
-				<version>0.0.1-snapshot</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<!-- ===== Bibliothèques tierces ===== -->
@@ -74,6 +74,35 @@
 				<version>3.8.1</version>
 				<scope>test</scope>
 			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>${spring.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- JSR-250 -->
+			<dependency>
+				<groupId>javax.annotation</groupId>
+				<artifactId>javax.annotation-api</artifactId>
+				<version>1.2</version>
+			</dependency>
+			<!-- JSR-330 -->
+			<dependency>
+				<groupId>javax.inject</groupId>
+				<artifactId>javax.inject</artifactId>
+				<version>1</version>
+			</dependency>
+			
+			 <!-- Drivers JDBC PostgreSQL -->
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>9.4.1212</version>
+                <scope>runtime</scope>
+            </dependency>
 		</dependencies>
 	</dependencyManagement>
 

@@ -4,7 +4,7 @@ public class Orientation {
 	
 	// ==================== Attributs ====================
 	private int id;
-	private String Orientation;
+	private String orientation;
 	
 	
 	// ==================== Getters/Setters ====================
@@ -17,10 +17,10 @@ public class Orientation {
 	
 	
 	public String getOrientation() {
-		return Orientation;
+		return orientation;
 	}
 	public void setOrientation(String orientation) {
-		Orientation = orientation;
+		this.orientation = orientation;
 	}
 	
 	
