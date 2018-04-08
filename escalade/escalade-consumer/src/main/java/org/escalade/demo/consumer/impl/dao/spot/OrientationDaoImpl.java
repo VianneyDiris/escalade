@@ -8,12 +8,12 @@ import org.escalade.demo.consumer.impl.rowmapper.spot.CotationRM;
 import org.escalade.demo.model.bean.spot.Cotation;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class CotationDaoImpl extends AbstractDaoImpl implements CotationDao {
+public class OrientationDaoImpl extends AbstractDaoImpl implements CotationDao {
 
 	@Override
 	public List<Cotation> listCotation() {
 		// TODO Auto-generated method stub
-		String vsql="SELECT * FROM public.cotation";
+		String vsql = "SELECT * FROM public.cotation";
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 		CotationRM rowCotation = new CotationRM();
