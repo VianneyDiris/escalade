@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- ===== Dao declaration ===== -->
+    <bean id="spotDao" class="org.escalade.demo.consumer.impl.dao.spot.SpotDaoImpl"/>
+    <bean id="cotationDao" class="org.escalade.demo.consumer.impl.dao.spot.CotationDaoImpl"/>
+    <bean id="orientationDao" class="org.escalade.demo.consumer.impl.dao.spot.OrientationDaoImpl"/>
+    <bean id="paysDao" class="org.escalade.demo.consumer.impl.dao.spot.PaysDaoImpl"/>
+    <bean id="secteurDao" class="org.escalade.demo.consumer.impl.dao.spot.SecteurDaoImpl"/>
+    <bean id="villeDao" class="org.escalade.demo.consumer.impl.dao.spot.VilleDaoImpl"/>
+    <bean id="voieDao" class="org.escalade.demo.consumer.impl.dao.spot.VoieDaoImpl"/>
+    
+    <bean id="commentaireDao" class="org.escalade.demo.consumer.impl.dao.topo.CommentaireDaoImpl"/>
+    <bean id="roleDao" class="org.escalade.demo.consumer.impl.dao.topo.RoleDaoImpl"/>
+    <bean id="topoDao" class="org.escalade.demo.consumer.impl.dao.topo.TopoDaoImpl"/>
+    <bean id="utilisateurDao" class="org.escalade.demo.consumer.impl.dao.topo.UtilisateurDaoImpl"/>
+    
+
+    <!-- ===== DaoFactory ===== -->
+    <bean id="daoFactory" class="org.escalade.demo.consumer.impl.DaoFactoryImpl">
+        <property name="spotDao" ref="spotDao"/>
+        <property name="cotationDao" ref="cotationDao"/>
+        <property name="orientationDao" ref="orientationDao"/>
+        <property name="paysDao" ref="paysDao"/>
+        <property name="secteurDao" ref="secteurDao"/>
+        <property name="villeDao" ref="villeDao"/>
+        <property name="voieDao" ref="voieDao"/>
+        
+        <property name="commentaireDao" ref="commentaireDao"/>
+        <property name="roleDao" ref="roleDao"/>
+        <property name="topoDao" ref="topoDao"/>
+        <property name="utilisateurDao" ref="utilisateurDao"/>
+    </bean>
+
+    <!-- ==== AbstractDao ===== -->
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetClass" value="org.escalade.demo.consumer.impl.dao.AbstractDaoImpl"/>
+        <property name="targetMethod" value="setDataSource"/>
+        <property name="arguments" ref="dataSourceEscalade"/>
+    </bean>
+</beans>

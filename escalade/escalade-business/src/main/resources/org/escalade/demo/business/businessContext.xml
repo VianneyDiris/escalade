@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- ===== Managers declaration ===== -->
+	<bean id="spotManager"  class="org.escalade.demo.business.impl.manager.spot.SpotManagerImpl" />
+	<bean id="orientationManager"  class="org.escalade.demo.business.impl.manager.spot.OrientationManagerImpl" />
+	<bean id="paysManager"  class="org.escalade.demo.business.impl.manager.spot.PaysManagerImpl" />
+	<bean id="secteurManager"  class="org.escalade.demo.business.impl.manager.spot.SecteurManagerImpl" />
+	<bean id="villeManager"  class="org.escalade.demo.business.impl.manager.spot.VilleManagerImpl" />
+	<bean id="voieManager"  class="org.escalade.demo.business.impl.manager.spot.VoieManagerImpl" />
+	<bean id="cotationManager" class="org.escalade.demo.business.impl.manager.spot.CotationManagerImpl"/>
+	
+	<bean id="commentaireManager" class="org.escalade.demo.business.impl.manager.topo.CommentaireManagerImpl"/>
+	<bean id="reservationManager" class="org.escalade.demo.business.impl.manager.topo.RservationManagerImpl"/>
+	<bean id="roleManager" class="org.escalade.demo.business.impl.manager.topo.RoleManagerImpl"/>
+	<bean id="topoManager" class="org.escalade.demo.business.impl.manager.topo.TopoManagerImpl"/>
+	<bean id="utilisateurManager" class="org.escalade.demo.business.impl.manager.topo.UtilisateurManagerImpl"/>
+	
+	
+
+	<!-- ===== ManagerFactory ===== -->
+	<bean id="managerFactory"  class="org.escalade.demo.business.impl.ManagerFactoryImpl">
+		<property name="spotManager" ref="spotManager" />
+		<property name="orientationManager" ref="orientationManager" />
+		<property name="paysManager" ref="paysManager" />
+		<property name="secteurManager" ref="secteurManager" />
+		<property name="villeManager" ref="villeManager" />
+		<property name="voieManager" ref="voieManager" />
+		
+		<property name="commentaireManager" ref="commentaireManager" />
+		<property name="reservationManager" ref="reservationManager" />
+		<property name="roleManager" ref="roleManager" />
+		<property name="topoManager" ref="topoManager" />
+		<property name="utilisateurManager" ref="utilisateurManager" />
+	</bean>
+
+	<!-- ==== AbstractManager ===== -->
+	<bean
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetClass"
+			value="org.escalade.demo.business.impl.AbstractManagerImpl" />
+		<property name="targetMethod" value="setDaoFactory" />
+		<property name="arguments" ref="daoFactory" />
+	</bean>
+</beans>

@@ -16,6 +16,10 @@ public abstract class AbstractDaoImpl {
 		return dataSource;
 	}
 	
+	public static void setDataSource(DataSource dataSource) {
+        AbstractDaoImpl.dataSource = dataSource;
+    }
+	
 	
 
 }
