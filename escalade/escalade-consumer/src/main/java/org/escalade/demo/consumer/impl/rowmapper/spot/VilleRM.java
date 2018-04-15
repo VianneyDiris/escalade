@@ -16,6 +16,8 @@ public class VilleRM implements RowMapper<Ville> {
 		ville.setCodePostal(rs.getInt("codePostal"));
 		
 		//rowMapper pour pays
+		PaysRM paysRM = new PaysRM();
+		paysRM.mapRow(rs, rowNum);
 		return ville;
 	}
 

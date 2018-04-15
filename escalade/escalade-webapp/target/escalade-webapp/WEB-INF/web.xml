@@ -3,14 +3,13 @@
          xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-         <display-name>Servlet 3.0 Web Application</display-name>
     <!-- ... -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:/applicationContext.xml</param-value>
+        <param-value>classpath:/bootstrapContext.xml</param-value>
     </context-param>
     
     <resource-ref>
