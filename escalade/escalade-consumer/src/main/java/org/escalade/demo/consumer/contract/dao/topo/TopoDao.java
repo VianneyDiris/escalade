@@ -8,6 +8,8 @@ public interface TopoDao {
 	
 	List<Topo> listTopo();
 	
+	Topo find(int id);
+	
 	void addTopo(Topo topo);
 	
 	void updateTopo(Topo topo);

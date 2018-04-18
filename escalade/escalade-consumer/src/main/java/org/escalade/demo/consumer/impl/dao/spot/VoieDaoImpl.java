@@ -40,4 +40,15 @@ public class VoieDaoImpl extends AbstractDaoImpl implements VoieDao {
 		
 	}
 
+	@Override
+	public Voie find(int id) {
+		// TODO Auto-generated method stub
+		String vsql ="SELECT * FROM public.voie WHERE id= ?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		Voie voie=(Voie)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new VoieRM());
+		
+		return voie;
+	}
+
 }

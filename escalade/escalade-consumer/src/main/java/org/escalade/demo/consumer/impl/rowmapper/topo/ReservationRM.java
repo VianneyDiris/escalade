@@ -3,6 +3,7 @@ package org.escalade.demo.consumer.impl.rowmapper.topo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.escalade.demo.consumer.impl.DaoFactoryImpl;
 import org.escalade.demo.model.bean.topo.Reservation;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -16,6 +17,10 @@ public class ReservationRM implements RowMapper<Reservation> {
 		reservation.setDateFin(rs.getDate("dateFin"));
 		
 		//rowMapper topo + utilisateur
+		DaoFactoryImpl daoFactory = new DaoFactoryImpl();
+		reservation.setTopo(daoFactory.getTopoDao().find(rs.getInt("topo_id")));
+		reservation.setUtilisateur(daoFactory.getUtilisateurDao().find(rs.getInt("utilisateur_id")));
+		
 		return reservation;
 	}
 

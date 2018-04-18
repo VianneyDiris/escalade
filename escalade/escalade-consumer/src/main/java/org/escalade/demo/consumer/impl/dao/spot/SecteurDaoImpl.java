@@ -41,4 +41,15 @@ public class SecteurDaoImpl extends AbstractDaoImpl implements SecteurDao {
 		
 	}
 
+	@Override
+	public Secteur find(int id) {
+		// TODO Auto-generated method stub
+		String vsql ="SELECT * FROM public.secteur WHERE id= ?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		Secteur secteur=(Secteur)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new SecteurRM());
+		
+		return secteur;
+	}
+
 }

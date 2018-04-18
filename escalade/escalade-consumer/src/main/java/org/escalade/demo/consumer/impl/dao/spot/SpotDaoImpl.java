@@ -41,4 +41,15 @@ public class SpotDaoImpl extends AbstractDaoImpl implements SpotDao {
 		
 	}
 
+	@Override
+	public Spot find(int id) {
+		// TODO Auto-generated method stub
+		String vsql ="SELECT * FROM public.spot WHERE id= ?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		Spot spot=(Spot)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new SpotRM());
+		
+		return spot;
+	}
+
 }

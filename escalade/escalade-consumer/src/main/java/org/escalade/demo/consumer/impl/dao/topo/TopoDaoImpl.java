@@ -40,4 +40,15 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 		
 	}
 
+	@Override
+	public Topo find(int id) {
+		// TODO Auto-generated method stub
+		String vsql ="SELECT * FROM public.topo WHERE id= ?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		Topo topo=(Topo)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new TopoRM());
+		
+		return topo;
+	}
+
 }

@@ -41,4 +41,15 @@ public class PaysDaoImpl extends AbstractDaoImpl implements PaysDao {
 		
 	}
 
+	@Override
+	public Pays find(int id) {
+		// TODO Auto-generated method stub
+		String vsql ="SELECT * FROM public.pays WHERE id= ?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		Pays pays=(Pays)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new PaysRM());
+		
+		return pays;
+	}
+
 }

@@ -41,4 +41,15 @@ public class CotationDaoImpl extends AbstractDaoImpl implements CotationDao {
 		
 	}
 
+	@Override
+	public Cotation find(int id) {
+		// TODO Auto-generated method stub
+		String vsql ="SELECT * FROM public.cotation WHERE id= ?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		Cotation cotation=(Cotation)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new CotationRM());
+		
+		return cotation;
+	}
+
 }

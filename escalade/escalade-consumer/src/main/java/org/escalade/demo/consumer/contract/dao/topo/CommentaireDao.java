@@ -8,6 +8,8 @@ public interface CommentaireDao {
 
 	List<Commentaire> listCommentaire();
 	
+	Commentaire find(int id);
+	
 	void addCommentaire(Commentaire commentaire);
 	
 	void updateCommentaire(Commentaire commentaire);

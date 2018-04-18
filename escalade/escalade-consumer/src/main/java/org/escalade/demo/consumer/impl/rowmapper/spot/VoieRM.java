@@ -3,6 +3,7 @@ package org.escalade.demo.consumer.impl.rowmapper.spot;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.escalade.demo.consumer.impl.DaoFactoryImpl;
 import org.escalade.demo.model.bean.spot.Voie;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -16,6 +17,11 @@ public class VoieRM implements RowMapper<Voie> {
 		voie.setNbLongueur(rs.getInt("nbLongueur"));
 		
 		//rowMapper cotation, orientation, secteur
+		DaoFactoryImpl daoFactory = new DaoFactoryImpl();
+		voie.setCotation(daoFactory.getCotationDao().find(rs.getInt("cotation_id")));
+		voie.setOrientation(daoFactory.getOrientationDao().find(rs.getInt("orientation_id")));
+		voie.setSecteur(daoFactory.getSecteurDao().find(rs.getInt("secteur_id")));
+		
 		return voie;
 	}
 

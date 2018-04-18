@@ -8,6 +8,8 @@ public interface VilleDao {
 	
 	List<Ville> listVille();
 	
+	Ville find(int id);
+	
 	void addVille(Ville ville);
 	
 	void updateVille(Ville ville);

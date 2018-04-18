@@ -41,4 +41,15 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 		
 	}
 
+	@Override
+	public Utilisateur find(int id) {
+		// TODO Auto-generated method stub
+		String vsql ="SELECT * FROM public.utilisateur WHERE id= ?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		Utilisateur utilisateur=(Utilisateur)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new UtilisateurRM());
+		
+		return utilisateur;
+	}
+
 }

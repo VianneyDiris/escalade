@@ -3,6 +3,7 @@ package org.escalade.demo.consumer.impl.rowmapper.spot;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.escalade.demo.consumer.impl.DaoFactoryImpl;
 import org.escalade.demo.model.bean.spot.Spot;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -19,6 +20,10 @@ public class SpotRM implements RowMapper<Spot> {
 		
 		
 		//demander pour rowMapper avec autre objet
+		DaoFactoryImpl daoFactory = new DaoFactoryImpl();
+		spot.setPays(daoFactory.getPaysDao().find(rs.getInt("pays_id")));
+		spot.setVille(daoFactory.getVilleDao().find(rs.getInt("ville_id")));
+		
 		return spot;
 	}
 

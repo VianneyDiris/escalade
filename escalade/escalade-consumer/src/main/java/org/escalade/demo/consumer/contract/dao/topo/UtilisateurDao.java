@@ -8,6 +8,8 @@ public interface UtilisateurDao {
 	
 	List<Utilisateur> listUtilisateur();
 	
+	Utilisateur find(int id);
+	
 	void addUtilisateur(Utilisateur utilisateur);
 	
 	void updateUtilisateur(Utilisateur utilisateur);

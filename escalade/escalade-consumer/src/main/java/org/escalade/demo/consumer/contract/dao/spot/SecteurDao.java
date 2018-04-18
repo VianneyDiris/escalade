@@ -8,6 +8,8 @@ public interface SecteurDao {
 	
 	List<Secteur> listSecteur();
 	
+	Secteur find(int id);
+	
 	void addSecteur(Secteur secteur);
 	
 	void updateSecteur(Secteur secteur);

@@ -40,4 +40,15 @@ public class VilleDaoImpl extends AbstractDaoImpl implements VilleDao {
 		
 	}
 
+	@Override
+	public Ville find(int id) {
+		// TODO Auto-generated method stub
+		String vsql ="SELECT * FROM public.ville WHERE id= ?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		Ville ville=(Ville)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new VilleRM());
+		
+		return ville;
+	}
+
 }

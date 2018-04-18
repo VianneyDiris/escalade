@@ -8,6 +8,8 @@ public interface PaysDao {
 	
 	List<Pays> listPays();
 	
+	Pays find(int id);
+	
 	void addPays(Pays pays);
 	
 	void updatePays(Pays pays);

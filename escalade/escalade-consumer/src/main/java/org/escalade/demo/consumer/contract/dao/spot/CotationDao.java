@@ -8,6 +8,8 @@ public interface CotationDao {
 	
 	List<Cotation> listCotation();
 	
+	Cotation find(int id);
+	
 	void addCotation(Cotation cotation);
 	
 	void updateCotation(Cotation cotation);

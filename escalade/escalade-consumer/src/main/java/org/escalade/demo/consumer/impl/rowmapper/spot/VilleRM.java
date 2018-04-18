@@ -3,6 +3,7 @@ package org.escalade.demo.consumer.impl.rowmapper.spot;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.escalade.demo.consumer.impl.DaoFactoryImpl;
 import org.escalade.demo.model.bean.spot.Ville;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -16,8 +17,9 @@ public class VilleRM implements RowMapper<Ville> {
 		ville.setCodePostal(rs.getInt("codePostal"));
 		
 		//rowMapper pour pays
-		PaysRM paysRM = new PaysRM();
-		paysRM.mapRow(rs, rowNum);
+		DaoFactoryImpl daoFactory = new DaoFactoryImpl();
+		ville.setPays(daoFactory.getPaysDao().find(rs.getInt("pays_id")));
+		
 		return ville;
 	}
 

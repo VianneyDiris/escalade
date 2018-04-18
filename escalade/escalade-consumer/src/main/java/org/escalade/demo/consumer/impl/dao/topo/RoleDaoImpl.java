@@ -40,4 +40,15 @@ public class RoleDaoImpl extends AbstractDaoImpl implements RoleDao {
 		
 	}
 
+	@Override
+	public Role find(int id) {
+		// TODO Auto-generated method stub
+		String vsql ="SELECT * FROM public.role WHERE id= ?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		Role role=(Role)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new RoleRM());
+		
+		return role;
+	}
+
 }

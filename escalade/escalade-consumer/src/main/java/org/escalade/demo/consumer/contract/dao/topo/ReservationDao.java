@@ -8,6 +8,8 @@ public interface ReservationDao {
 
 	List<Reservation> listReservation();
 	
+	Reservation find(int id);
+	
 	void addReservation(Reservation reservation);
 	
 	void updateReservation(Reservation reservation);

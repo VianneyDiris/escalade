@@ -8,6 +8,8 @@ public interface VoieDao {
 	
 	List<Voie> listVoie();
 	
+	Voie find(int id);
+	
 	void addVoie(Voie voie);
 	
 	void updateVoie(Voie voie);

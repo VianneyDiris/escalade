@@ -8,6 +8,8 @@ public interface OrientationDao {
 
 	List<Orientation> listOrientation();
 	
+	Orientation find(int id);
+	
 	void addOrientation(Orientation orientation);
 	
 	void updateOrientation(Orientation orientation);
