@@ -9,7 +9,7 @@
 	<!-- ===== Informations Maven ===== -->
 	<groupId>org.escalade.demo</groupId>
 	<artifactId>escalade</artifactId>
-	<version>${projetVersion}</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<!-- ===== Informations générales ===== -->
@@ -41,25 +41,25 @@
 			<dependency>
 				<groupId>org.escalade.demo</groupId>
 				<artifactId>escalade-business</artifactId>
-				<version>${projetVersion}</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.escalade.demo</groupId>
 				<artifactId>escalade-consumer</artifactId>
-				<version>${projetVersion}</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.escalade.demo</groupId>
 				<artifactId>escalade-model</artifactId>
-				<version>${projetVersion}</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.escalade.demo</groupId>
 				<artifactId>escalade-webapp</artifactId>
-				<version>${projetVersion}</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<!-- ===== Bibliothèques tierces ===== -->

@@ -31,6 +31,7 @@ org\escalade\demo\consumer\impl\rowmapper\topo\ReservationRM.class
 org\escalade\demo\consumer\impl\dao\spot\CotationDaoImpl.class
 org\escalade\demo\consumer\impl\dao\AbstractDaoImpl.class
 org\escalade\demo\consumer\impl\dao\spot\SpotDaoImpl.class
+org\escalade\demo\consumer\impl\dao\topo\ReservationDaoImpl.class
 org\escalade\demo\consumer\impl\dao\spot\VilleDaoImpl.class
 org\escalade\demo\consumer\impl\dao\topo\UtilisateurDaoImpl.class
 org\escalade\demo\consumer\impl\dao\topo\CommentaireDaoImpl.class
