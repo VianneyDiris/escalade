@@ -1,0 +1,3 @@
+org\escalade\demo\webapp\action\GestionSpotAction.class
+org\escalade\demo\webapp\action\GestionPaysAction.class
+org\escalade\demo\webapp\action\GestionTopoAction.class

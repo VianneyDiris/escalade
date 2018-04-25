@@ -1,12 +1,13 @@
 .main{
 	margin: 0;
 	padding: 0;
-	background: url("../../resource_image/home.jpg") no-repeat;
+	background: url("../resource_image/home.jpg") no-repeat;
 	background-size: 100%;
 	width:100%;
 	height:800px;
 	
 }
+
 
 .navbar{
 	margin:0;
@@ -37,7 +38,7 @@ footer{
 }
 
 .content{
-	background-image: url("../../resource_image/background-css.jpg");
+	background-image: url("../resource_image/background-css.jpg");
 	height :826px;
 	width:100%;
 	margin:0;

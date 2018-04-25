@@ -11,5 +11,19 @@
         <action name="index">
             <result>/jsp/index.jsp</result>
         </action>
+        
+        <!-- Action listant les spots -->
+        <action name="spot_list"
+                class="org.escalade.demo.webapp.action.GestionSpotAction"
+                method="doListSpot">
+            <result>/jsp/site/spot.jsp</result>
+        </action>
+        
+         <!-- Action listant les topos -->
+        <action name="topo_list"
+                class="org.escalade.demo.webapp.action.GestionTopoAction"
+                method="doListTopo">
+            <result>/jsp/site/topo.jsp</result>
+        </action>
     </package>
 </struts>

@@ -13,7 +13,7 @@ public class PaysRM implements RowMapper<Pays> {
 		Pays pays = new Pays();
 		pays.setId(rs.getInt("id"));
 		pays.setNom(rs.getString("nom"));
-		pays.setCodePays(rs.getString("codePays"));
+		pays.setCodePays(rs.getString("code_pays"));
 		return pays;
 	}
 

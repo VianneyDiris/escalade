@@ -21,6 +21,7 @@ public class SpotRM implements RowMapper<Spot> {
 		
 		//demander pour rowMapper avec autre objet
 		DaoFactoryImpl daoFactory = new DaoFactoryImpl();
+		System.out.println("méthode rowmapper");
 		spot.setPays(daoFactory.getPaysDao().find(rs.getInt("pays_id")));
 		spot.setVille(daoFactory.getVilleDao().find(rs.getInt("ville_id")));
 		

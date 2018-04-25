@@ -42,6 +42,7 @@ public class DaoFactoryImpl implements DaoFactory {
 	private PaysDao paysDao;
 	public PaysDao getPaysDao() {
 		// TODO Auto-generated method stub
+		System.out.println("méthode getPaysDao");
 		return paysDao;
 	}
 	public void setPaysDao(PaysDao paysDao) {

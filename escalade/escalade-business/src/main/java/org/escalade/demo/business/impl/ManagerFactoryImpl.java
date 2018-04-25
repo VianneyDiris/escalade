@@ -9,7 +9,7 @@ public class ManagerFactoryImpl implements ManagerFactory {
 
 	//TopoManager
 	private TopoManager topoManager;
-	public TopoManager getTopoManageur() {
+	public TopoManager getTopoManager() {
 		// TODO Auto-generated method stub
 		return this.topoManager;
 	}
@@ -20,7 +20,7 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	
 	//CommentaireManager
 	private CommentaireManager commentaireManager;
-	public CommentaireManager getCommentaireManageur() {
+	public CommentaireManager getCommentaireManager() {
 		// TODO Auto-generated method stub
 		return this.commentaireManager;
 	}
@@ -42,7 +42,7 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	
 	//RoleManager
 	private RoleManager roleManager;
-	public RoleManager getRoleManageur() {
+	public RoleManager getRoleManager() {
 		// TODO Auto-generated method stub
 		return this.roleManager;
 	}
@@ -53,7 +53,7 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	
 	//UtilisateurManager
 	private UtilisateurManager utilisateurManager;
-	public UtilisateurManager getUtilisateurManageur() {
+	public UtilisateurManager getUtilisateurManager() {
 		// TODO Auto-generated method stub
 		return this.utilisateurManager;
 	}
@@ -75,7 +75,7 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	
 	//CotationManager
 	private CotationManager cotationManager;
-	public CotationManager getCotationManageur() {
+	public CotationManager getCotationManager() {
 		// TODO Auto-generated method stub
 		return this.cotationManager;
 	}
@@ -86,18 +86,18 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	
 	//OrientationManager
 	private OrientationManager orientationManager;
-	public OrientationManager getOrientationManageur() {
+	public OrientationManager getOrientationManager() {
 		// TODO Auto-generated method stub
 		return this.orientationManager;
 	}
-	public void setOrientationManeger(OrientationManager orientationManager) {
+	public void setOrientationManager(OrientationManager orientationManager) {
 		this.orientationManager=orientationManager;
 	}
 
 	
 	//PaysManager
 	private PaysManager paysManager;
-	public PaysManager getPaysManageur() {
+	public PaysManager getPaysManager() {
 		// TODO Auto-generated method stub
 		return this.paysManager;
 	}
@@ -108,7 +108,7 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	
 	//SecteurManager
 	private SecteurManager secteurManager;
-	public SecteurManager getSecteurManageur() {
+	public SecteurManager getSecteurManager() {
 		// TODO Auto-generated method stub
 		return this.secteurManager;
 	}
@@ -119,7 +119,7 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	
 	//VilleManager
 	private VilleManager villeManager;
-	public VilleManager getVilleManageur() {
+	public VilleManager getVilleManager() {
 		// TODO Auto-generated method stub
 		return this.villeManager;
 	}
@@ -130,7 +130,7 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	
 	//VoieManageur
 	private VoieManager voieManager;
-	public VoieManager getVoieManageur() {
+	public VoieManager getVoieManager() {
 		// TODO Auto-generated method stub
 		return this.voieManager;
 	}
