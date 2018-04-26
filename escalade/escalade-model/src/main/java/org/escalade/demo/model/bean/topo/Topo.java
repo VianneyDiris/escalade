@@ -1,5 +1,7 @@
 package org.escalade.demo.model.bean.topo;
 
+import org.escalade.demo.model.bean.spot.Spot;
+
 public class Topo {
 
 	// ==================== Attributs ====================
@@ -9,6 +11,7 @@ public class Topo {
 	private String photo;
 	private boolean prive;
 	private boolean reserve;
+	private Spot spot;
 		
 	
 	// ==================== Getters/Setters ====================
@@ -58,6 +61,13 @@ public class Topo {
 	public void setReserve(boolean reserve) {
 		this.reserve = reserve;
 	}
+	public Spot getSpot() {
+		return spot;
+	}
+	public void setSpot(Spot spot) {
+		this.spot = spot;
+	}
+	
 	
 	
 	// ==================== Méthodes ====================

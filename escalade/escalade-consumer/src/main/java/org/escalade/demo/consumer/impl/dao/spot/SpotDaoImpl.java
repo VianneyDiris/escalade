@@ -13,7 +13,7 @@ public class SpotDaoImpl extends AbstractDaoImpl implements SpotDao {
 	@Override
 	public List<Spot> listSpot() {
 		// TODO Auto-generated method stub
-		String vsql = "SELECT * FROM public.spot";
+		String vsql = "SELECT * FROM public.spot where id>1";
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 		SpotRM rowSpot = new SpotRM();

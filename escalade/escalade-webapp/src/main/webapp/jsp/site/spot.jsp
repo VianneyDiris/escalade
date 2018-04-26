@@ -38,13 +38,13 @@
         <legend class="text-center grossissement">Spot</legend>
         <div class="row justify-content-lg-center">
 
-	<s:iterator value="listPays">
+	<s:iterator value="listSpots">
 	<div class="produit col-lg-3">
 		<div class="col-lg-12 panel panel-default">
 			<div class="panel-heading"><s:property value="nom"/></div>
-			<img alt="img" src="" width=200 height=150>
-			<p class="lieu"></p>
-			<p class=voie></p>
+			<img alt="img" src="resource_image/<s:property value="photo"/>" width=200 height=150>
+			<p class="lieu">Pays: <s:property value="pays.nom"/></p>
+			<p class=voie>Ville: <s:property value="ville.nom"/>  </p>
 			<p class="cotation"></p>
 			<s:action name="spot_detail"><button class="btn btn-default">Voir détails</button></s:action>
 		</div>

@@ -3,6 +3,7 @@ package org.escalade.demo.consumer.impl.rowmapper.topo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.escalade.demo.consumer.impl.dao.spot.SpotDaoImpl;
 import org.escalade.demo.model.bean.topo.Topo;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -17,6 +18,9 @@ public class TopoRM implements RowMapper<Topo>{
 		topo.setPhoto(rs.getString("photo"));
 		topo.setPrive(rs.getBoolean("prive"));
 		topo.setReserve(rs.getBoolean("reserve"));
+		
+		SpotDaoImpl spotDao = new SpotDaoImpl();
+		topo.setSpot(spotDao.find(rs.getInt("spot_id")));
 		
 		return topo;
 	}

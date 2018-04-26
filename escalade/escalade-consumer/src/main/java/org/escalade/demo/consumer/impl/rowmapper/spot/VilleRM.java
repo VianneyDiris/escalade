@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.escalade.demo.consumer.impl.DaoFactoryImpl;
+import org.escalade.demo.consumer.impl.dao.spot.PaysDaoImpl;
 import org.escalade.demo.model.bean.spot.Ville;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -14,11 +15,12 @@ public class VilleRM implements RowMapper<Ville> {
 		Ville ville = new Ville();
 		ville.setId(rs.getInt("id"));
 		ville.setNom(rs.getString("nom"));
-		ville.setCodePostal(rs.getInt("codePostal"));
+		ville.setCodePostal(rs.getInt("code_postal"));
 		
 		//rowMapper pour pays
 		DaoFactoryImpl daoFactory = new DaoFactoryImpl();
-		ville.setPays(daoFactory.getPaysDao().find(rs.getInt("pays_id")));
+		PaysDaoImpl paysDao = new PaysDaoImpl();
+		ville.setPays(paysDao.find(rs.getInt("pays_id")));
 		
 		return ville;
 	}
