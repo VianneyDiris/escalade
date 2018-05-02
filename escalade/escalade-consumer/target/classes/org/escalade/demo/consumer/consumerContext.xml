@@ -36,7 +36,6 @@
         <property name="utilisateurDao" ref="utilisateurDao"/>
     </bean>
     
-       
 
     <!-- ==== AbstractDao ===== -->
     <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">

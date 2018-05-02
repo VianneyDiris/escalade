@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.escalade.demo.business.impl.ManagerFactoryImpl;
 import org.escalade.demo.model.bean.spot.Spot;
+import org.escalade.demo.model.exception.NotFoundException;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
@@ -14,7 +15,8 @@ public class GestionSpotAction extends ActionSupport {
     // ==================== Attributs ====================
     // ----- Paramètres en entrée
 	private ManagerFactoryImpl managerFactory;
-	private int id;
+	private Integer id;
+	
 	
 	// ----- Eléments en sortie
 	private List<Spot> listSpots;
@@ -28,10 +30,10 @@ public class GestionSpotAction extends ActionSupport {
 	public void setManagerFactory(ManagerFactoryImpl managerFactory) {
 		this.managerFactory = managerFactory;
 	}
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public List<Spot> getListSpots() {
@@ -46,11 +48,25 @@ public class GestionSpotAction extends ActionSupport {
 	public void setSpot(Spot spot) {
 		this.spot = spot;
 	}
-	
 	// ==================== Méthodes ====================
 	public String doListSpot() {
 		listSpots=managerFactory.getSpotManager().getListSpot();
 		return Action.SUCCESS;
 	}
+	
+	public String doDetailSpot() {
+		System.out.println(id);
+        if (id == null) {
+            this.addActionError("Vous devez indiquer un id de Spot");
+        } else {
+            try {
+                spot = managerFactory.getSpotManager().getSpot(id);
+            } catch (NotFoundException pE) {
+                this.addActionError("Spot non trouvé. ID = " + id);
+            }
+        }
+        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
+	}
+	
 
 }

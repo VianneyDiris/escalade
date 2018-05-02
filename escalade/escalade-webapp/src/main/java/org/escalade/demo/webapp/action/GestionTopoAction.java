@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.escalade.demo.business.impl.ManagerFactoryImpl;
 import org.escalade.demo.model.bean.topo.Topo;
+import org.escalade.demo.model.exception.NotFoundException;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
@@ -14,7 +15,7 @@ public class GestionTopoAction extends ActionSupport {
 	// ==================== Attributs ====================
     // ----- Paramètres en entrée
 	private ManagerFactoryImpl managerFactory;
-	private int id;
+	private Integer id;
 	
 	// ----- Eléments en sortie
 	private List<Topo> listTopos;
@@ -28,10 +29,10 @@ public class GestionTopoAction extends ActionSupport {
 	public void setManagerFactory(ManagerFactoryImpl managerFactory) {
 		this.managerFactory = managerFactory;
 	}
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public List<Topo> getListTopos() {
@@ -53,4 +54,17 @@ public class GestionTopoAction extends ActionSupport {
 		return Action.SUCCESS;
 	}
 
+	public String doDetailTopo() {
+		if (id == null) {
+            this.addActionError("Vous devez indiquer un id de Topo");
+        } else {
+            try {
+                topo=managerFactory.getTopoManager().getTopo(id);
+                System.out.println(topo.getNom()+" "+topo.getSpot().getPays().getNom()+" "+topo.getDescription());
+            } catch (NotFoundException pE) {
+                this.addActionError("topo non trouvé. ID = " + id);
+            }
+        }
+        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
+	}
 }

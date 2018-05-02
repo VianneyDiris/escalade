@@ -13,32 +13,48 @@
 			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 		</button>
-		<a href="#" class="navbar-brand">Trouve la voie</a>
+		<s:a action="index" class="navbar-brand">Trouve la voie</s:a>
 	</div>
 
 	<div id="navbarCollapse" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
-			<li><a href="index.html">Accueil</a></li>
-			<li class="active"><a href="spot.html">Spot</a></li>
-			<li><a href="#">Topo</a></li>
-			<li><a href="ajout.html">Ajout</a></li>
+			<li><s:a action="index">Accueil</s:a></li>
+			<li><s:a action="spot_list">Spot</s:a></li>
+			<li class="active"><s:a action="topo_list">Topo</s:a></li>
+			<li><s:a action="ajout">Ajout</s:a></li>
 			<li><a href="#">Recherche</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="connexion.html">Connexion</a></li>
-			<li><a href="enregistrer.html">S'enregistrer</a></li>
+			<li><s:a action="connexion">Connexion</s:a></li>
+			<li><s:a action="enregistrer">S'enregistrer</s:a></li>
 		</ul>
 	</div>
 	</nav>
 
 
 	<!-- Page Content -->
-	<div class="container main">
-		<h1 class="text-center">page des topos</h1>
-		<p class="text-center">Lao-Tseu a dit "Il faut trouver la voie".
-			J'espère que vous la trouverai ici</p>
+  <div class="container content center">
+      <fieldset>
+        <legend class="text-center grossissement">Topo</legend>
+        <div class="row justify-content-lg-center">
 
+	<s:iterator value="listTopos">
+	<div class="produit col-lg-3">
+		<div class="col-lg-12 panel panel-default">
+			<div class="panel-heading"><s:property value="nom"/></div>
+			<img alt="img" src="resource_image/<s:property value="photo"/>" width=200 height=150>
+			<p class="lieu">Pays: <s:property value="spot.pays.nom"/></p>
+			<p class=nom>Ville: <s:property value="spot.ville.nom"/>  </p>
+			<p><p>
+			<s:a action="topo_detail"><s:param name="id" value="id" /><button class="btn btn-default">Voir détails</button></s:a>
+		</div>
 	</div>
+	</s:iterator>
+  
+
+     </div>
+   </fieldset>
+    </div>
 
 
 

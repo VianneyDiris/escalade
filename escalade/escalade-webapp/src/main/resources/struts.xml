@@ -3,27 +3,68 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-    <package name="default" extends="struts-default">
-        <!-- Action par défaut -->
-        <default-action-ref name="index" />
+	<package name="default" extends="struts-default">
+		<!-- Action par défaut -->
+		<default-action-ref name="index" />
 
-        <!-- Action "index" -->
-        <action name="index">
-            <result>/jsp/index.jsp</result>
-        </action>
-        
-        <!-- Action listant les spots -->
-        <action name="spot_list"
-                class="org.escalade.demo.webapp.action.GestionSpotAction"
-                method="doListSpot">
-            <result>/jsp/site/spot.jsp</result>
-        </action>
-        
-         <!-- Action listant les topos -->
-        <action name="topo_list"
-                class="org.escalade.demo.webapp.action.GestionTopoAction"
-                method="doListTopo">
-            <result>/jsp/site/topo.jsp</result>
-        </action>
-    </package>
+		<!-- Action "index" -->
+		<action name="index">
+			<result>/jsp/index.jsp</result>
+		</action>
+
+		<!-- Action listant les spots -->
+		<action name="spot_list"
+			class="org.escalade.demo.webapp.action.GestionSpotAction"
+			method="doListSpot">
+			<result>/jsp/site/spot.jsp</result>
+		</action>
+
+		<!-- Action affichant le détail d'un spot -->
+		<action name="spot_detail"
+			class="org.escalade.demo.webapp.action.GestionSpotAction"
+			method="doDetailSpot">
+			<result name="success">/jsp/site/spot_detail.jsp</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
+
+		<!-- Action listant les topos -->
+		<action name="topo_list"
+			class="org.escalade.demo.webapp.action.GestionTopoAction"
+			method="doListTopo">
+			<result>/jsp/site/topo.jsp</result>
+		</action>
+
+		<!-- Action affichant le détail d'un topo -->
+		<action name="topo_detail"
+			class="org.escalade.demo.webapp.action.GestionTopoAction"
+			method="doDetailTopo">
+			<result name="success">/jsp/site/topo_detail.jsp</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
+
+		<!-- Action "ajout" -->
+		<action name="ajout">
+			<result>/jsp/site/ajout.jsp</result>
+		</action>
+
+		<!-- Action "connexion" -->
+		<action name="connexion">
+			<result>/jsp/site/connexion.jsp</result>
+		</action>
+
+		<!-- Action "enregistrer" -->
+		<action name="enregistrer">
+			<result>/jsp/site/enregistrer.jsp</result>
+		</action>
+
+		<!-- Actions permettant de créer un projet -->
+		<action name="new_user"
+			class="org.escalade.demo.webapp.action.GestionUtilisateurAction"
+			method="doCreateUser">
+			<result name="input">/jsp/site/enregistrer.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">topo_list</param>
+			</result>
+		</action>
+	</package>
 </struts>

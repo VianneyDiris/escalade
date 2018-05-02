@@ -15,5 +15,7 @@ public interface UtilisateurManager {
 	
 	//renvoie l'utilisateur grâce à son couple pseudo/password
 	Utilisateur getUtilisateur(String pseudo, String password) throws NotFoundException;
+	
+	void addUtilisateur(Utilisateur user);
 
 }

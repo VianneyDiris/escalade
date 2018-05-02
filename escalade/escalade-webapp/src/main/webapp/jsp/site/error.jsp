@@ -25,39 +25,29 @@
 				<li><s:a action="topo_list">Topo</s:a></li>
 				<li><s:a action="ajout">Ajout</s:a></li>
 				<li><a href="#">Recherche</a></li>
+				<li class="active">Erreur</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><s:a action="connexion">Connexion</s:a></li>
+				<li><s:a action="connexion">Connexion</s:a></li>
 				<li><s:a action="enregistrer">S'enregistrer</s:a></li>
 			</ul>
 		</div>
 	</nav>
 
+	<h2></h2>
+	<div class="container content">
+		<fieldset>
+			<legend class="text-center grossissement">Topo</legend>
+			<div class="row justify-content-lg-center">
+				<div class="produit ">
+					<div class="col-lg-6 col-lg-offset-3 panel panel-default">
+						<div class="panel-heading">Une erreur s'est produite</div>
+						<p><s:actionerror /><p>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</div>
 
-	    <!-- Page Content -->
-    <div class="container content">
-    <form class="col-lg-6 col-lg-offset-3">
-      <fieldset class="scheduler-border">
-        <legend class="scheduler-border">Se connecter</legend>
- 
-  <div class="form-inline" id="space-top">
-    <label for="exampleInputPassword1"class="espace">Pseudo</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="pseudo">
-
-    <label for="exampleInputPassword1" id="space-right" class="espace">Mot de passe</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="**********">
-  </div>
-  
-
-
- 
-  <button type="submit" class="btn btn-primary center-block" id="connecter">Connecter</button>
-</fieldset>
-</form>
-    </div>
-
-
-
-	<%@include file="../_include/footer.jsp"%>
 </body>
 </html>

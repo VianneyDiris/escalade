@@ -13,20 +13,20 @@
 			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 		</button>
-		<a href="#" class="navbar-brand">Trouve la voie</a>
+		<s:a action="index" class="navbar-brand">Trouve la voie</s:a>
 	</div>
 
 	<div id="navbarCollapse" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
-			<li><a href="index.html">Accueil</a></li>
-			<li class="active"><a href="spot.html">Spot</a></li>
-			<li><a href="#">Topo</a></li>
-			<li><a href="ajout.html">Ajout</a></li>
+			<li><s:a action="index">Accueil</s:a></li>
+			<li class="active"><s:a action="spot_list">Spot</s:a></li>
+			<li><s:a action="topo_list">Topo</s:a></li>
+			<li><s:a action="ajout">Ajout</s:a></li>
 			<li><a href="#">Recherche</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="connexion.html">Connexion</a></li>
-			<li><a href="enregistrer.html">S'enregistrer</a></li>
+			<li><s:a action="connexion">Connexion</s:a></li>
+			<li><s:a action="enregistrer">S'enregistrer</s:a></li>
 		</ul>
 	</div>
 	</nav>
@@ -44,9 +44,9 @@
 			<div class="panel-heading"><s:property value="nom"/></div>
 			<img alt="img" src="resource_image/<s:property value="photo"/>" width=200 height=150>
 			<p class="lieu">Pays: <s:property value="pays.nom"/></p>
-			<p class=voie>Ville: <s:property value="ville.nom"/>  </p>
-			<p class="cotation"></p>
-			<s:action name="spot_detail"><button class="btn btn-default">Voir détails</button></s:action>
+			<p class=nom>Ville: <s:property value="ville.nom"/>  </p>
+			<p>id:<s:property value="id"/>.</p>
+			<s:a action="spot_detail"><s:param name="id" value="id" />Voir détails</s:a>
 		</div>
 	</div>
 	</s:iterator>

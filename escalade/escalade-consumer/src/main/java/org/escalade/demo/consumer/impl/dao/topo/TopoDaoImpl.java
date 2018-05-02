@@ -13,7 +13,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 	@Override
 	public List<Topo> listTopo() {
 		// TODO Auto-generated method stub
-		String vsql = "SELECT * FROM public.topo";
+		String vsql = "SELECT * FROM public.topo where id>1";
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 		TopoRM rowTopo = new TopoRM();
@@ -41,7 +41,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 	}
 
 	@Override
-	public Topo find(int id) {
+	public Topo find(Integer id) {
 		// TODO Auto-generated method stub
 		String vsql ="SELECT * FROM public.topo WHERE id= ?";
 		

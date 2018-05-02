@@ -8,6 +8,7 @@ import org.escalade.demo.consumer.impl.rowmapper.topo.UtilisateurRM;
 import org.escalade.demo.model.bean.topo.Utilisateur;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+
 public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDao {
 
 	@Override
@@ -26,7 +27,12 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 	@Override
 	public void addUtilisateur(Utilisateur utilisateur) {
 		// TODO Auto-generated method stub
-		
+		String vsql = "INSERT INTO public.utilisateur (nom,prenom,pseudo,mail,password,role_id) VALUES (?,?,?,?,?,?)";
+
+		System.out.println(utilisateur.getNom()+" "+utilisateur.getPassword());
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+
+		vJdbcTemplate.update(vsql,utilisateur.getNom(),utilisateur.getPrenom(),utilisateur.getPseudo(),utilisateur.getMail(),utilisateur.getPassword(),utilisateur.getRole().getId());
 	}
 
 	@Override

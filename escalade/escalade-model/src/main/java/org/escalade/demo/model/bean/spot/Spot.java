@@ -3,7 +3,7 @@ package org.escalade.demo.model.bean.spot;
 public class Spot {
 	
 	// ==================== Attributs ====================
-	private int id;
+	private Integer id;
 	private String nom;
 	private String description;
 	private String photo;
@@ -12,10 +12,10 @@ public class Spot {
 	
 	
 	// ==================== Getters/Setters ====================
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	

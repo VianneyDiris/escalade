@@ -42,7 +42,7 @@ public class SpotDaoImpl extends AbstractDaoImpl implements SpotDao {
 	}
 
 	@Override
-	public Spot find(int id) {
+	public Spot find(Integer id) {
 		// TODO Auto-generated method stub
 		String vsql ="SELECT * FROM public.spot WHERE id= ?";
 		

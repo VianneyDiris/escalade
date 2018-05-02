@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class topo_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -18,10 +18,10 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fhead_005fnobody;
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fa_0026_005fclass_005faction;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fa_0026_005faction;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005faction_0026_005fname;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fparam_0026_005fvalue_005fname_005fnobody;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
@@ -33,10 +33,10 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   public void _jspInit() {
     _005fjspx_005ftagPool_005fs_005fhead_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _005fjspx_005ftagPool_005fs_005fa_0026_005fclass_005faction = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fs_005fa_0026_005faction = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fs_005faction_0026_005fname = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fs_005fparam_0026_005fvalue_005fname_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
@@ -44,10 +44,10 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   public void _jspDestroy() {
     _005fjspx_005ftagPool_005fs_005fhead_005fnobody.release();
-    _005fjspx_005ftagPool_005fs_005fa_0026_005fclass_005faction.release();
     _005fjspx_005ftagPool_005fs_005fa_0026_005faction.release();
     _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue.release();
     _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.release();
+    _005fjspx_005ftagPool_005fs_005faction_0026_005fname.release();
     _005fjspx_005ftagPool_005fs_005fparam_0026_005fvalue_005fname_005fnobody.release();
   }
 
@@ -107,41 +107,26 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t<span class=\"sr-only\">Toggle navigation</span> <span class=\"icon-bar\"></span>\r\n");
       out.write("\t\t\t<span class=\"icon-bar\"></span> <span class=\"icon-bar\"></span>\r\n");
       out.write("\t\t</button>\r\n");
-      out.write("\t\t");
-      if (_jspx_meth_s_005fa_005f0(_jspx_page_context))
-        return;
-      out.write("\r\n");
+      out.write("\t\t<a href=\"#\" class=\"navbar-brand\">Trouve la voie</a>\r\n");
       out.write("\t</div>\r\n");
       out.write("\r\n");
       out.write("\t<div id=\"navbarCollapse\" class=\"collapse navbar-collapse\">\r\n");
       out.write("\t\t<ul class=\"nav navbar-nav\">\r\n");
+      out.write("\t\t\t<li><a href=\"index.html\">Accueil</a></li>\r\n");
       out.write("\t\t\t<li>");
-      if (_jspx_meth_s_005fa_005f1(_jspx_page_context))
+      if (_jspx_meth_s_005fa_005f0(_jspx_page_context))
         return;
       out.write("</li>\r\n");
       out.write("\t\t\t<li class=\"active\">");
-      if (_jspx_meth_s_005fa_005f2(_jspx_page_context))
+      if (_jspx_meth_s_005fa_005f1(_jspx_page_context))
         return;
       out.write("</li>\r\n");
-      out.write("\t\t\t<li>");
-      if (_jspx_meth_s_005fa_005f3(_jspx_page_context))
-        return;
-      out.write("</li>\r\n");
-      out.write("\t\t\t<li>");
-      if (_jspx_meth_s_005fa_005f4(_jspx_page_context))
-        return;
-      out.write("</li>\r\n");
+      out.write("\t\t\t<li><a href=\"ajout.html\">Ajout</a></li>\r\n");
       out.write("\t\t\t<li><a href=\"#\">Recherche</a></li>\r\n");
       out.write("\t\t</ul>\r\n");
       out.write("\t\t<ul class=\"nav navbar-nav navbar-right\">\r\n");
-      out.write("\t\t\t<li>");
-      if (_jspx_meth_s_005fa_005f5(_jspx_page_context))
-        return;
-      out.write("</li>\r\n");
-      out.write("\t\t\t<li>");
-      if (_jspx_meth_s_005fa_005f6(_jspx_page_context))
-        return;
-      out.write("</li>\r\n");
+      out.write("\t\t\t<li><a href=\"connexion.html\">Connexion</a></li>\r\n");
+      out.write("\t\t\t<li><a href=\"enregistrer.html\">S'enregistrer</a></li>\r\n");
       out.write("\t\t</ul>\r\n");
       out.write("\t</div>\r\n");
       out.write("\t</nav>\r\n");
@@ -150,7 +135,7 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<!-- Page Content -->\r\n");
       out.write("\t  <div class=\"container content center\">\r\n");
       out.write("      <fieldset>\r\n");
-      out.write("        <legend class=\"text-center grossissement\">Spot</legend>\r\n");
+      out.write("        <legend class=\"text-center grossissement\">Topo</legend>\r\n");
       out.write("        <div class=\"row justify-content-lg-center\">\r\n");
       out.write("\r\n");
       out.write("\t");
@@ -215,13 +200,11 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  s:a
-    org.apache.struts2.views.jsp.ui.AnchorTag _jspx_th_s_005fa_005f0 = (org.apache.struts2.views.jsp.ui.AnchorTag) _005fjspx_005ftagPool_005fs_005fa_0026_005fclass_005faction.get(org.apache.struts2.views.jsp.ui.AnchorTag.class);
+    org.apache.struts2.views.jsp.ui.AnchorTag _jspx_th_s_005fa_005f0 = (org.apache.struts2.views.jsp.ui.AnchorTag) _005fjspx_005ftagPool_005fs_005fa_0026_005faction.get(org.apache.struts2.views.jsp.ui.AnchorTag.class);
     _jspx_th_s_005fa_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fa_005f0.setParent(null);
-    // /jsp/site/spot.jsp(16,2) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fa_005f0.setAction("index");
-    // /jsp/site/spot.jsp(16,2) name = class type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fa_005f0.setCssClass("navbar-brand");
+    // /jsp/site/topo.jsp(22,7) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fa_005f0.setAction("spot_list");
     int _jspx_eval_s_005fa_005f0 = _jspx_th_s_005fa_005f0.doStartTag();
     if (_jspx_eval_s_005fa_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       if (_jspx_eval_s_005fa_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
@@ -230,7 +213,7 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
         _jspx_th_s_005fa_005f0.doInitBody();
       }
       do {
-        out.write("Trouve la voie");
+        out.write("Spot");
         int evalDoAfterBody = _jspx_th_s_005fa_005f0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -240,10 +223,10 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
       }
     }
     if (_jspx_th_s_005fa_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fa_0026_005fclass_005faction.reuse(_jspx_th_s_005fa_005f0);
+      _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f0);
       return true;
     }
-    _005fjspx_005ftagPool_005fs_005fa_0026_005fclass_005faction.reuse(_jspx_th_s_005fa_005f0);
+    _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f0);
     return false;
   }
 
@@ -255,8 +238,8 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.ui.AnchorTag _jspx_th_s_005fa_005f1 = (org.apache.struts2.views.jsp.ui.AnchorTag) _005fjspx_005ftagPool_005fs_005fa_0026_005faction.get(org.apache.struts2.views.jsp.ui.AnchorTag.class);
     _jspx_th_s_005fa_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005fa_005f1.setParent(null);
-    // /jsp/site/spot.jsp(21,7) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fa_005f1.setAction("index");
+    // /jsp/site/topo.jsp(23,22) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fa_005f1.setAction("topo_list");
     int _jspx_eval_s_005fa_005f1 = _jspx_th_s_005fa_005f1.doStartTag();
     if (_jspx_eval_s_005fa_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       if (_jspx_eval_s_005fa_005f1 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
@@ -265,7 +248,7 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
         _jspx_th_s_005fa_005f1.doInitBody();
       }
       do {
-        out.write("Accueil");
+        out.write("Topo");
         int evalDoAfterBody = _jspx_th_s_005fa_005f1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -282,181 +265,6 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_s_005fa_005f2(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:a
-    org.apache.struts2.views.jsp.ui.AnchorTag _jspx_th_s_005fa_005f2 = (org.apache.struts2.views.jsp.ui.AnchorTag) _005fjspx_005ftagPool_005fs_005fa_0026_005faction.get(org.apache.struts2.views.jsp.ui.AnchorTag.class);
-    _jspx_th_s_005fa_005f2.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fa_005f2.setParent(null);
-    // /jsp/site/spot.jsp(22,22) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fa_005f2.setAction("spot_list");
-    int _jspx_eval_s_005fa_005f2 = _jspx_th_s_005fa_005f2.doStartTag();
-    if (_jspx_eval_s_005fa_005f2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      if (_jspx_eval_s_005fa_005f2 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-        out = _jspx_page_context.pushBody();
-        _jspx_th_s_005fa_005f2.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
-        _jspx_th_s_005fa_005f2.doInitBody();
-      }
-      do {
-        out.write("Spot");
-        int evalDoAfterBody = _jspx_th_s_005fa_005f2.doAfterBody();
-        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-          break;
-      } while (true);
-      if (_jspx_eval_s_005fa_005f2 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-        out = _jspx_page_context.popBody();
-      }
-    }
-    if (_jspx_th_s_005fa_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f2);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f2);
-    return false;
-  }
-
-  private boolean _jspx_meth_s_005fa_005f3(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:a
-    org.apache.struts2.views.jsp.ui.AnchorTag _jspx_th_s_005fa_005f3 = (org.apache.struts2.views.jsp.ui.AnchorTag) _005fjspx_005ftagPool_005fs_005fa_0026_005faction.get(org.apache.struts2.views.jsp.ui.AnchorTag.class);
-    _jspx_th_s_005fa_005f3.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fa_005f3.setParent(null);
-    // /jsp/site/spot.jsp(23,7) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fa_005f3.setAction("topo_list");
-    int _jspx_eval_s_005fa_005f3 = _jspx_th_s_005fa_005f3.doStartTag();
-    if (_jspx_eval_s_005fa_005f3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      if (_jspx_eval_s_005fa_005f3 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-        out = _jspx_page_context.pushBody();
-        _jspx_th_s_005fa_005f3.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
-        _jspx_th_s_005fa_005f3.doInitBody();
-      }
-      do {
-        out.write("Topo");
-        int evalDoAfterBody = _jspx_th_s_005fa_005f3.doAfterBody();
-        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-          break;
-      } while (true);
-      if (_jspx_eval_s_005fa_005f3 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-        out = _jspx_page_context.popBody();
-      }
-    }
-    if (_jspx_th_s_005fa_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f3);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f3);
-    return false;
-  }
-
-  private boolean _jspx_meth_s_005fa_005f4(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:a
-    org.apache.struts2.views.jsp.ui.AnchorTag _jspx_th_s_005fa_005f4 = (org.apache.struts2.views.jsp.ui.AnchorTag) _005fjspx_005ftagPool_005fs_005fa_0026_005faction.get(org.apache.struts2.views.jsp.ui.AnchorTag.class);
-    _jspx_th_s_005fa_005f4.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fa_005f4.setParent(null);
-    // /jsp/site/spot.jsp(24,7) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fa_005f4.setAction("ajout");
-    int _jspx_eval_s_005fa_005f4 = _jspx_th_s_005fa_005f4.doStartTag();
-    if (_jspx_eval_s_005fa_005f4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      if (_jspx_eval_s_005fa_005f4 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-        out = _jspx_page_context.pushBody();
-        _jspx_th_s_005fa_005f4.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
-        _jspx_th_s_005fa_005f4.doInitBody();
-      }
-      do {
-        out.write("Ajout");
-        int evalDoAfterBody = _jspx_th_s_005fa_005f4.doAfterBody();
-        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-          break;
-      } while (true);
-      if (_jspx_eval_s_005fa_005f4 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-        out = _jspx_page_context.popBody();
-      }
-    }
-    if (_jspx_th_s_005fa_005f4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f4);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f4);
-    return false;
-  }
-
-  private boolean _jspx_meth_s_005fa_005f5(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:a
-    org.apache.struts2.views.jsp.ui.AnchorTag _jspx_th_s_005fa_005f5 = (org.apache.struts2.views.jsp.ui.AnchorTag) _005fjspx_005ftagPool_005fs_005fa_0026_005faction.get(org.apache.struts2.views.jsp.ui.AnchorTag.class);
-    _jspx_th_s_005fa_005f5.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fa_005f5.setParent(null);
-    // /jsp/site/spot.jsp(28,7) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fa_005f5.setAction("connexion");
-    int _jspx_eval_s_005fa_005f5 = _jspx_th_s_005fa_005f5.doStartTag();
-    if (_jspx_eval_s_005fa_005f5 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      if (_jspx_eval_s_005fa_005f5 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-        out = _jspx_page_context.pushBody();
-        _jspx_th_s_005fa_005f5.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
-        _jspx_th_s_005fa_005f5.doInitBody();
-      }
-      do {
-        out.write("Connexion");
-        int evalDoAfterBody = _jspx_th_s_005fa_005f5.doAfterBody();
-        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-          break;
-      } while (true);
-      if (_jspx_eval_s_005fa_005f5 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-        out = _jspx_page_context.popBody();
-      }
-    }
-    if (_jspx_th_s_005fa_005f5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f5);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f5);
-    return false;
-  }
-
-  private boolean _jspx_meth_s_005fa_005f6(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:a
-    org.apache.struts2.views.jsp.ui.AnchorTag _jspx_th_s_005fa_005f6 = (org.apache.struts2.views.jsp.ui.AnchorTag) _005fjspx_005ftagPool_005fs_005fa_0026_005faction.get(org.apache.struts2.views.jsp.ui.AnchorTag.class);
-    _jspx_th_s_005fa_005f6.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fa_005f6.setParent(null);
-    // /jsp/site/spot.jsp(29,7) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fa_005f6.setAction("enregistrer");
-    int _jspx_eval_s_005fa_005f6 = _jspx_th_s_005fa_005f6.doStartTag();
-    if (_jspx_eval_s_005fa_005f6 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      if (_jspx_eval_s_005fa_005f6 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-        out = _jspx_page_context.pushBody();
-        _jspx_th_s_005fa_005f6.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
-        _jspx_th_s_005fa_005f6.doInitBody();
-      }
-      do {
-        out.write("S'enregistrer");
-        int evalDoAfterBody = _jspx_th_s_005fa_005f6.doAfterBody();
-        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-          break;
-      } while (true);
-      if (_jspx_eval_s_005fa_005f6 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-        out = _jspx_page_context.popBody();
-      }
-    }
-    if (_jspx_th_s_005fa_005f6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f6);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f6);
-    return false;
-  }
-
   private boolean _jspx_meth_s_005fiterator_005f0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -465,8 +273,8 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.IteratorTag _jspx_th_s_005fiterator_005f0 = (org.apache.struts2.views.jsp.IteratorTag) _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue.get(org.apache.struts2.views.jsp.IteratorTag.class);
     _jspx_th_s_005fiterator_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fiterator_005f0.setParent(null);
-    // /jsp/site/spot.jsp(41,1) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fiterator_005f0.setValue("listSpots");
+    // /jsp/site/topo.jsp(41,1) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fiterator_005f0.setValue("listTopos");
     int _jspx_eval_s_005fiterator_005f0 = _jspx_th_s_005fiterator_005f0.doStartTag();
     if (_jspx_eval_s_005fiterator_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       if (_jspx_eval_s_005fiterator_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
@@ -490,16 +298,13 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
         if (_jspx_meth_s_005fproperty_005f2(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
           return true;
         out.write("</p>\r\n");
-        out.write("\t\t\t<p class=nom>Ville: ");
+        out.write("\t\t\t<p class=voie>Ville: ");
         if (_jspx_meth_s_005fproperty_005f3(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
           return true;
         out.write("  </p>\r\n");
-        out.write("\t\t\t<p>id:");
-        if (_jspx_meth_s_005fproperty_005f4(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
-          return true;
-        out.write(".</p>\r\n");
-        out.write("\t\t\t");
-        if (_jspx_meth_s_005fa_005f7(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
+        out.write("\t\t\t<p class=\"cotation\"></p>\r\n");
+        out.write("\t\t");
+        if (_jspx_meth_s_005faction_005f0(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
           return true;
         out.write("\r\n");
         out.write("\t\t</div>\r\n");
@@ -529,7 +334,7 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f0 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /jsp/site/spot.jsp(44,30) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /jsp/site/topo.jsp(44,30) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f0.setValue("nom");
     int _jspx_eval_s_005fproperty_005f0 = _jspx_th_s_005fproperty_005f0.doStartTag();
     if (_jspx_th_s_005fproperty_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -548,7 +353,7 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f1 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /jsp/site/spot.jsp(45,38) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /jsp/site/topo.jsp(45,38) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f1.setValue("photo");
     int _jspx_eval_s_005fproperty_005f1 = _jspx_th_s_005fproperty_005f1.doStartTag();
     if (_jspx_th_s_005fproperty_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -567,8 +372,8 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f2 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /jsp/site/spot.jsp(46,25) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f2.setValue("pays.nom");
+    // /jsp/site/topo.jsp(46,25) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fproperty_005f2.setValue("spot.pays.nom");
     int _jspx_eval_s_005fproperty_005f2 = _jspx_th_s_005fproperty_005f2.doStartTag();
     if (_jspx_th_s_005fproperty_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f2);
@@ -586,8 +391,8 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f3 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f3.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /jsp/site/spot.jsp(47,23) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f3.setValue("ville.nom");
+    // /jsp/site/topo.jsp(47,24) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fproperty_005f3.setValue("spot.ville.nom");
     int _jspx_eval_s_005fproperty_005f3 = _jspx_th_s_005fproperty_005f3.doStartTag();
     if (_jspx_th_s_005fproperty_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f3);
@@ -597,73 +402,54 @@ public final class spot_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_s_005fproperty_005f4(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fiterator_005f0, PageContext _jspx_page_context)
+  private boolean _jspx_meth_s_005faction_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fiterator_005f0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
-    //  s:property
-    org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f4 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
-    _jspx_th_s_005fproperty_005f4.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fproperty_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /jsp/site/spot.jsp(48,9) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f4.setValue("id");
-    int _jspx_eval_s_005fproperty_005f4 = _jspx_th_s_005fproperty_005f4.doStartTag();
-    if (_jspx_th_s_005fproperty_005f4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f4);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f4);
-    return false;
-  }
-
-  private boolean _jspx_meth_s_005fa_005f7(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fiterator_005f0, PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:a
-    org.apache.struts2.views.jsp.ui.AnchorTag _jspx_th_s_005fa_005f7 = (org.apache.struts2.views.jsp.ui.AnchorTag) _005fjspx_005ftagPool_005fs_005fa_0026_005faction.get(org.apache.struts2.views.jsp.ui.AnchorTag.class);
-    _jspx_th_s_005fa_005f7.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fa_005f7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /jsp/site/spot.jsp(49,3) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fa_005f7.setAction("spot_detail");
-    int _jspx_eval_s_005fa_005f7 = _jspx_th_s_005fa_005f7.doStartTag();
-    if (_jspx_eval_s_005fa_005f7 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      if (_jspx_eval_s_005fa_005f7 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+    //  s:action
+    org.apache.struts2.views.jsp.ActionTag _jspx_th_s_005faction_005f0 = (org.apache.struts2.views.jsp.ActionTag) _005fjspx_005ftagPool_005fs_005faction_0026_005fname.get(org.apache.struts2.views.jsp.ActionTag.class);
+    _jspx_th_s_005faction_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_s_005faction_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
+    // /jsp/site/topo.jsp(49,2) name = name type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005faction_005f0.setName("topo_detail");
+    int _jspx_eval_s_005faction_005f0 = _jspx_th_s_005faction_005f0.doStartTag();
+    if (_jspx_eval_s_005faction_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      if (_jspx_eval_s_005faction_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
         out = _jspx_page_context.pushBody();
-        _jspx_th_s_005fa_005f7.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
-        _jspx_th_s_005fa_005f7.doInitBody();
+        _jspx_th_s_005faction_005f0.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+        _jspx_th_s_005faction_005f0.doInitBody();
       }
       do {
-        if (_jspx_meth_s_005fparam_005f0(_jspx_th_s_005fa_005f7, _jspx_page_context))
+        if (_jspx_meth_s_005fparam_005f0(_jspx_th_s_005faction_005f0, _jspx_page_context))
           return true;
         out.write("Voir détails");
-        int evalDoAfterBody = _jspx_th_s_005fa_005f7.doAfterBody();
+        int evalDoAfterBody = _jspx_th_s_005faction_005f0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
       } while (true);
-      if (_jspx_eval_s_005fa_005f7 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+      if (_jspx_eval_s_005faction_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
         out = _jspx_page_context.popBody();
       }
     }
-    if (_jspx_th_s_005fa_005f7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f7);
+    if (_jspx_th_s_005faction_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005faction_0026_005fname.reuse(_jspx_th_s_005faction_005f0);
       return true;
     }
-    _005fjspx_005ftagPool_005fs_005fa_0026_005faction.reuse(_jspx_th_s_005fa_005f7);
+    _005fjspx_005ftagPool_005fs_005faction_0026_005fname.reuse(_jspx_th_s_005faction_005f0);
     return false;
   }
 
-  private boolean _jspx_meth_s_005fparam_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fa_005f7, PageContext _jspx_page_context)
+  private boolean _jspx_meth_s_005fparam_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005faction_005f0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  s:param
     org.apache.struts2.views.jsp.ParamTag _jspx_th_s_005fparam_005f0 = (org.apache.struts2.views.jsp.ParamTag) _005fjspx_005ftagPool_005fs_005fparam_0026_005fvalue_005fname_005fnobody.get(org.apache.struts2.views.jsp.ParamTag.class);
     _jspx_th_s_005fparam_005f0.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fparam_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fa_005f7);
-    // /jsp/site/spot.jsp(49,29) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fparam_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005faction_005f0);
+    // /jsp/site/topo.jsp(49,31) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fparam_005f0.setName("id");
-    // /jsp/site/spot.jsp(49,29) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /jsp/site/topo.jsp(49,31) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fparam_005f0.setValue("id");
     int _jspx_eval_s_005fparam_005f0 = _jspx_th_s_005fparam_005f0.doStartTag();
     if (_jspx_th_s_005fparam_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

@@ -8,7 +8,7 @@ public interface TopoDao {
 	
 	List<Topo> listTopo();
 	
-	Topo find(int id);
+	Topo find(Integer id);
 	
 	void addTopo(Topo topo);
 	

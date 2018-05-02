@@ -8,7 +8,7 @@ public interface SpotDao {
 	
 	List<Spot> listSpot();
 	
-	Spot find(int id);
+	Spot find(Integer id);
 	
 	void addSpot(Spot spot);
 	
