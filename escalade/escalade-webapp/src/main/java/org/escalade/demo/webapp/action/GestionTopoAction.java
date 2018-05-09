@@ -60,7 +60,6 @@ public class GestionTopoAction extends ActionSupport {
         } else {
             try {
                 topo=managerFactory.getTopoManager().getTopo(id);
-                System.out.println(topo.getNom()+" "+topo.getSpot().getPays().getNom()+" "+topo.getDescription());
             } catch (NotFoundException pE) {
                 this.addActionError("topo non trouvé. ID = " + id);
             }

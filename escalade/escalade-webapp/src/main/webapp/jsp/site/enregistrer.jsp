@@ -27,8 +27,14 @@
 				<li><a href="#">Recherche</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><s:a action="connexion">Connexion</s:a></li>
-				<li class="active"><s:a action="enregistrer">S'enregistrer</s:a></li>
+				 <s:if test="#session.user">
+		            <li><s:a><s:property value="#session.user.pseudo" /></s:a></li>
+		            <li><s:a action="logout">Déconnexion</s:a></li>
+    			</s:if>
+		    	<s:else>
+		        	<li><s:a action="login">Connexion</s:a></li>
+					<li class="active"><s:a action="enregistrer">S'enregistrer</s:a></li>
+		    	</s:else>
 			</ul>
 		</div>
 	</nav>
@@ -36,7 +42,7 @@
 
 	<!-- Page Content -->
 	<div class="container content">
-		<s:form action="new_user" class="col-lg-6 col-lg-offset-3">
+		<s:form action="enregistrer" class="col-lg-6 col-lg-offset-3">
 			<fieldset class="scheduler-border">
 				<legend class="scheduler-border">Création du compte</legend>
 				<div class="form-inline">

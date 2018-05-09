@@ -23,10 +23,21 @@
 			<li><s:a action="topo_list">Topo</s:a></li>
 			<li><s:a action="ajout">Ajout</s:a></li>
 			<li><a href="#">Recherche</a></li>
+			<s:if test="%{#session.user.role.role=='admin'}">
+				<li><s:a action="gestion_spot">Administration</s:a></li>
+			</s:if>
+			
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><s:a action="connexion">Connexion</s:a></li>
+		 <s:if test="#session.user">
+            <li><s:a><s:property value="#session.user.pseudo" /></s:a></li>
+            <li><s:a action="logout">Déconnexion</s:a></li>
+    	</s:if>
+    	<s:else>
+        	<li><s:a action="login">Connexion</s:a></li>
 			<li><s:a action="enregistrer">S'enregistrer</s:a></li>
+    	</s:else>
+			
 		</ul>
 	</div>
 	</nav>

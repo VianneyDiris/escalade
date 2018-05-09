@@ -12,5 +12,9 @@ public interface CommentaireManager {
 		
 	//renvoie le commentaire grâce à son id
 	Commentaire getCommentaire(Integer id) throws NotFoundException;
+	
+	Commentaire findCommentbySpotId(Integer id) throws NotFoundException;
+	
+	Commentaire findCommentbyTopoId(Integer id) throws NotFoundException;
 
 }

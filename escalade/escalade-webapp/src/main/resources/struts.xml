@@ -47,24 +47,34 @@
 			<result>/jsp/site/ajout.jsp</result>
 		</action>
 
-		<!-- Action "connexion" -->
-		<action name="connexion">
-			<result>/jsp/site/connexion.jsp</result>
-		</action>
-
-		<!-- Action "enregistrer" -->
-		<action name="enregistrer">
-			<result>/jsp/site/enregistrer.jsp</result>
-		</action>
-
-		<!-- Actions permettant de créer un projet -->
-		<action name="new_user"
+		<!-- Actions permettant de créer un user -->
+		<action name="enregistrer"
 			class="org.escalade.demo.webapp.action.GestionUtilisateurAction"
 			method="doCreateUser">
 			<result name="input">/jsp/site/enregistrer.jsp</result>
 			<result name="success" type="redirectAction">
 				<param name="actionName">topo_list</param>
 			</result>
+		</action>
+
+		<!-- Actions Login/Logout -->
+		<action name="login"
+			class="org.escalade.demo.webapp.action.LoginAction"
+			method="doLogin">
+			<result name="input">/jsp/site/connexion.jsp</result>
+			<result name="success" type="redirectAction">index</result>
+		</action>
+		<action name="logout"
+			class="org.escalade.demo.webapp.action.LoginAction"
+			method="doLogout">
+			<result type="redirectAction">index</result>
+		</action>
+		
+		<!-- Action "Gestion Spot" -->
+		<action name="gestion_spot"
+			class="org.escalade.demo.webapp.action.BackGestionSpotAction"
+			method="doListSpot">
+			<result>/jsp/backoffice/spot_gestion.jsp</result>
 		</action>
 	</package>
 </struts>

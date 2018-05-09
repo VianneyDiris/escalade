@@ -21,20 +21,15 @@
 		<div id="navbarCollapse" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li><s:a action="index">Accueil</s:a></li>
-				<li><s:a action="spot_list">Spot</s:a></li>
-				<li><s:a action="topo_list">Topo</s:a></li>
-				<li><s:a action="ajout">Ajout</s:a></li>
-				<li><a href="#">Recherche</a></li>
+				<li><s:a action="gestion_spot">Gestion Spot</s:a></li>
+				<li><s:a action="gestion_topo">Gestion Topo</s:a></li>
+				<li><s:a action="gestion_user">Gestion Utilisateur</s:a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<s:if test="#session.user">
 		            <li><s:a><s:property value="#session.user.pseudo" /></s:a></li>
 		            <li><s:a action="logout">Déconnexion</s:a></li>
     			</s:if>
-		    	<s:else>
-		        	<li class="active"><s:a action="login">Connexion</s:a></li>
-					<li><s:a action="enregistrer">S'enregistrer</s:a></li>
-		    	</s:else>
 			</ul>
 		</div>
 	</nav>

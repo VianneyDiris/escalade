@@ -21,4 +21,16 @@ public class CommentaireManagerImpl extends AbstractManagerImpl implements Comme
 		return null;
 	}
 
+	@Override
+	public Commentaire findCommentbySpotId(Integer id) throws NotFoundException {
+		// TODO Auto-generated method stub
+		return getDaoFactory().getCommentaireDao().findCommentbySpotId(id);
+	}
+
+	@Override
+	public Commentaire findCommentbyTopoId(Integer id) throws NotFoundException {
+		// TODO Auto-generated method stub
+		return getDaoFactory().getCommentaireDao().findCommentbyTopoId(id);
+	}
+
 }

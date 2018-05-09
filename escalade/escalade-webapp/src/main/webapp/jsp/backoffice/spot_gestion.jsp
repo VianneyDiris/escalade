@@ -21,10 +21,9 @@
 		<div id="navbarCollapse" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li><s:a action="index">Accueil</s:a></li>
-				<li class="active"><s:a action="spot_list">Spot</s:a></li>
-				<li><s:a action="topo_list">Topo</s:a></li>
-				<li><s:a action="ajout">Ajout</s:a></li>
-				<li><a href="#">Recherche</a></li>
+				<li class="active"><s:a action="spot_list">Gestion Spot</s:a></li>
+				<li><s:a action="topo_list">Gestion Topo</s:a></li>
+				<li><s:a action="ajout">Gestion Utilisateur</s:a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<s:if test="#session.user">
@@ -33,10 +32,6 @@
 						</s:a></li>
 					<li><s:a action="logout">Déconnexion</s:a></li>
 				</s:if>
-				<s:else>
-					<li><s:a action="login">Connexion</s:a></li>
-					<li><s:a action="enregistrer">S'enregistrer</s:a></li>
-				</s:else>
 			</ul>
 		</div>
 	</nav>
@@ -46,28 +41,28 @@
 	<div class="container content center">
 		<fieldset>
 			<legend class="text-center grossissement">Spot</legend>
-			<div class="row justify-content-lg-center">
-
-				<s:iterator value="listSpots">
-					<div class="produit col-lg-3">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<s:property value="nom" />
-							</div>
-							<div class="panel-body">
-								<img alt="img" src="resource_image/<s:property value="photo"/>"	width=200 height=150>
-								<p class="lieu">Pays:<s:property value="pays.nom" /></p>
-								<p class=nom>Ville:<s:property value="ville.nom" /></p>
-								<p></p>
-								<s:a action="spot_detail"><s:param name="id" value="id" /><button class="btn btn-default">Voir détails</button></s:a>
-							</div>
-						</div>
+			<s:iterator value="listSpots">
+				<s:form action="login">
+					<div class="form-inline" id="space-top">
+						<s:property value="nom"/>
+						<s:property value="description"/>
+						<s:submit value="modifier" id="connecter"
+						class="btn btn-warning" />
+						<s:submit value="supprimer" id="connecter"
+						class="btn btn-danger" />
+						
 					</div>
-				</s:iterator>
 
-			</div>
+
+					
+
+
+				</s:form>
+			</s:iterator>
+
 		</fieldset>
 	</div>
+
 
 
 

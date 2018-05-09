@@ -10,6 +10,8 @@ public interface UtilisateurDao {
 	
 	Utilisateur find(int id);
 	
+	Utilisateur search(String pseudo,String password);
+	
 	void addUtilisateur(Utilisateur utilisateur);
 	
 	void updateUtilisateur(Utilisateur utilisateur);

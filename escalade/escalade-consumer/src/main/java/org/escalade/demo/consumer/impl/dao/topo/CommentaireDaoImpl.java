@@ -51,4 +51,25 @@ public class CommentaireDaoImpl extends AbstractDaoImpl implements CommentaireDa
 		return commentaire;
 	}
 
+	@Override
+	public Commentaire findCommentbySpotId(Integer id) {
+		// TODO Auto-generated method stub
+		String vsql ="SELECT * FROM public.commentaire WHERE spot_id= ?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		Commentaire commentaire=(Commentaire)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new CommentaireRM());
+		
+		return commentaire;
+	}
+
+	@Override
+	public Commentaire findCommentbyTopoId(Integer id) {
+		String vsql ="SELECT * FROM public.commentaire WHERE topo_id= ?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		Commentaire commentaire=(Commentaire)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new CommentaireRM());
+		
+		return commentaire;
+	}
+
 }

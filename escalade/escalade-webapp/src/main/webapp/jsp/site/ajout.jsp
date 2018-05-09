@@ -27,27 +27,33 @@
 				<li><a href="#">Recherche</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><s:a action="connexion">Connexion</s:a></li>
-				<li><s:a action="enregistrer">S'enregistrer</s:a></li>
+				<s:if test="#session.user">
+					<li><s:a>
+							<s:property value="#session.user.pseudo" />
+						</s:a></li>
+					<li><s:a action="logout">Déconnexion</s:a></li>
+				</s:if>
+				<s:else>
+					<li><s:a action="login">Connexion</s:a></li>
+					<li><s:a action="enregistrer">S'enregistrer</s:a></li>
+				</s:else>
 			</ul>
 		</div>
 	</nav>
 
 
 	<div class="container content">
-		<form class="col-lg-5 col-lg-offset-1">
+		<s:form class="col-lg-5 col-lg-offset-1">
 			<fieldset class="scheduler-border">
 				<legend class="scheduler-border">Spot</legend>
 				<div class="form-group">
-					<label for="exampleInputEmail1">Nom du spot</label> <input
-						type="text" class="form-control" id="exampleInputEmail1"
-						placeholder="nom du spot">
-
+					<s:label for="spot" class="espace">Nom du spot</s:label>
+					<s:textfield name="spot" class="form-control" placeholder="nom du spot"/>
 				</div>
 
 				<div class="form-group">
-					<label for="comment">Description:</label>
-					<textarea class="form-control" rows="5" id="comment"></textarea>
+					<s:label for="description" class="espace">Description</s:label>
+					<s:textarea class="form-control" rows="5" id="comment"></s:textarea>
 				</div>
 
 				<div class="form-group">
@@ -88,10 +94,10 @@
 				<button type="submit" class="btn btn-primary center-block">Valider
 					le spot</button>
 			</fieldset>
-		</form>
+		</s:form>
 
 
-		<form class="col-lg-5">
+		<s:form class="col-lg-5">
 			<fieldset class="scheduler-border">
 				<legend class="scheduler-border">Topo</legend>
 				<div class="form-group">
@@ -130,11 +136,11 @@
 				<button type="submit" class="btn btn-primary center-block">Valider
 					le topo</button>
 			</fieldset>
-		</form>
+		</s:form>
 	</div>
 
 
 
-		<%@include file="../_include/footer.jsp"%>
+	<%@include file="../_include/footer.jsp"%>
 </body>
 </html>

@@ -28,8 +28,14 @@
 				<li class="active">Erreur</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><s:a action="connexion">Connexion</s:a></li>
-				<li><s:a action="enregistrer">S'enregistrer</s:a></li>
+				 <s:if test="#session.user">
+		            <li><s:a><s:property value="#session.user.pseudo" /></s:a></li>
+		            <li><s:a action="logout">Déconnexion</s:a></li>
+		    	</s:if>
+		    	<s:else>
+		        	<li><s:a action="login">Connexion</s:a></li>
+					<li><s:a action="enregistrer">S'enregistrer</s:a></li>
+		    	</s:else>
 			</ul>
 		</div>
 	</nav>

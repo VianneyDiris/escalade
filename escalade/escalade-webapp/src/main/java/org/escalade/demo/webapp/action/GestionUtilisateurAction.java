@@ -4,7 +4,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.escalade.demo.business.impl.ManagerFactoryImpl;
 import org.escalade.demo.model.bean.topo.Utilisateur;
 import org.escalade.demo.model.exception.NotFoundException;
-
 import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
@@ -79,6 +78,7 @@ public class GestionUtilisateurAction extends ActionSupport {
         	if(!password.equals(passwordConfirm)) {
         		this.addFieldError(password, "mot de passe différent");
         	}
+        	
         	Utilisateur user = new Utilisateur();
         	user.setNom(userName);
         	user.setPrenom(userSurname);

@@ -15,4 +15,8 @@ public interface CommentaireDao {
 	void updateCommentaire(Commentaire commentaire);
 	
 	void deleteCommentaire(Commentaire commentaire);
+	
+	Commentaire findCommentbySpotId(Integer id);
+	
+	Commentaire findCommentbyTopoId(Integer id);
 }

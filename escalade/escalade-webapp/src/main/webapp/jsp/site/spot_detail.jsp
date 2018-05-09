@@ -25,27 +25,47 @@
 			<li><a href="#">Recherche</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><s:a action="connexion">Connexion</s:a></li>
-			<li><s:a action="enregistrer">S'enregistrer</s:a></li>
+			 <s:if test="#session.user">
+	            <li><s:a><s:property value="#session.user.pseudo" /></s:a></li>
+	            <li><s:a action="logout">Déconnexion</s:a></li>
+	    	</s:if>
+	    	<s:else>
+	        	<li><s:a action="login">Connexion</s:a></li>
+				<li><s:a action="enregistrer">S'enregistrer</s:a></li>
+	    	</s:else>
 		</ul>
 	</div>
 	</nav>
 
 
-	<!-- Page Content -->
+<!-- Page Content -->
 	 <div class="container content">
-    <article class="produit_detail col-lg-12">
-       <h2><s:property value="nom"/></h2>
-      <img alt="img" src="resource_image/<s:property value="photo"/>" width=200 height=150>
-       <p class="lieu">Lieu du spot: FontaineBleau</p>
-       <p class="voie">Voie Préféré : La Via Gregoria</p>
-       <p class="cotation">Cotation de la voie : 5B</p>
-       <p class="description">site d'escalade proche de Fontainebleau</p>
-     <s:a action="spot_list"><button class="btn btn-default">Retour</button></s:a>
-     </article>
+	  <fieldset>
+        <legend class="text-center grossissement">Spot</legend>
+        <div class="row justify-content-lg-center">
+		 <div class="produit ">
+			<div class="col-lg-8 col-lg-offset-2 panel panel-default">
+				<div class="panel-heading"><s:property value="spot.nom"/></div>
+				<img class="col-lg-8" alt="img" src="resource_image/<s:property value="spot.photo"/>">
+				<div class="col-lg-4">
+					<p class="lieu">Pays: <s:property value="spot.pays.nom"/></p>
+					<p class=nom>Ville: <s:property value="spot.ville.nom"/>  </p>
+					<p class="description">Description: <s:property value="spot.description"/><p>
+					<s:a action="spot_list"><button class="btn btn-default">Retour</button></s:a>
+				</div>
+			</div>
+		</div>
+    </div>
+   </fieldset>
     </div>
 
-
+	<s:if test="commentaire">
+	<p><s:property value="commentaire.contenue"/></p>
+	</s:if>
+	<s:else>
+	<p>no comment</p>
+	</s:else>
+	
 
 	<%@include file="../_include/footer.jsp"%>
 </body>
