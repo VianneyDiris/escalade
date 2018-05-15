@@ -36,8 +36,11 @@ public class SpotDaoImpl extends AbstractDaoImpl implements SpotDao {
 	}
 
 	@Override
-	public void deleteSpot(Spot spot) {
+	public void deleteSpot(Integer id) {
 		// TODO Auto-generated method stub
+		String vsql="DELETE FROM public.spot WHERE id=?";
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		vJdbcTemplate.update(vsql,new Object[] { id });
 		
 	}
 

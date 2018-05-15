@@ -14,7 +14,7 @@ public interface CommentaireDao {
 	
 	void updateCommentaire(Commentaire commentaire);
 	
-	void deleteCommentaire(Commentaire commentaire);
+	void deleteCommentaire(Integer id);
 	
 	Commentaire findCommentbySpotId(Integer id);
 	

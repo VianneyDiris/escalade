@@ -43,15 +43,17 @@
 	  <fieldset>
         <legend class="text-center grossissement">Topo</legend>
         <div class="row justify-content-lg-center">
-		 <div class="produit ">
-			<div class="col-lg-8 col-lg-offset-2 panel panel-default">
+		 <div class="produit col-lg-8 col-lg-offset-2 ">
+			<div class="panel panel-default">
 				<div class="panel-heading"><s:property value="topo.nom"/></div>
+				<div class="panel-body">
 				<img class="col-lg-8" alt="img" src="resource_image/<s:property value="topo.photo"/>">
 				<div class="col-lg-4">
 					<p class="lieu">Pays: <s:property value="topo.spot.pays.nom"/></p>
 					<p class=nom>Ville: <s:property value="topo.spot.ville.nom"/>  </p>
 					<p class="description">Description: <s:property value="topo.description"/><p>
 					<s:a action="topo_list"><button class="btn btn-default">Retour</button></s:a>
+				</div>
 				</div>
 			</div>
 		</div>

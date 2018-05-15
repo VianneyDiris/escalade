@@ -8,7 +8,7 @@ public interface UtilisateurDao {
 	
 	List<Utilisateur> listUtilisateur();
 	
-	Utilisateur find(int id);
+	Utilisateur find(Integer id);
 	
 	Utilisateur search(String pseudo,String password);
 	
@@ -16,6 +16,6 @@ public interface UtilisateurDao {
 	
 	void updateUtilisateur(Utilisateur utilisateur);
 	
-	void deleteUtilisateur(Utilisateur utilisateur);
+	void deleteUtilisateur(Integer id);
 
 }

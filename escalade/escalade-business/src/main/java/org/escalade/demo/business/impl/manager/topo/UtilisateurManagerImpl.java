@@ -18,7 +18,7 @@ public class UtilisateurManagerImpl extends AbstractManagerImpl implements Utili
 	@Override
 	public Utilisateur getUtilisateur(Integer id) throws NotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		return getDaoFactory().getUtilisateurDao().find(id);
 	}
 
 	@Override
@@ -32,6 +32,14 @@ public class UtilisateurManagerImpl extends AbstractManagerImpl implements Utili
 		// TODO Auto-generated method stub
 	         
           getDaoFactory().getUtilisateurDao().addUtilisateur(user);
+	}
+
+	@Override
+	public void deleteUtilisateur(Utilisateur user) {
+		// TODO Auto-generated method stub
+		System.out.println("méthode deleteUtilisateur: "+user.getId());
+		getDaoFactory().getUtilisateurDao().deleteUtilisateur(user.getId());
+		
 	}
 		
 

@@ -17,5 +17,7 @@ public interface UtilisateurManager {
 	Utilisateur getUtilisateur(String pseudo, String password) throws NotFoundException;
 	
 	void addUtilisateur(Utilisateur user);
+	
+	void deleteUtilisateur(Utilisateur user);
 
 }

@@ -8,12 +8,10 @@
 	
 }
 
-
 .navbar{
 	margin:0;
 	padding:0;
 }
-
 
 .body {
 margin:0;  
@@ -47,6 +45,11 @@ footer{
 
 .produit{
 	text-align: center;
+}
+
+.list{
+	margin-left:15px;
+	margin-right:15px;
 }
 
 .produit_detail{
@@ -101,4 +104,9 @@ legend.scheduler-border {
 
 .panel-heading,.panel-body{
 	text-align: center;
+}
+
+.img_list{
+	width:200px; 
+	height:150px;
 }

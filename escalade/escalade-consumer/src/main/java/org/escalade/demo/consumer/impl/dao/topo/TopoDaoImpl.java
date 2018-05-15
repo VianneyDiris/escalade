@@ -35,8 +35,11 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 	}
 
 	@Override
-	public void deleteTopo(Topo topo) {
+	public void deleteTopo(Integer id) {
 		// TODO Auto-generated method stub
+		String vsql="DELETE FROM public.topo WHERE id=?";
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		vJdbcTemplate.update(vsql,new Object[] { id });
 		
 	}
 

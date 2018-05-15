@@ -49,13 +49,14 @@
 			<div class="row justify-content-lg-center">
 
 				<s:iterator value="listSpots">
+				<div class="list">
 					<div class="produit col-lg-3">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<s:property value="nom" />
 							</div>
 							<div class="panel-body">
-								<img alt="img" src="resource_image/<s:property value="photo"/>"	width=200 height=150>
+								<img alt="img" class="img_list" src="resource_image/<s:property value="photo"/>">
 								<p class="lieu">Pays:<s:property value="pays.nom" /></p>
 								<p class=nom>Ville:<s:property value="ville.nom" /></p>
 								<p></p>
@@ -63,6 +64,7 @@
 							</div>
 						</div>
 					</div>
+				</div>
 				</s:iterator>
 
 			</div>

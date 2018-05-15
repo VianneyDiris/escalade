@@ -14,6 +14,6 @@ public interface SpotDao {
 	
 	void updateSpot(Spot spot);
 	
-	void deleteSpot(Spot spot);
+	void deleteSpot(Integer id);
 
 }

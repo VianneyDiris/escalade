@@ -3,7 +3,7 @@ package org.escalade.demo.model.bean.topo;
 public class Utilisateur {
 	
 	// ==================== Attributs ====================
-	private int id;
+	private Integer id;
 	private String nom;
 	private String prenom;
 	private String pseudo;
@@ -13,10 +13,10 @@ public class Utilisateur {
 	
 	
 	// ==================== Getters/Setters ====================
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	

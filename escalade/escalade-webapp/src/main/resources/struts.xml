@@ -6,12 +6,14 @@
 	<package name="default" extends="struts-default">
 		<!-- Action par défaut -->
 		<default-action-ref name="index" />
-
+		
+<!-- ########################### SITE #############################################-->
 		<!-- Action "index" -->
 		<action name="index">
 			<result>/jsp/index.jsp</result>
 		</action>
 
+<!-- ########################### SPOT #############################-->
 		<!-- Action listant les spots -->
 		<action name="spot_list"
 			class="org.escalade.demo.webapp.action.GestionSpotAction"
@@ -27,6 +29,7 @@
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
 
+<!-- ########################### Topo ############################-->
 		<!-- Action listant les topos -->
 		<action name="topo_list"
 			class="org.escalade.demo.webapp.action.GestionTopoAction"
@@ -42,11 +45,13 @@
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
 
+<!-- ########################### Ajout ############################-->
 		<!-- Action "ajout" -->
 		<action name="ajout">
 			<result>/jsp/site/ajout.jsp</result>
 		</action>
-
+		
+<!-- ########################### Utilisateur ############################-->
 		<!-- Actions permettant de créer un user -->
 		<action name="enregistrer"
 			class="org.escalade.demo.webapp.action.GestionUtilisateurAction"
@@ -69,12 +74,43 @@
 			method="doLogout">
 			<result type="redirectAction">index</result>
 		</action>
-		
+
+<!-- ########################### BACKOFFICE #############################################-->
+<!-- ########################### Spot ############################-->		
 		<!-- Action "Gestion Spot" -->
 		<action name="gestion_spot"
 			class="org.escalade.demo.webapp.action.BackGestionSpotAction"
 			method="doListSpot">
 			<result>/jsp/backoffice/spot_gestion.jsp</result>
+		</action>
+		
+		<!-- Action "Gestion Topo" -->
+		<action name="gestion_topo"
+			class="org.escalade.demo.webapp.action.BackGestionTopoAction"
+			method="doListTopo">
+			<result>/jsp/backoffice/topo_gestion.jsp</result>
+		</action>
+		
+<!-- ########################### Utilisateur ############################-->		
+		<!-- Action "Gestion User" -->
+		<action name="gestion_user"
+			class="org.escalade.demo.webapp.action.BackGestionUserAction"
+			method="doListUtilisateur">
+			<result>/jsp/backoffice/user_gestion.jsp</result>
+		</action>
+		<action name="delete_user"
+			class="org.escalade.demo.webapp.action.BackGestionUserAction"
+			method="doDeleteUtilisateur">
+			<result name="success" type="redirectAction">gestion_user</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
+
+<!-- ########################### Commentaire ############################-->		
+		<!-- Action "Gestion Commentaire" -->
+		<action name="gestion_comment"
+			class="org.escalade.demo.webapp.action.BackGestionCommentAction"
+			method="doListComment">
+			<result>/jsp/backoffice/user_gestion.jsp</result>
 		</action>
 	</package>
 </struts>

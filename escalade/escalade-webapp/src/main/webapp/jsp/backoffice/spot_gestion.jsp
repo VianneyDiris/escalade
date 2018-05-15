@@ -21,9 +21,10 @@
 		<div id="navbarCollapse" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li><s:a action="index">Accueil</s:a></li>
-				<li class="active"><s:a action="spot_list">Gestion Spot</s:a></li>
-				<li><s:a action="topo_list">Gestion Topo</s:a></li>
-				<li><s:a action="ajout">Gestion Utilisateur</s:a></li>
+				<li class="active"><s:a action="gestion_spot">Gestion Spot</s:a></li>
+				<li><s:a action="gestion_topo">Gestion Topo</s:a></li>
+				<li><s:a action="gestion_user">Gestion Utilisateur</s:a></li>
+				<li><s:a action="gestion_comment">Gestion Commentaire</s:a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<s:if test="#session.user">
@@ -39,28 +40,31 @@
 
 	<!-- Page Content -->
 	<div class="container content center">
-		<fieldset>
-			<legend class="text-center grossissement">Spot</legend>
-			<s:iterator value="listSpots">
-				<s:form action="login">
-					<div class="form-inline" id="space-top">
-						<s:property value="nom"/>
-						<s:property value="description"/>
-						<s:submit value="modifier" id="connecter"
-						class="btn btn-warning" />
-						<s:submit value="supprimer" id="connecter"
-						class="btn btn-danger" />
-						
-					</div>
-
-
-					
-
-
-				</s:form>
-			</s:iterator>
-
-		</fieldset>
+	<div class="col-lg-8 col-lg-offset-2">
+	<div class="table-responsive">
+  		<table class="table table-hover table-border">
+  		 <thead>
+	      <tr>
+	        <th>Nom du spot</th>
+	        <th>Description</th>
+	        <th>Modifier</th>
+	        <th>Supprimer</th>
+	      </tr>
+   		</thead>
+   		  <tbody>
+   		  <s:iterator value="listSpots">
+		      <tr>
+		        <td><s:property value="nom"/></td>
+		        <td><s:property value="description"/></td>
+		        <td><s:a action="spot_list"><button class="btn btn-warning">modifier</button></s:a></td>
+		        <td><s:a action="spot_list"><button class="btn btn-danger">supprimer</button></s:a></td>
+		      </tr>
+		    </s:iterator>
+		   </tbody>
+   
+  		</table>
+	</div>
+	</div>
 	</div>
 
 

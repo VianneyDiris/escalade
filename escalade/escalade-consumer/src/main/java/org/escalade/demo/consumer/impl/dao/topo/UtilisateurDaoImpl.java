@@ -44,15 +44,17 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 	}
 
 	@Override
-	public void deleteUtilisateur(Utilisateur utilisateur) {
+	public void deleteUtilisateur(Integer id) {
 		// TODO Auto-generated method stub
-		
+		String vsql = "DELETE FROM public.utilisateur WHERE id=?";
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		vJdbcTemplate.update(vsql, new Object[] { id });
 	}
 
 	@Override
-	public Utilisateur find(int id) {
+	public Utilisateur find(Integer id) {
 		// TODO Auto-generated method stub
-		String vsql ="SELECT * FROM public.utilisateur WHERE id= ?";
+		String vsql ="SELECT * FROM public.utilisateur WHERE id=?";
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 		Utilisateur utilisateur=(Utilisateur)vJdbcTemplate.query(vsql, new Object[] { id }, new UtilisateurRM());

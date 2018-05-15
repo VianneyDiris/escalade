@@ -45,15 +45,19 @@
         <div class="row justify-content-lg-center">
 
 	<s:iterator value="listTopos">
+	<div class="list">
 	<div class="produit col-lg-3">
-		<div class="col-lg-12 panel panel-default">
+		<div class="panel panel-default">
 			<div class="panel-heading"><s:property value="nom"/></div>
-			<img alt="img" src="resource_image/<s:property value="photo"/>" width=200 height=150>
+			<div class="panel-body">
+			<img alt="img" class="img_list" src="resource_image/<s:property value="photo"/>">
 			<p class="lieu">Pays: <s:property value="spot.pays.nom"/></p>
 			<p class=nom>Ville: <s:property value="spot.ville.nom"/>  </p>
 			<p><p>
 			<s:a action="topo_detail"><s:param name="id" value="id" /><button class="btn btn-default">Voir détails</button></s:a>
 		</div>
+		</div>
+	</div>
 	</div>
 	</s:iterator>
   

@@ -14,6 +14,6 @@ public interface TopoDao {
 	
 	void updateTopo(Topo topo);
 	
-	void deleteTopo(Topo topo);
+	void deleteTopo(Integer id);
 
 }

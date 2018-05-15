@@ -13,7 +13,7 @@ public class CommentaireDaoImpl extends AbstractDaoImpl implements CommentaireDa
 	@Override
 	public List<Commentaire> listCommentaire() {
 		// TODO Auto-generated method stub
-		String vsql = "SELECt * FROM public.commentaire";
+		String vsql = "SELECT * FROM public.commentaire";
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 		CommentaireRM rowCommentaire = new CommentaireRM();
@@ -35,9 +35,11 @@ public class CommentaireDaoImpl extends AbstractDaoImpl implements CommentaireDa
 	}
 
 	@Override
-	public void deleteCommentaire(Commentaire commentaire) {
+	public void deleteCommentaire(Integer id) {
 		// TODO Auto-generated method stub
-		
+		String vsql="DELETE FROM public.commentaire WHERE id=?";
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		vJdbcTemplate.update(vsql,new Object[] { id });
 	}
 
 	@Override
