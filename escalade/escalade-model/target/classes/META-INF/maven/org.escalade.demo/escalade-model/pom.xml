@@ -30,6 +30,10 @@
 	<!-- Gestion des dépendances -->
 	<dependencies>
 
+		<dependency>
+			<groupId>org.escalade.demo</groupId>
+			<artifactId>escalade-technical</artifactId>
+		</dependency>
 		<!-- ===== Bibliothèques tierces ===== -->
 		<dependency>
 			<groupId>junit</groupId>

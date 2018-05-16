@@ -6,55 +6,70 @@
 <%@include file="../_include/head.jsp"%>
 </head>
 <body>
-	<nav class="navbar navbar-default"> <!-- Brand and toggle get grouped for better mobile display -->
-	<div class="navbar-header">
-		<button type="button" data-target="#navbarCollapse"
-			data-toggle="collapse" class="navbar-toggle">
-			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
-			<span class="icon-bar"></span> <span class="icon-bar"></span>
-		</button>
-		<a href="#" class="navbar-brand">Trouve la voie</a>
-	</div>
+	<nav class="navbar navbar-default">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" data-target="#navbarCollapse"
+				data-toggle="collapse" class="navbar-toggle">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<s:a action="index" class="navbar-brand">Trouve la voie</s:a>
+		</div>
 
-	<div id="navbarCollapse" class="collapse navbar-collapse">
-		<ul class="nav navbar-nav">
-			<li><a href="index.html">Accueil</a></li>
-			<li class="active"><a href="spot.html">Spot</a></li>
-			<li><a href="#">Topo</a></li>
-			<li><a href="ajout.html">Ajout</a></li>
-			<li><a href="#">Recherche</a></li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="connexion.html">Connexion</a></li>
-			<li><a href="enregistrer.html">S'enregistrer</a></li>
-		</ul>
-	</div>
+		<div id="navbarCollapse" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li><s:a action="index">Accueil</s:a></li>
+				<li class="active"><s:a action="spot_list">Spot</s:a></li>
+				<li><s:a action="topo_list">Topo</s:a></li>
+				<li><s:a action="ajout">Ajout</s:a></li>
+				<li><a href="#">Recherche</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<s:if test="#session.user">
+					<li><s:a>
+							<s:property value="#session.user.pseudo" />
+						</s:a></li>
+					<li><s:a action="logout">Déconnexion</s:a></li>
+				</s:if>
+				<s:else>
+					<li><s:a action="login">Connexion</s:a></li>
+					<li><s:a action="enregistrer">S'enregistrer</s:a></li>
+				</s:else>
+			</ul>
+		</div>
 	</nav>
 
 
 	<!-- Page Content -->
-	  <div class="container content center">
-      <fieldset>
-        <legend class="text-center grossissement">Spot</legend>
-        <div class="row justify-content-lg-center">
+	<div class="container content center">
+		<fieldset>
+			<legend class="text-center grossissement">Spot</legend>
+			<div class="row justify-content-lg-center">
 
-	<s:iterator value="listPays">
-	<div class="produit col-lg-3">
-		<div class="col-lg-12 panel panel-default">
-			<div class="panel-heading"><s:property value="nom"/></div>
-			<img alt="img" src="" width=200 height=150>
-			<p class="lieu"></p>
-			<p class=voie></p>
-			<p class="cotation"></p>
-			<s:action name="spot_detail"><button class="btn btn-default">Voir détails</button></s:action>
-		</div>
+				<s:iterator value="listSpots">
+				<div class="list">
+					<div class="produit col-lg-3">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<s:property value="nom" />
+							</div>
+							<div class="panel-body">
+								<img alt="img" class="img_list" src="resource_image/<s:property value="photo"/>">
+								<p class="lieu">Pays:<s:property value="pays.nom" /></p>
+								<p class=nom>Ville:<s:property value="ville.nom" /></p>
+								<p></p>
+								<s:a action="spot_detail"><s:param name="id" value="id" /><button class="btn btn-default">Voir détails</button></s:a>
+							</div>
+						</div>
+					</div>
+				</div>
+				</s:iterator>
+
+			</div>
+		</fieldset>
 	</div>
-	</s:iterator>
-  
-
-     </div>
-   </fieldset>
-    </div>
 
 
 

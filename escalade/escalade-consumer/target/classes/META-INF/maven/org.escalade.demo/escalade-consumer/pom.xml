@@ -35,6 +35,11 @@
 			<groupId>org.escalade.demo</groupId>
 			<artifactId>escalade-model</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.escalade.demo</groupId>
+			<artifactId>escalade-technical</artifactId>
+		</dependency>
 
 		<!-- ===== Bibliothèques tierces ===== -->
 		<dependency>
@@ -64,6 +69,11 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
         </dependency>
+        
+        <dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
 		
 	</dependencies>
 </project>

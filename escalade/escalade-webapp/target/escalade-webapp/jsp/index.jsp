@@ -13,20 +13,31 @@
 			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 		</button>
-		<a href="#" class="navbar-brand">Trouve la voie</a>
+		<s:a action="index" class="navbar-brand">Trouve la voie</s:a>
 	</div>
 
 	<div id="navbarCollapse" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
-			<li class="active"><a href="index.html">Accueil</a></li>
+			<li class="active"><s:a action="index">Accueil</s:a></li>
 			<li><s:a action="spot_list">Spot</s:a></li>
-			<li><a href="#">Topo</a></li>
-			<li><a href="ajout.html">Ajout</a></li>
+			<li><s:a action="topo_list">Topo</s:a></li>
+			<li><s:a action="ajout">Ajout</s:a></li>
 			<li><a href="#">Recherche</a></li>
+			<s:if test="%{#session.user.role.role=='admin'}">
+				<li><s:a action="gestion_spot">Administration</s:a></li>
+			</s:if>
+			
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="connexion.html">Connexion</a></li>
-			<li><a href="enregistrer.html">S'enregistrer</a></li>
+		 <s:if test="#session.user">
+            <li><s:a><s:property value="#session.user.pseudo" /></s:a></li>
+            <li><s:a action="logout">Déconnexion</s:a></li>
+    	</s:if>
+    	<s:else>
+        	<li><s:a action="login">Connexion</s:a></li>
+			<li><s:a action="enregistrer">S'enregistrer</s:a></li>
+    	</s:else>
+			
 		</ul>
 	</div>
 	</nav>

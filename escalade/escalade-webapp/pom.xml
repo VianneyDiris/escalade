@@ -35,9 +35,12 @@
 		<dependency>
 			<groupId>org.escalade.demo</groupId>
 			<artifactId>escalade-model</artifactId>
-
 		</dependency>
 
+		<dependency>
+			<groupId>org.escalade.demo</groupId>
+			<artifactId>escalade-technical</artifactId>
+		</dependency>
 		<!-- ===== Bibliothèques tierces ===== -->
 		<dependency>
 			<groupId>junit</groupId>
