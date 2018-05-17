@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<!-- =============================================================== -->
 	<!-- Informations du projet -->
@@ -59,7 +61,7 @@
 				<artifactId>escalade-webapp</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.escalade.demo</groupId>
 				<artifactId>escalade-technical</artifactId>
@@ -127,11 +129,35 @@
 				<scope>import</scope>
 			</dependency>
 
-			<dependency>
-				<groupId>log4j</groupId>
-				<artifactId>log4j</artifactId>
-				<version>1.2.17</version>
-			</dependency>
+			<!-- Bibliothèques pour la gestion des logs -->
+
+<!-- 			<dependency> -->
+<!-- 				<groupId>commons-logging</groupId> -->
+<!-- 				<artifactId>commons-logging</artifactId> -->
+<!-- 				<version>1.2</version> -->
+<!-- 			</dependency> -->
+
+<!-- 			<dependency> -->
+<!-- 				<groupId>org.apache.logging.log4j</groupId> -->
+<!-- 				<artifactId>log4j-core</artifactId> -->
+<!-- 				<version>2.6.2</version> -->
+<!-- 				<scope>runtime</scope> -->
+<!-- 			</dependency> -->
+
+<!-- 			<dependency> -->
+<!-- 				<groupId>org.apache.logging.log4j</groupId> -->
+<!-- 				<artifactId>log4j-jcl</artifactId> -->
+<!-- 				<version>2.6.2</version> -->
+<!-- 				<scope>runtime</scope> -->
+<!-- 			</dependency> -->
+
+			<!-- Log web --> 
+
+<!-- 			<dependency> -->
+<!-- 				<groupId>org.apache.logging.log4j</groupId> -->
+<!-- 				<artifactId>log4j-web</artifactId> -->
+<!-- 				<version>2.11.0</version> -->
+<!-- 			</dependency> -->
 
 		</dependencies>
 	</dependencyManagement>
@@ -143,7 +169,7 @@
 		<module>escalade-consumer</module>
 		<module>escalade-model</module>
 		<module>escalade-webapp</module>
-    	<module>escalade-technical</module>
-  </modules>
+		<module>escalade-technical</module>
+	</modules>
 
 </project>

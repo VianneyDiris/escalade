@@ -75,6 +75,7 @@
 			<artifactId>struts2-spring-plugin</artifactId>
 		</dependency>
 
+
 	</dependencies>
 
 	<build>
