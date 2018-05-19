@@ -12,4 +12,6 @@ public interface SpotManager {
 				
 	//renvoie l'orientation grâce à son id
 	Spot getSpot(Integer id) throws NotFoundException;
+	
+	void deleteSpot(Integer id)throws NotFoundException;
 }

@@ -38,11 +38,15 @@ public class SecteurDaoImpl extends AbstractDaoImpl implements SecteurDao {
 	@Override
 	public void deleteSecteur(Secteur secteur) {
 		// TODO Auto-generated method stub
+		String vsql ="DELETE FROM public.secteur WHERE id= ?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		vJdbcTemplate.update(vsql, new Object[] { secteur.getId() });
 		
 	}
 
 	@Override
-	public Secteur find(int id) {
+	public Secteur find(Integer id) {
 		// TODO Auto-generated method stub
 		String vsql ="SELECT * FROM public.secteur WHERE id= ?";
 		
@@ -50,6 +54,19 @@ public class SecteurDaoImpl extends AbstractDaoImpl implements SecteurDao {
 		Secteur secteur=(Secteur)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new SecteurRM());
 		
 		return secteur;
+	}
+
+	@Override
+	public List<Secteur> listSecteurBySpot(Integer id) {
+		// TODO Auto-generated method stub
+		String vsql = "SELECT * FROM public.secteur WHERE site_id=?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		SecteurRM rowSecteur = new SecteurRM();
+		
+		List<Secteur> listSecteurs = vJdbcTemplate.query(vsql, new Object[] { id },rowSecteur);
+		
+		return listSecteurs;
 	}
 
 }

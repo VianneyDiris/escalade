@@ -19,4 +19,10 @@ public interface CommentaireDao {
 	Commentaire findCommentbySpotId(Integer id);
 	
 	Commentaire findCommentbyTopoId(Integer id);
+	
+	void deleteCommentaireByUser(Integer id);
+	
+	void deleteCommentaireByTopo(Integer id);
+	
+	void deleteCommentaireBySpot(Integer id);
 }

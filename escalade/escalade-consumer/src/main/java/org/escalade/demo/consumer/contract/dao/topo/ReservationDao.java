@@ -15,4 +15,8 @@ public interface ReservationDao {
 	void updateReservation(Reservation reservation);
 	
 	void deleteReservation(Reservation reservation);
+	
+	void deleteReservationByUser(Integer id);
+	
+	void deleteReservationByTopo(Integer id);
 }

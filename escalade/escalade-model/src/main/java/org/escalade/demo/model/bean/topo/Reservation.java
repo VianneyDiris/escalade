@@ -5,7 +5,7 @@ import java.util.Date;
 public class Reservation {
 
 	// ==================== Attributs ====================
-	private int id;
+	private Integer id;
 	private Date dateDebut;
 	private Date dateFin;
 	private Topo topo;
@@ -13,10 +13,10 @@ public class Reservation {
 	
 	
 	// ==================== Getters/Setters ====================
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	

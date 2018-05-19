@@ -21,4 +21,11 @@ public class TopoManagerImpl extends AbstractManagerImpl implements TopoManager 
 		return getDaoFactory().getTopoDao().find(id);
 	}
 
+	@Override
+	public void deleteTopo(Integer id) throws NotFoundException {
+		// TODO Auto-generated method stub
+		getDaoFactory().getTopoDao().deleteTopo(id);
+		
+	}
+
 }

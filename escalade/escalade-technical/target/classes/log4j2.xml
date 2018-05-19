@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration status="info">
-
+	
+	<ThresholdFilter level="trace"/>
 	<Appenders>
 		<Console name="console">
 			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
@@ -12,8 +13,7 @@
 			<AppenderRef ref="console" />
 		</logger>
 		
-		<root>
-			<level value="DEBUG" />
+		<root level="debug">
 			<appender-ref ref="console" />
 		</root>
 	</loggers>

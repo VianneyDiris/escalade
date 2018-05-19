@@ -83,12 +83,25 @@
 			method="doListSpot">
 			<result>/jsp/backoffice/spot_gestion.jsp</result>
 		</action>
-		
+		<action name="delete_spot"
+			class="org.escalade.demo.webapp.action.BackGestionSpotAction"
+			method="doDeleteSpot">
+			<result name="success" type="redirectAction">gestion_spot</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
+
+<!-- ########################### Topo ############################-->			
 		<!-- Action "Gestion Topo" -->
 		<action name="gestion_topo"
 			class="org.escalade.demo.webapp.action.BackGestionTopoAction"
 			method="doListTopo">
 			<result>/jsp/backoffice/topo_gestion.jsp</result>
+		</action>
+		<action name="delete_topo"
+			class="org.escalade.demo.webapp.action.BackGestionTopoAction"
+			method="doDeleteTopo">
+			<result name="success" type="redirectAction">gestion_topo</result>
+			<result name="error">/jsp/site/error.jsp</result>
 		</action>
 		
 <!-- ########################### Utilisateur ############################-->		
@@ -110,7 +123,13 @@
 		<action name="gestion_comment"
 			class="org.escalade.demo.webapp.action.BackGestionCommentAction"
 			method="doListComment">
-			<result>/jsp/backoffice/user_gestion.jsp</result>
+			<result>/jsp/backoffice/comment_gestion.jsp</result>
+		</action>
+		<action name="delete_comment"
+			class="org.escalade.demo.webapp.action.BackGestionCommentAction"
+			method="doDeleteComment">
+			<result name="success" type="redirectAction">gestion_comment</result>
+			<result name="error">/jsp/site/error.jsp</result>
 		</action>
 	</package>
 </struts>

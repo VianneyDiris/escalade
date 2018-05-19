@@ -59,12 +59,14 @@ public class BackGestionUserAction extends ActionSupport{
 			this.addActionError("Vous devez indiquer un id de utilisateur");
 		} else {
 			try {
+				managerFactory.getCommentaireManager().deleteCommentaireByUser(id);
+				managerFactory.getReservationManager().deleteReservationByUser(id);
+				
 				user=managerFactory.getUtilisateurManager().getUtilisateur(id);
-				System.out.println("méthode doDeleteUtilisateur: "+user.getId()+" "+user.getPseudo());
 				managerFactory.getUtilisateurManager().deleteUtilisateur(user);
 				
 			} catch (NotFoundException pE) {
-				this.addActionError("Spot non trouvé. ID = " + id);
+				this.addActionError("user non trouvé. ID = " + id);
 			}
 		}
 		return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;

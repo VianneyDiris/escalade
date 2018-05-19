@@ -12,5 +12,7 @@ public interface TopoManager {
 	
 	//renvoie le topo grâce à son id
 	Topo getTopo(Integer id) throws NotFoundException;
+	
+	void deleteTopo(Integer id)throws NotFoundException;
 
 }

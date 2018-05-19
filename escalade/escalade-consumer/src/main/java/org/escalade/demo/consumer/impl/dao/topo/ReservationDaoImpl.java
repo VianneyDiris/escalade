@@ -7,8 +7,11 @@ import org.escalade.demo.consumer.impl.dao.AbstractDaoImpl;
 import org.escalade.demo.consumer.impl.rowmapper.topo.ReservationRM;
 import org.escalade.demo.model.bean.topo.Reservation;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ReservationDaoImpl extends AbstractDaoImpl implements ReservationDao {
+	static final Log logger = LogFactory.getLog(ReservationDaoImpl.class);
 
 	@Override
 	public List<Reservation> listReservation() {
@@ -43,6 +46,25 @@ public class ReservationDaoImpl extends AbstractDaoImpl implements ReservationDa
 	public void deleteReservation(Reservation reservation) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void deleteReservationByUser(Integer id) {
+		// TODO Auto-generated method stub
+		String vsql="DELETE FROM public.reservation WHERE utilisateur_id=?";
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		vJdbcTemplate.update(vsql,new Object[] { id });
+		
+	}
+
+	@Override
+	public void deleteReservationByTopo(Integer id) {
+		logger.debug("ReservationDaoImpl méthode deleteReservationByTopo(Integer id) id = "+id);
+		// TODO Auto-generated method stub
+		String vsql="DELETE FROM public.reservation WHERE topo_id=?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		vJdbcTemplate.update(vsql,new Object[] { id });
 	}
 
 }

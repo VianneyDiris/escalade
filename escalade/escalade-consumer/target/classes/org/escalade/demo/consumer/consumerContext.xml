@@ -14,6 +14,7 @@
     <bean id="villeDao" class="org.escalade.demo.consumer.impl.dao.spot.VilleDaoImpl"/>
     <bean id="voieDao" class="org.escalade.demo.consumer.impl.dao.spot.VoieDaoImpl"/>
     
+     <bean id="reservationDao" class="org.escalade.demo.consumer.impl.dao.topo.ReservationDaoImpl"/>
     <bean id="commentaireDao" class="org.escalade.demo.consumer.impl.dao.topo.CommentaireDaoImpl"/>
     <bean id="roleDao" class="org.escalade.demo.consumer.impl.dao.topo.RoleDaoImpl"/>
     <bean id="topoDao" class="org.escalade.demo.consumer.impl.dao.topo.TopoDaoImpl"/>
@@ -30,6 +31,7 @@
         <property name="villeDao" ref="villeDao"/>
         <property name="voieDao" ref="voieDao"/>
         
+        <property name="reservationDao" ref="reservationDao"/>
         <property name="commentaireDao" ref="commentaireDao"/>
         <property name="roleDao" ref="roleDao"/>
         <property name="topoDao" ref="topoDao"/>

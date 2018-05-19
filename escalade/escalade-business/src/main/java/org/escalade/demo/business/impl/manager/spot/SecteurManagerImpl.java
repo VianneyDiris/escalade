@@ -18,7 +18,19 @@ public class SecteurManagerImpl extends AbstractManagerImpl implements SecteurMa
 	@Override
 	public Secteur getSecteur(Integer id) throws NotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		return getDaoFactory().getSecteurDao().find(id);
+	}
+
+	@Override
+	public void deleteSecteur(Secteur secteur) throws NotFoundException {
+		// TODO Auto-generated method stub
+		getDaoFactory().getSecteurDao().deleteSecteur(secteur);
+	}
+
+	@Override
+	public List<Secteur> listSecteurBySpot(Integer id) throws NotFoundException {
+		// TODO Auto-generated method stub
+		return getDaoFactory().getSecteurDao().listSecteurBySpot(id);
 	}
 
 }

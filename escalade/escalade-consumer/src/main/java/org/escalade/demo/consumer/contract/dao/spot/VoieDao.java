@@ -2,6 +2,7 @@ package org.escalade.demo.consumer.contract.dao.spot;
 
 import java.util.List;
 
+import org.escalade.demo.model.bean.spot.Secteur;
 import org.escalade.demo.model.bean.spot.Voie;
 
 public interface VoieDao {
@@ -15,5 +16,7 @@ public interface VoieDao {
 	void updateVoie(Voie voie);
 	
 	void deleteVoie(Voie voie);
+	
+	List<Voie> listVoieBySecteur(Secteur secteur);
 
 }

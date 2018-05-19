@@ -16,5 +16,16 @@ public interface CommentaireManager {
 	Commentaire findCommentbySpotId(Integer id) throws NotFoundException;
 	
 	Commentaire findCommentbyTopoId(Integer id) throws NotFoundException;
+	
+	void deleteCommentaire(Integer id)throws NotFoundException;
+	
+	void deleteCommentaireByUser(Integer id)throws NotFoundException;
+	
+	void deleteCommentaireByTopo(Integer id)throws NotFoundException;
+	
+	void deleteCommentaireBySpot(Integer id)throws NotFoundException;
+	
+	void updateCommentaire(Commentaire commentaire);
+	
 
 }

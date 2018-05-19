@@ -21,4 +21,10 @@ public class SpotManagerImpl extends AbstractManagerImpl implements SpotManager 
 		return getDaoFactory().getSpotDao().find(id);
 	}
 
+	@Override
+	public void deleteSpot(Integer id) throws NotFoundException {
+		// TODO Auto-generated method stub
+		getDaoFactory().getSpotDao().deleteSpot(id);		
+	}
+
 }

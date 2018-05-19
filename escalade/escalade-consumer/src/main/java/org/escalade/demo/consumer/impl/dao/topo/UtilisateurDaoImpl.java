@@ -57,7 +57,7 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 		String vsql ="SELECT * FROM public.utilisateur WHERE id=?";
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
-		Utilisateur utilisateur=(Utilisateur)vJdbcTemplate.query(vsql, new Object[] { id }, new UtilisateurRM());
+		Utilisateur utilisateur=(Utilisateur)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new UtilisateurRM());
 		if(utilisateur==null) {
 			return null;
 		}
