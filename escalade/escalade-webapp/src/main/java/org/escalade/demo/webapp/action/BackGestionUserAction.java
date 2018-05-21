@@ -1,6 +1,5 @@
 package org.escalade.demo.webapp.action;
 
-import java.util.Iterator;
 import java.util.List;
 
 import org.escalade.demo.business.contract.ManagerFactory;
@@ -32,7 +31,7 @@ public class BackGestionUserAction extends ActionSupport{
 	private String pseudo;
 	private String mail;
 	private String password;
-	private Role userRole;
+	private Role role;
 	
 	// ==================== Getters/Setters ====================
 	public ManagerFactory getManagerFactory() {
@@ -95,11 +94,11 @@ public class BackGestionUserAction extends ActionSupport{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Role getUserRole() {
-		return userRole;
+	public Role getRole() {
+		return role;
 	}
-	public void setRole(Role userRole) {
-		this.userRole = userRole;
+	public void setRole(Role role) {
+		this.role = role;
 	}
 	// ==================== Méthodes ====================
 	public String doListUtilisateur() {
@@ -132,8 +131,8 @@ public class BackGestionUserAction extends ActionSupport{
 						 user.setPassword(password);
 					 }
 					 
-//					 System.out.println(userRole.getRole());
-//					 Role userRole=managerFactory.getRoleManager().getRoleByName(role);
+					 System.out.println(role.getRole());
+//					 Role userRole=managerFactory.getRoleManager().getRoleByName(userRole);
 //					 user.setRole(role);
 //					 
 //					 System.out.println("role = "+role.getRole());

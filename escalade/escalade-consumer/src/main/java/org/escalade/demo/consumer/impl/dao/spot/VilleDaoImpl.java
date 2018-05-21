@@ -13,7 +13,7 @@ public class VilleDaoImpl extends AbstractDaoImpl implements VilleDao {
 	@Override
 	public List<Ville> listVille() {
 		// TODO Auto-generated method stub
-		String vsql = "SELECT * FROM public.ville";
+		String vsql = "SELECT * FROM public.ville WHERE id>1";
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 		VilleRM rowVille = new VilleRM();

@@ -22,7 +22,7 @@
 			<li><s:a action="spot_list">Spot</s:a></li>
 			<li><s:a action="topo_list">Topo</s:a></li>
 			<li><s:a action="ajout">Ajout</s:a></li>
-			<li><a href="#">Recherche</a></li>
+			<li><s:a action="search">Recherche</s:a></li>
 			<s:if test="%{#session.user.role.role=='admin'}">
 				<li><s:a action="gestion_spot">Administration</s:a></li>
 			</s:if>

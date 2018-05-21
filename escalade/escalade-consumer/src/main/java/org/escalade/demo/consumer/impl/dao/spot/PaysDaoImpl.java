@@ -13,7 +13,7 @@ public class PaysDaoImpl extends AbstractDaoImpl implements PaysDao {
 	@Override
 	public List<Pays> listPays() {
 		// TODO Auto-generated method stub
-		String vsql ="SELECT * FROM public.pays";
+		String vsql ="SELECT * FROM public.pays WHERE id>1";
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 		PaysRM rowPays = new PaysRM();

@@ -74,6 +74,14 @@
 			method="doLogout">
 			<result type="redirectAction">index</result>
 		</action>
+		
+<!-- ########################### Recherche ############################-->
+		<!-- Action "ajout" -->
+		<action name="search"
+			class="org.escalade.demo.webapp.action.GestionSearchAction"
+			method="doListSearch">
+			<result>/jsp/site/recherche.jsp</result>
+		</action>
 
 <!-- ########################### BACKOFFICE #############################################-->
 <!-- ########################### Spot ############################-->		
