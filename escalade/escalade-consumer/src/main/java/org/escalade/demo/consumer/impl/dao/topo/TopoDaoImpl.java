@@ -5,6 +5,7 @@ import java.util.List;
 import org.escalade.demo.consumer.contract.dao.topo.TopoDao;
 import org.escalade.demo.consumer.impl.dao.AbstractDaoImpl;
 import org.escalade.demo.consumer.impl.rowmapper.topo.TopoRM;
+import org.escalade.demo.model.bean.spot.Spot;
 import org.escalade.demo.model.bean.topo.Topo;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -50,6 +51,17 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 		Topo topo=(Topo)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new TopoRM());
+		
+		return topo;
+	}
+
+	@Override
+	public Topo getTopoBySpot(Spot spot) {
+		// TODO Auto-generated method stub
+		String vsql ="SELECT * FROM public.topo WHERE spot_id= ?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		Topo topo=(Topo)vJdbcTemplate.queryForObject(vsql, new Object[] { spot.getId() }, new TopoRM());
 		
 		return topo;
 	}

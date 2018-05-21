@@ -48,6 +48,14 @@ public class UtilisateurManagerImpl extends AbstractManagerImpl implements Utili
 		getDaoFactory().getUtilisateurDao().deleteUtilisateur(user.getId());
 		
 	}
+
+	@Override
+	public void updateUtilisateur(Utilisateur user) {
+		// TODO Auto-generated method stub
+		logger.debug("UtilisateurManagerImpl méthode updateUtilisateur() avec id: "+user.getId());
+		getDaoFactory().getUtilisateurDao().updateUtilisateur(user);
+		
+	}
 		
 
 }

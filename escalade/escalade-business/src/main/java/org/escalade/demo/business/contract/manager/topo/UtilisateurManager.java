@@ -19,5 +19,7 @@ public interface UtilisateurManager {
 	void addUtilisateur(Utilisateur user);
 	
 	void deleteUtilisateur(Utilisateur user);
+	
+	void updateUtilisateur(Utilisateur user);
 
 }

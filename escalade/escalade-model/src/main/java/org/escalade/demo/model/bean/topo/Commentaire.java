@@ -5,7 +5,7 @@ import org.escalade.demo.model.bean.spot.Spot;
 public class Commentaire {
 	
 	// ==================== Attributs ====================
-	private int id;
+	private Integer id;
 	private String contenue;
 	private Utilisateur utilisateur;
 	private Topo topo;
@@ -13,10 +13,10 @@ public class Commentaire {
 	
 	
 	// ==================== Getters/Setters ====================
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	

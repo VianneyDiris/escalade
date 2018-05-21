@@ -12,4 +12,6 @@ public interface RoleManager {
 	
 	//renvoie le role grâce à son id
 	Role getRole(Integer id) throws NotFoundException;
+	
+	Role getRoleByName(String role)throws NotFoundException;
 }

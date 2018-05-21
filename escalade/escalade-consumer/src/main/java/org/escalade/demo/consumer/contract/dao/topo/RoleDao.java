@@ -10,6 +10,8 @@ public interface RoleDao {
 	
 	Role find(int id);
 	
+	Role getRoleByName(String role);
+	
 	void addRole(Role role);
 	
 	void updateRole(Role role);

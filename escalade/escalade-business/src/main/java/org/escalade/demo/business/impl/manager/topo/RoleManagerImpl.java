@@ -21,4 +21,10 @@ public class RoleManagerImpl extends AbstractManagerImpl implements RoleManager 
 		return getDaoFactory().getRoleDao().find(id);
 	}
 
+	@Override
+	public Role getRoleByName(String role) throws NotFoundException {
+		// TODO Auto-generated method stub
+		return getDaoFactory().getRoleDao().getRoleByName(role);
+	}
+
 }

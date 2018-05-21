@@ -117,6 +117,19 @@
 			<result name="success" type="redirectAction">gestion_user</result>
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
+		<action name="detail_user"
+			class="org.escalade.demo.webapp.action.BackGestionUserAction"
+			method="doDetailUtilisateur">
+			<result name="success">/jsp/backoffice/user_modif.jsp</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
+		<action name="update_user"
+			class="org.escalade.demo.webapp.action.BackGestionUserAction"
+			method="doUpdateUtilisateur">
+			<result name="input">/jsp/backoffice/user_modif.jsp</result>
+			<result name="success" type="redirectAction">gestion_user</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
 
 <!-- ########################### Commentaire ############################-->		
 		<!-- Action "Gestion Commentaire" -->
@@ -128,6 +141,18 @@
 		<action name="delete_comment"
 			class="org.escalade.demo.webapp.action.BackGestionCommentAction"
 			method="doDeleteComment">
+			<result name="success" type="redirectAction">gestion_comment</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
+		<action name="detail_comment"
+			class="org.escalade.demo.webapp.action.BackGestionCommentAction"
+			method="doDetailComment">
+			<result name="success">/jsp/backoffice/comment_modif.jsp</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
+		<action name="update_comment"
+			class="org.escalade.demo.webapp.action.BackGestionCommentAction"
+			method="doUpdateComment">
 			<result name="success" type="redirectAction">gestion_comment</result>
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>

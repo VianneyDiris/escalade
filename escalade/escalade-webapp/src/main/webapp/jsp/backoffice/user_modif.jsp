@@ -40,28 +40,29 @@
 
 	<!-- Page Content -->
 	<div class="container content center">
-	 <s:form action="login" class="col-lg-6 col-lg-offset-3">
+	 <s:form action="update_user" class="col-lg-6 col-lg-offset-3">
+	  <s:hidden name="id" value="%{user.id}"/>
       <fieldset class="scheduler-border">
         <legend class="scheduler-border">Modification de l'utilisateur</legend>
  
 		<div class="form-group">
 			<s:label for="nom" class="espace">Nom</s:label>
-			<s:textfield name="nom" class="form-control" value="<s:property value="nom"/>"/>
+			<s:textfield name="nom" class="form-control" value="%{user.nom}"/>
 			
 			<s:label for="prenom" class="espace">Prénom</s:label>
-			<s:textfield name="prenom" class="form-control" value="<s:property value="prenom"/>"/>
+			<s:textfield name="prenom" class="form-control" value="%{user.prenom}"/>
 			
 			<s:label for="pseudo" class="espace">Pseudo</s:label>
-			<s:textfield name="pseudo" class="form-control" value="<s:property value="pseudo"/>"/>
+			<s:textfield name="pseudo" class="form-control" value="%{user.pseudo}"/>
 			
 			<s:label for="mail" class="espace">Mail</s:label>
-			<s:textfield name="mail" class="form-control" value="<s:property value="mail"/>"/>
+			<s:textfield name="mail" class="form-control" value="%{user.mail}"/>
 			
 			<s:label for="password" class="espace">Password</s:label>
 			<s:password name="password" class="form-control"/>
 			
 			<s:label for="role" class="espace">Role</s:label>
-			<s:select name="role" class="form-control" list="listRole"/>
+			<s:select headerKey="0" class="form-control" list="listRole" listValue="role" name="userRole" />
 			
 			
 			

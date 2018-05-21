@@ -37,7 +37,11 @@ public class CommentaireDaoImpl extends AbstractDaoImpl implements CommentaireDa
 	public void updateCommentaire(Commentaire commentaire) {
 		logger.debug("CommentaireDaoImpl méthode updateCommentaire()");
 		// TODO Auto-generated method stub
-		
+		 String vSQL = "UPDATE public.commentaire SET contenue = ? WHERE id = ?";
+
+	     JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+	     vJdbcTemplate.update(vSQL, commentaire.getContenue(),commentaire.getId());
+				
 	}
 
 	@Override

@@ -23,7 +23,7 @@ public class CommentaireManagerImpl extends AbstractManagerImpl implements Comme
 	public Commentaire getCommentaire(Integer id) throws NotFoundException {
 		logger.debug("CommentaireManagerImpl méthode getCommentaire(id) "+id);
 		// TODO Auto-generated method stub
-		return null;
+		return getDaoFactory().getCommentaireDao().find(id);
 	}
 
 	@Override

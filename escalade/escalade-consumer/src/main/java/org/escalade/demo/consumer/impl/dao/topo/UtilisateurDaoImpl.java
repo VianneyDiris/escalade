@@ -40,6 +40,11 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 	@Override
 	public void updateUtilisateur(Utilisateur utilisateur) {
 		// TODO Auto-generated method stub
+		 String vSQL = "UPDATE public.utilisateur SET nom =?, prenom=?,pseudo=?,mail=?,password=?,role_id=? WHERE id = ?";
+		 String hashed = BCrypt.hashpw(utilisateur.getPassword(), BCrypt.gensalt());
+		 
+	     JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+	     vJdbcTemplate.update(vSQL,utilisateur.getNom(),utilisateur.getPrenom(),utilisateur.getPseudo(),utilisateur.getMail(),hashed,utilisateur.getRole().getId(),utilisateur.getId());
 		
 	}
 

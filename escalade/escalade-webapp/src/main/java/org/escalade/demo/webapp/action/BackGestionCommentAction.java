@@ -8,6 +8,8 @@ import org.escalade.demo.model.exception.NotFoundException;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
+
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -21,6 +23,9 @@ public class BackGestionCommentAction extends ActionSupport  {
 	 private Commentaire commentaire;
 	 private List<Commentaire> listCommentaires;
 	 private Integer id;
+	 
+	 // ----- Paramètres en sortie
+	 private String contenue;
 	 
 	// ==================== Getters/Setters ====================
 	public ManagerFactory getManagerFactory() {
@@ -47,6 +52,12 @@ public class BackGestionCommentAction extends ActionSupport  {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	public String getContenue() {
+		return contenue;
+	}
+	public void setContenue(String contenue) {
+		this.contenue = contenue;
+	}
 	// ==================== Méthodes ====================
 	public String doListComment(){
 		logger.debug("BackGestionCommentAction méthode doListComment()");
@@ -56,6 +67,23 @@ public class BackGestionCommentAction extends ActionSupport  {
 	
 	public String doUpdateComment() {
 		logger.debug("BackGestionCommentAction méthode doUpdateComment()");
+	
+        if(id==null) {
+			this.addActionError("veuillez donner un identifiant de commentaire");			
+		}
+		else {
+			try {
+				commentaire=managerFactory.getCommentaireManager().getCommentaire(id);
+				 if (!StringUtils.isAllEmpty(contenue)){
+					 commentaire.setContenue(contenue);
+					 System.out.println(commentaire.getContenue());
+					 managerFactory.getCommentaireManager().updateCommentaire(commentaire);
+				 }
+				
+			}catch(NotFoundException pE) {
+				logger.debug(pE.getMessage());
+			}
+		}
 		return Action.SUCCESS;
 	}
 	
@@ -67,6 +95,23 @@ public class BackGestionCommentAction extends ActionSupport  {
 		else {
 			try {
 				managerFactory.getCommentaireManager().deleteCommentaire(id);
+				
+			}catch(NotFoundException pE) {
+				logger.debug(pE.getMessage());
+			}
+		}
+		
+		return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
+	}
+	
+	public String doDetailComment() {
+		logger.debug("BackGestionCommentAction méthode doDetailComment()");
+		if(id==null) {
+			this.addActionError("veuillez donner un identifiant de commentaire");			
+		}
+		else {
+			try {
+				commentaire=managerFactory.getCommentaireManager().getCommentaire(id);
 				
 			}catch(NotFoundException pE) {
 				logger.debug(pE.getMessage());

@@ -2,6 +2,7 @@ package org.escalade.demo.consumer.contract.dao.topo;
 
 import java.util.List;
 
+import org.escalade.demo.model.bean.spot.Spot;
 import org.escalade.demo.model.bean.topo.Topo;
 
 public interface TopoDao {
@@ -15,5 +16,7 @@ public interface TopoDao {
 	void updateTopo(Topo topo);
 	
 	void deleteTopo(Integer id);
+	
+	Topo getTopoBySpot(Spot spot);
 
 }

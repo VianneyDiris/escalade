@@ -8,6 +8,7 @@ import org.escalade.demo.business.impl.ManagerFactoryImpl;
 import org.escalade.demo.model.bean.spot.Secteur;
 import org.escalade.demo.model.bean.spot.Spot;
 import org.escalade.demo.model.bean.spot.Voie;
+import org.escalade.demo.model.bean.topo.Topo;
 import org.escalade.demo.model.exception.NotFoundException;
 
 import com.opensymphony.xwork2.Action;
@@ -96,7 +97,12 @@ public class BackGestionSpotAction extends ActionSupport {
 						Secteur secteur = itSecteur.next();
 						managerFactory.getSecteurManager().deleteSecteur(secteur);
 					}
+					Spot spot = managerFactory.getSpotManager().getSpot(id);
+					Topo topo = managerFactory.getTopoManager().getTopoBySpot(spot);
 					
+					managerFactory.getCommentaireManager().deleteCommentaireByTopo(topo.getId());
+					managerFactory.getReservationManager().deleteReservationByTopo(topo.getId());
+					managerFactory.getTopoManager().deleteTopo(topo.getId());
 					
 					managerFactory.getSpotManager().deleteSpot(id);
 				}

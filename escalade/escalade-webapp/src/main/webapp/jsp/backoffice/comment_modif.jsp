@@ -40,18 +40,23 @@
 
 	<!-- Page Content -->
 	<div class="container content center">
-	 <s:form action="login" class="col-lg-6 col-lg-offset-3">
-      <fieldset class="scheduler-border">
+	 <s:form action="update_comment" class="col-lg-6 col-lg-offset-3">
+	 <s:hidden name="id" value="%{commentaire.id}"/>
+	   <fieldset class="scheduler-border">
         <legend class="scheduler-border">Modification du commentaire</legend>
  
 		<div class="form-group">
+			<s:label for="user" class="form_control">Posté par: <s:property value="commentaire.utilisateur.pseudo"/></s:label>
+		</div>
+		
+		<div class="form-group">	
 			<s:label for="contenue" class="espace">Contenue</s:label>
-			<s:textfield name="contenue" class="form-control" value="<s:property value="contenue"/>"/>
-				
+			<s:textfield name="contenue" class="form-control" value="%{commentaire.contenue}"/>
+			
 			
 			
 		</div>
-
+	
 	<s:submit value="Sauver modification" class="btn btn-primary center-block"/>
  
 </fieldset>
