@@ -8,7 +8,9 @@ public interface PaysDao {
 	
 	List<Pays> listPays();
 	
-	Pays find(int id);
+	List<Pays> allPays();
+	
+	Pays find(Integer id);
 	
 	void addPays(Pays pays);
 	

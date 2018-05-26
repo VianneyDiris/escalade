@@ -31,7 +31,7 @@ public class BackGestionUserAction extends ActionSupport{
 	private String pseudo;
 	private String mail;
 	private String password;
-	private Role role;
+	private String userStringRole;
 	
 	// ==================== Getters/Setters ====================
 	public ManagerFactory getManagerFactory() {
@@ -94,11 +94,11 @@ public class BackGestionUserAction extends ActionSupport{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Role getRole() {
-		return role;
+	public String getUserStringRole() {
+		return userStringRole;
 	}
-	public void setRole(Role role) {
-		this.role = role;
+	public void setUserStringRole(String userStringRole) {
+		this.userStringRole = userStringRole;
 	}
 	// ==================== Méthodes ====================
 	public String doListUtilisateur() {
@@ -131,12 +131,10 @@ public class BackGestionUserAction extends ActionSupport{
 						 user.setPassword(password);
 					 }
 					 
-					 System.out.println(role.getRole());
-//					 Role userRole=managerFactory.getRoleManager().getRoleByName(userRole);
-//					 user.setRole(role);
-//					 
-//					 System.out.println("role = "+role.getRole());
-//					 managerFactory.getUtilisateurManager().updateUtilisateur(user);
+					 Role userRole=managerFactory.getRoleManager().getRole(Integer.valueOf(userStringRole));
+					 user.setRole(userRole);
+
+					 managerFactory.getUtilisateurManager().updateUtilisateur(user);
 				
 					
 				}catch(NotFoundException pE) {

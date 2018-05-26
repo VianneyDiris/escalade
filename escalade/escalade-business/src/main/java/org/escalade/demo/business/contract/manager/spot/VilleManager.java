@@ -9,6 +9,8 @@ public interface VilleManager {
 	
 	// ==================== Ville ====================	
 	List<Ville> getListVille();
+	
+	List<Ville> allVille();
 			
 	//renvoie la ville grâce à son id
 	Ville getVille(Integer id) throws NotFoundException;

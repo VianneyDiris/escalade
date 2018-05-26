@@ -76,7 +76,6 @@ public class BackGestionCommentAction extends ActionSupport  {
 				commentaire=managerFactory.getCommentaireManager().getCommentaire(id);
 				 if (!StringUtils.isAllEmpty(contenue)){
 					 commentaire.setContenue(contenue);
-					 System.out.println(commentaire.getContenue());
 					 managerFactory.getCommentaireManager().updateCommentaire(commentaire);
 				 }
 				

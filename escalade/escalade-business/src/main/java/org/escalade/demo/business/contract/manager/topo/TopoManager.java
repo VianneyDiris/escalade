@@ -17,5 +17,9 @@ public interface TopoManager {
 	void deleteTopo(Integer id)throws NotFoundException;
 	
 	Topo getTopoBySpot(Spot spot)throws NotFoundException;
+	
+	void updateTopo(Topo topo);
+	
+	
 
 }

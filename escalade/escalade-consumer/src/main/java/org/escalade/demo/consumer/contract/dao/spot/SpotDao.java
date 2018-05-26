@@ -8,6 +8,8 @@ public interface SpotDao {
 	
 	List<Spot> listSpot();
 	
+	List<Spot> allSpot();
+	
 	Spot find(Integer id);
 	
 	void addSpot(Spot spot);

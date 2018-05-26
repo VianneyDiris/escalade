@@ -42,7 +42,7 @@ public class PaysDaoImpl extends AbstractDaoImpl implements PaysDao {
 	}
 
 	@Override
-	public Pays find(int id) {
+	public Pays find(Integer id) {
 		// TODO Auto-generated method stub
 		String vsql ="SELECT * FROM public.pays WHERE id=?";
 		System.out.println("méthode find");
@@ -50,6 +50,19 @@ public class PaysDaoImpl extends AbstractDaoImpl implements PaysDao {
 		Pays pays=(Pays)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new PaysRM());
 		
 		return pays;
+	}
+
+	@Override
+	public List<Pays> allPays() {
+		// TODO Auto-generated method stub
+		String vsql ="SELECT * FROM public.pays";
+				
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		PaysRM rowPays = new PaysRM();
+			
+		List<Pays> listPays = vJdbcTemplate.query(vsql, rowPays);
+				
+		return listPays;
 	}
 
 }

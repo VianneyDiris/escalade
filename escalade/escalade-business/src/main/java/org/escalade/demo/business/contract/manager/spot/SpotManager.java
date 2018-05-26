@@ -9,9 +9,13 @@ public interface SpotManager {
 	
 	// ==================== Spot ====================	
 	List<Spot> getListSpot();
+	
+	List<Spot> allSpot();
 				
 	//renvoie l'orientation grâce à son id
 	Spot getSpot(Integer id) throws NotFoundException;
 	
 	void deleteSpot(Integer id)throws NotFoundException;
+	
+	void updateSpot(Spot spot);
 }

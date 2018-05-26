@@ -3,17 +3,17 @@ package org.escalade.demo.model.bean.spot;
 public class Ville {
 	
 	// ==================== Attributs ====================
-	private int id;
+	private Integer id;
 	private String nom;
 	private int codePostal;
 	private Pays pays;
 		
 	
 	// ==================== Getters/Setters ====================
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	

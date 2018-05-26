@@ -18,7 +18,13 @@ public class VilleManagerImpl extends AbstractManagerImpl implements VilleManage
 	@Override
 	public Ville getVille(Integer id) throws NotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		return getDaoFactory().getVilleDao().find(id);
+	}
+
+	@Override
+	public List<Ville> allVille() {
+		// TODO Auto-generated method stub
+		return getDaoFactory().getVilleDao().allVille();
 	}
 
 }

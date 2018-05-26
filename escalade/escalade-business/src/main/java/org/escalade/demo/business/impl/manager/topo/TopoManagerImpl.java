@@ -35,4 +35,12 @@ public class TopoManagerImpl extends AbstractManagerImpl implements TopoManager 
 		return getDaoFactory().getTopoDao().getTopoBySpot(spot);
 	}
 
+	@Override
+	public void updateTopo(Topo topo) {
+		// TODO Auto-generated method stub
+		getDaoFactory().getTopoDao().updateTopo(topo);		
+	}
+
+	
+
 }

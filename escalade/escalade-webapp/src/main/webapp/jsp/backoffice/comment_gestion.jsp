@@ -41,7 +41,7 @@
 	<!-- Page Content -->
 	<div class="container content center">
 	<div class="col-lg-8 col-lg-offset-2">
-	<div class="table-responsive padded">
+	<div class="table-responsive">
   		<table class="table table-hover ">
   		 <thead>
 	      <tr>

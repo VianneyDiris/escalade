@@ -8,7 +8,9 @@ public interface VilleDao {
 	
 	List<Ville> listVille();
 	
-	Ville find(int id);
+	List<Ville> allVille();
+	
+	Ville find(Integer id);
 	
 	void addVille(Ville ville);
 	

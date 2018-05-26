@@ -32,6 +32,10 @@ public class SpotDaoImpl extends AbstractDaoImpl implements SpotDao {
 	@Override
 	public void updateSpot(Spot spot) {
 		// TODO Auto-generated method stub
+		String vSQL = "UPDATE public.spot SET nom =?, description=?,pays_id=?,ville_id=? WHERE id = ?";
+		 
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+	    vJdbcTemplate.update(vSQL,spot.getNom(),spot.getDescription(),spot.getPays().getId(),spot.getVille().getId(),spot.getId());
 		
 	}
 
@@ -53,6 +57,19 @@ public class SpotDaoImpl extends AbstractDaoImpl implements SpotDao {
 		Spot spot=(Spot)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new SpotRM());
 		
 		return spot;
+	}
+
+	@Override
+	public List<Spot> allSpot() {
+		// TODO Auto-generated method stub
+		String vsql = "SELECT * FROM public.spot";
+				
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		SpotRM rowSpot = new SpotRM();
+			
+		List<Spot> listSpots = vJdbcTemplate.query(vsql, rowSpot);
+			
+		return listSpots;
 	}
 
 }

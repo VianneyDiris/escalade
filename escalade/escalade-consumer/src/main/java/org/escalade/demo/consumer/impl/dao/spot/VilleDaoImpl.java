@@ -41,7 +41,7 @@ public class VilleDaoImpl extends AbstractDaoImpl implements VilleDao {
 	}
 
 	@Override
-	public Ville find(int id) {
+	public Ville find(Integer id) {
 		// TODO Auto-generated method stub
 		String vsql ="SELECT * FROM public.ville WHERE id= ?";
 		
@@ -49,6 +49,18 @@ public class VilleDaoImpl extends AbstractDaoImpl implements VilleDao {
 		Ville ville=(Ville)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new VilleRM());
 		
 		return ville;
+	}
+
+	@Override
+	public List<Ville> allVille() {
+		// TODO Auto-generated method stub
+		String vsql = "SELECT * FROM public.ville";
+				
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		VilleRM rowVille = new VilleRM();
+				
+		List<Ville> listVilles = vJdbcTemplate.query(vsql, rowVille);
+		return listVilles;
 	}
 
 }

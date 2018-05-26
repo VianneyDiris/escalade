@@ -18,7 +18,13 @@ public class PaysManagerImpl extends AbstractManagerImpl implements PaysManager 
 	@Override
 	public Pays getPays(Integer id) throws NotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		return getDaoFactory().getPaysDao().find(id);
+	}
+
+	@Override
+	public List<Pays> allPays() {
+		// TODO Auto-generated method stub
+		return getDaoFactory().getPaysDao().allPays();
 	}
 
 }

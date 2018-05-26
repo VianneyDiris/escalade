@@ -32,6 +32,10 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 	@Override
 	public void updateTopo(Topo topo) {
 		// TODO Auto-generated method stub
+		String vSQL = "UPDATE public.topo SET nom =?, description=?,prive=?,reserve=?,spot_id=? WHERE id = ?";
+		 
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+	    vJdbcTemplate.update(vSQL,topo.getNom(),topo.getDescription(),topo.isPrive(),topo.isReserve(),topo.getSpot().getId(),topo.getId());
 		
 	}
 
@@ -65,5 +69,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 		
 		return topo;
 	}
+
+
 
 }

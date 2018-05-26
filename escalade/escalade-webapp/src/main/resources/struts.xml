@@ -97,6 +97,18 @@
 			<result name="success" type="redirectAction">gestion_spot</result>
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
+		<action name="detail_spot"
+			class="org.escalade.demo.webapp.action.BackGestionSpotAction"
+			method="doDetailSpot">
+			<result name="success">/jsp/backoffice/spot_modif.jsp</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
+		<action name="update_spot"
+			class="org.escalade.demo.webapp.action.BackGestionSpotAction"
+			method="doUpdateSpot">
+			<result name="success" type="redirectAction">gestion_spot</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
 
 <!-- ########################### Topo ############################-->			
 		<!-- Action "Gestion Topo" -->
@@ -108,6 +120,18 @@
 		<action name="delete_topo"
 			class="org.escalade.demo.webapp.action.BackGestionTopoAction"
 			method="doDeleteTopo">
+			<result name="success" type="redirectAction">gestion_topo</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
+		<action name="detail_topo"
+			class="org.escalade.demo.webapp.action.BackGestionTopoAction"
+			method="doDetailTopo">
+			<result name="success">/jsp/backoffice/topo_modif.jsp</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
+		<action name="update_topo"
+			class="org.escalade.demo.webapp.action.BackGestionTopoAction"
+			method="doUpdateTopo">
 			<result name="success" type="redirectAction">gestion_topo</result>
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
@@ -134,7 +158,6 @@
 		<action name="update_user"
 			class="org.escalade.demo.webapp.action.BackGestionUserAction"
 			method="doUpdateUtilisateur">
-			<result name="input">/jsp/backoffice/user_modif.jsp</result>
 			<result name="success" type="redirectAction">gestion_user</result>
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
