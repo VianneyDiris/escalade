@@ -9,9 +9,12 @@ import org.escalade.demo.model.exception.NotFoundException;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 @SuppressWarnings("serial")
 public class GestionSpotAction extends ActionSupport {
+	static final Log logger = LogFactory.getLog(GestionSpotAction.class);
 
 	// ==================== Attributs ====================
 	// ----- Paramètres en entrée
@@ -58,11 +61,15 @@ public class GestionSpotAction extends ActionSupport {
 	}
 	// ==================== Méthodes ====================
 	public String doListSpot() {
+		logger.debug("GestionSpotAction méthode doListSpot()");
+		
 		listSpots=managerFactory.getSpotManager().getListSpot();
 		return Action.SUCCESS;
 	}
 
 	public String doDetailSpot() {
+		logger.debug("GestionSpotAction méthode doDetailSpot()");
+		
 		System.out.println(id);
 		if (id == null) {
 			this.addActionError("Vous devez indiquer un id de Spot");
@@ -78,7 +85,7 @@ public class GestionSpotAction extends ActionSupport {
 			commentaire=managerFactory.getCommentaireManager().findCommentbySpotId(id);
 		} catch(NotFoundException pE) {
 			
-			System.out.println(pE.getMessage());
+			logger.debug(pE.getMessage());
 		}
 		return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
 	}

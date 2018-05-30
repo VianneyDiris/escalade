@@ -40,23 +40,31 @@
 
 	<!-- Page Content -->
 	<div class="container content center">
-	 <s:form action="login" class="col-lg-6 col-lg-offset-3">
+	 <s:form action="update_spot" class="col-lg-6 col-lg-offset-3">
+	 <s:hidden name="id" value="%{spot.id}"/>
       <fieldset class="scheduler-border">
         <legend class="scheduler-border">Modification du spot</legend>
  
 		<div class="form-group">
+			<div class="form-group">
 			<s:label for="nom" class="espace">Nom</s:label>
-			<s:textfield name="nom" class="form-control" value="<s:property value="nom"/>"/>
+			<s:textfield name="nom" class="form-control" value="%{spot.nom}"/>
+			</div>
 			
+			<div class="form-group">
 			<s:label for="description" class="espace">Description</s:label>
-			<s:textfield name="description" class="form-control" value="<s:property value="description"/>"/>
+			<s:textfield name="description" class="form-control" value="%{spot.description}"/>
+			</div>
 			
-			<s:label for="pays" class="espace">Pays</s:label>
-			<s:select name="pays" class="form-control" list="listPays"/>
+			<div class="form-group">
+			<s:label for="StringPays" class="espace">Pays</s:label>
+			<s:select headerKey="0" name="StringPays" class="form-control" list="listPays" listValue="nom" listKey="id"/>
+			</div>
 			
-			<s:label for="ville" class="espace">Ville</s:label>
-			<s:select name="ville" class="form-control" list="listVille"/>
-				
+			<div class="form-group">
+			<s:label for="StringVille" class="espace">Ville</s:label>
+			<s:select headerKey="0" name="StringVille" class="form-control" list="listVille" listValue="nom" listKey="id"/>
+			</div>	
 			
 			
 		</div>

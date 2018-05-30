@@ -141,7 +141,7 @@ public class BackGestionUserAction extends ActionSupport{
 					logger.debug(pE.getMessage());
 				}
 			}
-			return Action.SUCCESS;
+		 return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
 	}
 	
 	public String doDeleteUtilisateur() {

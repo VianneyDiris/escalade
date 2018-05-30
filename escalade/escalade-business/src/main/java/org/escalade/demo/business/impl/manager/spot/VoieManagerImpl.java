@@ -19,7 +19,7 @@ public class VoieManagerImpl extends AbstractManagerImpl implements VoieManager 
 	@Override
 	public Voie getVoie(Integer id) throws NotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		return getDaoFactory().getVoieDao().find(id);
 	}
 
 	@Override

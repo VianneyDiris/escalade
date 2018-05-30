@@ -8,9 +8,12 @@ import org.escalade.demo.model.exception.NotFoundException;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 @SuppressWarnings("serial")
 public class GestionTopoAction extends ActionSupport {
+	static final Log logger = LogFactory.getLog(GestionTopoAction.class);
 	
 	// ==================== Attributs ====================
     // ----- Paramètres en entrée
@@ -50,11 +53,15 @@ public class GestionTopoAction extends ActionSupport {
 	
 	// ==================== Méthodes ====================
 	public String doListTopo() {
+		logger.debug("GestionTopoAction méthode doListTopo()");
+		
 		listTopos=managerFactory.getTopoManager().getListTopo();
 		return Action.SUCCESS;
 	}
 
 	public String doDetailTopo() {
+		logger.debug("GestionTopoAction méthode doDetailTopo()");
+		
 		if (id == null) {
             this.addActionError("Vous devez indiquer un id de Topo");
         } else {

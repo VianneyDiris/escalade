@@ -5,7 +5,9 @@ import java.util.List;
 import org.escalade.demo.consumer.contract.dao.spot.SpotDao;
 import org.escalade.demo.consumer.impl.dao.AbstractDaoImpl;
 import org.escalade.demo.consumer.impl.rowmapper.spot.SpotRM;
+import org.escalade.demo.model.bean.spot.Pays;
 import org.escalade.demo.model.bean.spot.Spot;
+import org.escalade.demo.model.bean.spot.Ville;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class SpotDaoImpl extends AbstractDaoImpl implements SpotDao {
@@ -69,6 +71,30 @@ public class SpotDaoImpl extends AbstractDaoImpl implements SpotDao {
 			
 		List<Spot> listSpots = vJdbcTemplate.query(vsql, rowSpot);
 			
+		return listSpots;
+	}
+
+	@Override
+	public List<Spot> listSpotByPays(Pays pays) {
+		String vsql = "SELECT * FROM public.spot where pays_id=?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		SpotRM rowSpot = new SpotRM();
+		
+		List<Spot> listSpots = vJdbcTemplate.query(vsql,new Object[] { pays.getId() } ,rowSpot);
+		
+		return listSpots;
+	}
+
+	@Override
+	public List<Spot> listSpotByVille(Ville ville) {
+		String vsql = "SELECT * FROM public.spot where ville_id=?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		SpotRM rowSpot = new SpotRM();
+		
+		List<Spot> listSpots = vJdbcTemplate.query(vsql,new Object[] { ville.getId() } ,rowSpot);
+		
 		return listSpots;
 	}
 

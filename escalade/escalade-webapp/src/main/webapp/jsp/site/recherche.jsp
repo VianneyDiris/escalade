@@ -47,20 +47,20 @@
 
 	<!-- Page Content -->
 	<div class="container content">
-		<s:form action="login" class="col-lg-6 col-lg-offset-3">
+		<s:form action="search_topo" class="col-lg-6 col-lg-offset-3">
 			<fieldset class="scheduler-border">
 				<legend class="scheduler-border">Recherche topo</legend>
 
 				<div class="form-inline" id="space-top">
 				
 					<s:label for="listSpot" class="espace">Spot</s:label>
-					<s:select  headerKey="1" class="form-control" list="listSpot" listValue="nom" name="listSpot" />
+					<s:select  headerKey="0" class="form-control" list="listSpot" listValue="nom" name="StringSpot" listKey="id" emptyOption="true"/>
 					
 					<s:label for="listPays" class="espace">Pays</s:label>
-					<s:select headerKey="1"  class="form-control" list="listPays" listValue="nom" name="listPays" />
+					<s:select headerKey="0"  class="form-control" list="listPays" listValue="nom" name="StringPays" listKey="id" emptyOption="true"/>
 					
 					<s:label for="listVille" class="espace">Ville</s:label>
-					<s:select headerKey="1"  class="form-control" list="listVilles" listValue="nom" name="listVille" />
+					<s:select headerKey="0"  class="form-control" list="listVilles" listValue="nom" name="StringVille" listKey="id" emptyOption="true"/>
 				</div>
 
 
@@ -70,22 +70,22 @@
 			</fieldset>
 		</s:form>
 		
-		<s:form action="login" class="col-lg-8 col-lg-offset-2">
+		<s:form action="search_spot" class="col-lg-8 col-lg-offset-2">
 			<fieldset class="scheduler-border">
 				<legend class="scheduler-border">Recherche Spot</legend>
 
 				<div class="form-inline" id="space-top">
 					<s:label for="listPays" class="espace">Pays</s:label>
-					<s:select headerKey="1"  class="form-control" list="listPays" listValue="nom" name="listPays" />
+					<s:select headerKey="1"  class="form-control" list="listPays" listValue="nom" name="StringPays" listKey="id" emptyOption="true"/>
 					
 					<s:label for="listVille" class="espace">Ville</s:label>
-					<s:select headerKey="1"  class="form-control" list="listVilles" listValue="nom" name="listVille" />
+					<s:select headerKey="1"  class="form-control" list="listVilles" listValue="nom" name="StringVille" listKey="id" emptyOption="true"/>
 					
 					<s:label for="listSecteur" class="espace">Secteur</s:label>
-					<s:select headerKey="1"  class="form-control" list="listSecteur" listValue="nom" name="listSecteur" />
+					<s:select headerKey="1"  class="form-control" list="listSecteur" listValue="nom" name="StringSecteur" listKey="id" emptyOption="true"/>
 					
 					<s:label for="listVoie" class="espace">Voie</s:label>
-					<s:select headerKey="1"  class="form-control" list="listVoies" listValue="nom" name="listVoie" />
+					<s:select headerKey="1"  class="form-control" list="listVoies" listValue="nom" name="StringVoie" listKey="id" emptyOption="true"/>
 
 				</div>
 

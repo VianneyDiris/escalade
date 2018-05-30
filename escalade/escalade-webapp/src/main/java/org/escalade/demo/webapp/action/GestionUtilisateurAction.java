@@ -5,9 +5,12 @@ import org.escalade.demo.business.impl.ManagerFactoryImpl;
 import org.escalade.demo.model.bean.topo.Utilisateur;
 import org.escalade.demo.model.exception.NotFoundException;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 @SuppressWarnings("serial")
 public class GestionUtilisateurAction extends ActionSupport {
+	static final Log logger = LogFactory.getLog(GestionUtilisateurAction.class);
 	// ==================== Attributs ====================
 	// ----- Paramètres en entrée
 	private String userName;
@@ -69,6 +72,8 @@ public class GestionUtilisateurAction extends ActionSupport {
 	
 	// ==================== Méthodes ====================
 	public String doCreateUser() throws NotFoundException {
+		logger.debug("GestionUtilisateurAction méthode doCreateUser()");
+		
 		// Par défaut, le result est "input"
         String vResult = ActionSupport.INPUT;
         

@@ -70,6 +70,18 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 		return topo;
 	}
 
+	@Override
+	public List<Topo> listTopoBySpot(Spot spot) {
+		String vsql = "SELECT * FROM public.topo WHERE spot_id=?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		TopoRM rowTopo = new TopoRM();
+		
+		List<Topo> listTopos = vJdbcTemplate.query(vsql,new Object[] { spot.getId() }, rowTopo);
+		
+		return listTopos;
+	}
+
 
 
 }

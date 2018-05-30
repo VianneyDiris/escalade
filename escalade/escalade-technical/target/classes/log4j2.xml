@@ -10,11 +10,11 @@
 	</Appenders>
 	
 	<loggers>
-		<logger name="org.escalade.demo.webapp" level="debug" additivity="false">
+		<logger name="org.escalade.demo.webapp" level="info" additivity="false">
 			<AppenderRef ref="console" />
 		</logger>
 		
-		<root level="debug">
+		<root level="info">
 			<appender-ref ref="console" />
 		</root>
 	</loggers>

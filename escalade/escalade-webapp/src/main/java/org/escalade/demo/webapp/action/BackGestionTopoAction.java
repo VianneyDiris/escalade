@@ -128,7 +128,7 @@ public class BackGestionTopoAction extends ActionSupport{
 				logger.debug(e.getMessage());
 			}
 		}
-		return Action.SUCCESS;
+		return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
 	}
 
 	public String doDeleteTopo() {
@@ -165,6 +165,6 @@ public class BackGestionTopoAction extends ActionSupport{
 			
 		}
 		
-		return ActionSupport.SUCCESS;
+		return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
 	}
 }

@@ -11,6 +11,10 @@ public interface SpotManager {
 	List<Spot> getListSpot();
 	
 	List<Spot> allSpot();
+	
+	List<Spot> listSpotByPays(Pays pays) throws NotFoundException;
+	
+	List<Spot> listSpotByVille(Ville ville) throws NotFoundException;;
 				
 	//renvoie l'orientation grâce à son id
 	Spot getSpot(Integer id) throws NotFoundException;

@@ -18,5 +18,7 @@ public interface TopoDao {
 	void deleteTopo(Integer id);
 	
 	Topo getTopoBySpot(Spot spot);
+	
+	List<Topo> listTopoBySpot(Spot spot);
 
 }

@@ -56,8 +56,8 @@
 		      <tr>
 		        <td><s:property value="nom"/></td>
 		        <td><s:property value="description"/></td>
-		        <td><s:a action="spot_list"><button class="btn btn-warning">modifier</button></s:a></td>
-		        <td><s:a action="spot_list"><button class="btn btn-danger">supprimer</button></s:a></td>
+		        <td><s:a action="detail_spot"><s:param name="id" value="id" /><button class="btn btn-warning">modifier</button></s:a></td>
+		         <td><s:a action="delete_spot"><s:param name="id" value="id" /><button class="btn btn-danger">supprimer</button></s:a></td>
 		      </tr>
 		    </s:iterator>
 		   </tbody>

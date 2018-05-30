@@ -11,9 +11,12 @@ import org.escalade.demo.business.contract.ManagerFactory;
 import org.escalade.demo.model.bean.topo.Utilisateur;
 import org.escalade.demo.model.exception.NotFoundException;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 @SuppressWarnings("serial")
 public class LoginAction extends ActionSupport implements ServletRequestAware,SessionAware{
+	static final Log logger = LogFactory.getLog(LoginAction.class);	
 	
 	// ==================== Attributs ====================
     // ----- Paramètres en entrée
@@ -61,11 +64,12 @@ public class LoginAction extends ActionSupport implements ServletRequestAware,Se
 	}
 	// ==================== Méthodes ====================
 	public String doLogin() {
+		logger.debug("LoginAction méthode doLogin()");
+		
     	String vResult = ActionSupport.INPUT;
         if (!StringUtils.isAllEmpty(pseudo, password)) {
             try {
-            	System.out.println("dans le try");
-                user = managerFactory.getUtilisateurManager().getUtilisateur(pseudo, password);
+            	user = managerFactory.getUtilisateurManager().getUtilisateur(pseudo, password);
                 this.session.put("user", user);
                 vResult = ActionSupport.SUCCESS;
             } catch (NotFoundException pEx) {
@@ -76,6 +80,8 @@ public class LoginAction extends ActionSupport implements ServletRequestAware,Se
     }
     
     public String doLogout() {
+    	logger.debug("LoginAction méthode doLogout()");
+    	
     	this.session.remove("user");
     	// Invalidation de la session
         this.servletRequest.getSession().invalidate();

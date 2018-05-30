@@ -82,6 +82,18 @@
 			method="doListSearch">
 			<result>/jsp/site/recherche.jsp</result>
 		</action>
+		<action name="search_topo"
+			class="org.escalade.demo.webapp.action.GestionSearchAction"
+			method="doSearchTopo">
+			<result name="success">/jsp/site/result.jsp</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
+		<action name="search_spot"
+			class="org.escalade.demo.webapp.action.GestionSearchAction"
+			method="doSearchSpot">
+			<result name="success">/jsp/site/result.jsp</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
 
 <!-- ########################### BACKOFFICE #############################################-->
 <!-- ########################### Spot ############################-->		

@@ -11,6 +11,7 @@ public interface TopoManager {
 	// ==================== Topo ====================
 	List<Topo> getListTopo();
 	
+	List<Topo> listTopoBySpot(Spot spot)throws NotFoundException;	
 	//renvoie le topo grâce à son id
 	Topo getTopo(Integer id) throws NotFoundException;
 	

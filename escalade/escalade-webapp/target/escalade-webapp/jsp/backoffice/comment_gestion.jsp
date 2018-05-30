@@ -42,7 +42,7 @@
 	<div class="container content center">
 	<div class="col-lg-8 col-lg-offset-2">
 	<div class="table-responsive">
-  		<table class="table table-hover table-border">
+  		<table class="table table-hover ">
   		 <thead>
 	      <tr>
 	        <th>Posté par</th>
@@ -56,8 +56,8 @@
 		      <tr>
 		        <td><s:property value="utilisateur.pseudo"/></td>
 		        <td><s:property value="contenue"/></td>
-		        <td><s:a action="spot_list"><button class="btn btn-warning">modifier</button></s:a></td>
-		        <td><s:a action="spot_list"><button class="btn btn-danger">supprimer</button></s:a></td>
+		        <td><s:a action="detail_comment"><s:param name="id" value="id" /><button class="btn btn-warning">modifier</button></s:a></td>
+		        <td><s:a action="delete_comment"><s:param name="id" value="id" /><button class="btn btn-danger">supprimer</button></s:a></td>
 		      </tr>
 		    </s:iterator>
 		   </tbody>

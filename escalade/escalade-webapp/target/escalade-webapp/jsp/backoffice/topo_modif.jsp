@@ -40,21 +40,37 @@
 
 	<!-- Page Content -->
 		<div class="container content center">
-	 <s:form action="login" class="col-lg-6 col-lg-offset-3">
+	 <s:form action="update_topo" class="col-lg-6 col-lg-offset-3">
+	 <s:hidden name="id" value="%{topo.id}"/>
       <fieldset class="scheduler-border">
-        <legend class="scheduler-border">Modification du spot</legend>
+        <legend class="scheduler-border">Modification du topo</legend>
  
 		<div class="form-group">
+			<div class="form-group">
 			<s:label for="nom" class="espace">Nom</s:label>
-			<s:textfield name="nom" class="form-control" value="<s:property value="nom"/>"/>
+			<s:textfield name="nom" class="form-control" value="%{topo.nom}"/>
+			</div>
 			
+			<div class="form-group">
 			<s:label for="description" class="espace">Description</s:label>
-			<s:textfield name="description" class="form-control" value="<s:property value="description"/>"/>
+			<s:textfield name="description" class="form-control" value="%{topo.description}"/>
+			</div>
 			
+			<div class="form-group">
+			<s:label for="prive" class="">Privé: </s:label>
+			<s:radio name="prive" list="#{'true':'Oui','false':'Non'}" value="%{topo.prive}" />
+			</div>
 			
+			<div class="form-group">
+			<s:label for="reserved" >Réservé: </s:label>
+			<s:radio name="reserved" list="#{'true':'Oui','false':'Non'}" value="%{topo.reserve}" />
+			</div>
 			
-			<s:label for="spot" class="espace">Spot</s:label>
-			<s:select name="spot" class="form-control" list="listSpot"/>
+			<div class="form-group">
+			<s:label for="StringSpot" class="espace">Spot</s:label>
+			<s:select headerKey="0" name="StringSpot" class="form-control" list="listSpots" listValue="nom" listKey="id"/>
+			</div>
+			
 				
 			
 			

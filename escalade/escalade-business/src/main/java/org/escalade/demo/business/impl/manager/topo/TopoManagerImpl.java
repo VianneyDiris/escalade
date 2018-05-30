@@ -41,6 +41,12 @@ public class TopoManagerImpl extends AbstractManagerImpl implements TopoManager 
 		getDaoFactory().getTopoDao().updateTopo(topo);		
 	}
 
+	@Override
+	public List<Topo> listTopoBySpot(Spot spot) throws NotFoundException {
+		// TODO Auto-generated method stub
+		return getDaoFactory().getTopoDao().listTopoBySpot(spot);
+	}
+
 	
 
 }
