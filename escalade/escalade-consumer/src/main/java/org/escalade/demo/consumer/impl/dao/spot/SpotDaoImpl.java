@@ -28,6 +28,10 @@ public class SpotDaoImpl extends AbstractDaoImpl implements SpotDao {
 	@Override
 	public void addSpot(Spot spot) {
 		// TODO Auto-generated method stub
+		String vsql = "INSERT INTO public.spot (nom,description,photo,pays_id,ville_id) VALUES (?,?,?,?,?)";
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		
+		vJdbcTemplate.update(vsql,spot.getNom(),spot.getDescription(),spot.getPhoto(),spot.getPays().getId(),spot.getVille().getId());
 		
 	}
 

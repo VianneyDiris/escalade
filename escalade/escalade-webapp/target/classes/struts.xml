@@ -28,6 +28,7 @@
 			<result name="success">/jsp/site/spot_detail.jsp</result>
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
+		
 
 <!-- ########################### Topo ############################-->
 		<!-- Action listant les topos -->
@@ -44,11 +45,55 @@
 			<result name="success">/jsp/site/topo_detail.jsp</result>
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
+		
+		<action name="topo_reserve">
+			<result>/jsp/site/reservation.jsp</result>
+		</action>
 
 <!-- ########################### Ajout ############################-->
 		<!-- Action "ajout" -->
-		<action name="ajout">
-			<result>/jsp/site/ajout.jsp</result>
+		<action name="ajout"
+			class="org.escalade.demo.webapp.action.AddAction"
+			method="doAdd">
+			<result name="success">/jsp/site/ajout.jsp</result>
+		</action>
+		
+		<action name="addTopo" class="org.escalade.demo.webapp.action.AddTopoAction" method="doAddTopo">
+	    <interceptor-ref name="exception"/>
+            <interceptor-ref name="i18n"/>
+            <interceptor-ref name="fileUpload">
+       		<param name="allowedTypes">image/png,image/gif,image/jpeg</param>
+       		<param name="maximumSize">1024000000</param>
+  	    </interceptor-ref> 
+            <interceptor-ref name="params">
+                <param name="excludeParams">dojo\..*,^struts\..*</param>
+            </interceptor-ref>
+            <interceptor-ref name="validation">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+            </interceptor-ref>
+            <interceptor-ref name="workflow">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+            </interceptor-ref>
+       	<result type="redirectAction">topo_list</result>
+		</action>
+		
+		<action name="addSpot" class="org.escalade.demo.webapp.action.AddSpotAction" method="doAddSpot">
+	    <interceptor-ref name="exception"/>
+            <interceptor-ref name="i18n"/>
+            <interceptor-ref name="fileUpload">
+       		<param name="allowedTypes">image/png,image/gif,image/jpeg</param>
+       		<param name="maximumSize">1024000000</param>
+  	    </interceptor-ref> 
+            <interceptor-ref name="params">
+                <param name="excludeParams">dojo\..*,^struts\..*</param>
+            </interceptor-ref>
+            <interceptor-ref name="validation">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+            </interceptor-ref>
+            <interceptor-ref name="workflow">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+            </interceptor-ref>
+       	<result type="redirectAction">spot_list</result>
 		</action>
 		
 <!-- ########################### Utilisateur ############################-->

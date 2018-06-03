@@ -26,6 +26,9 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 	@Override
 	public void addTopo(Topo topo) {
 		// TODO Auto-generated method stub
+		String vsql = "INSERT INTO public.topo (nom,description,photo,prive,reserve,spot_id) VALUES (?,?,?,?,?,?)";
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		vJdbcTemplate.update(vsql,topo.getNom(),topo.getDescription(),topo.getPhoto(),topo.isPrive(),topo.isReserve(),topo.getSpot().getId());
 		
 	}
 

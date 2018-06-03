@@ -46,9 +46,10 @@
 
 
 	<div class="container content">
-		<s:form class="col-lg-5 col-lg-offset-1">
+		<s:form class="col-lg-5 col-lg-offset-1" action="addSpot" namespace="/" method="POST" enctype="multipart/form-data">
 			<fieldset class="scheduler-border">
 				<legend class="scheduler-border">Spot</legend>
+				
 				<div class="form-group">
 					<s:label for="spot" class="espace">Nom du spot</s:label>
 					<s:textfield name="spot" class="form-control" placeholder="nom du spot"/>
@@ -56,86 +57,56 @@
 
 				<div class="form-group">
 					<s:label for="description" class="espace">Description</s:label>
-					<s:textarea class="form-control" rows="5" id="comment"></s:textarea>
+					<s:textarea class="form-control" rows="5" id="comment" name="description"></s:textarea>
 				</div>
 
-				<div class="form-group">
-					<label for="sel1">Selection du pays:</label> <select
-						class="form-control" id="sel1">
-						<option>France</option>
-						<option>Angleterre</option>
-						<option>Italie</option>
-						<option>Afrique du Sud</option>
-					</select>
-				</div>
+			<div class="form-group">
+			<s:label for="StringPays" class="espace">Pays</s:label>
+			<s:select headerKey="0" name="StringPays" class="form-control" list="listPays" listValue="nom" listKey="id"/>
+			</div>
+			
+			<div class="form-group">
+			<s:label for="StringVille" class="espace">Ville</s:label>
+			<s:select headerKey="0" name="StringVille" class="form-control" list="listVille" listValue="nom" listKey="id"/>
+			</div>	
 
-				<div class="form-group">
-					<label for="sel1">Selection de la ville:</label> <select
-						class="form-control" id="sel1">
-						<option>Le Verdon</option>
-						<option>Fontainebleau</option>
-						<option>Sardeigne</option>
-						<option>Capetown</option>
-					</select>
+				<s:file name="fileUpload" label="Selectionnez le spot" size="40" class="btn btn-secondary"/>
 
-				</div>
+				
 
-				<input type="file" class="btn btn-secondary">
-
-				<div class="form-group">
-					<label for="voie">Nom de la voie</label> <input type="text"
-						class="form-control" id="exampleInputEmail1"
-						placeholder="nom de la voie"> <label for="sel1">Cotation:</label>
-					<select class="form-control" id="sel1">
-						<option>3A</option>
-						<option>3B</option>
-						<option>3C</option>
-						<option>4A</option>
-					</select>
-				</div>
-
-				<button type="submit" class="btn btn-primary center-block">Valider
-					le spot</button>
+				<s:submit value="Valider le spot" class="btn btn-primary center-block" />
 			</fieldset>
 		</s:form>
 
-
-		<s:form class="col-lg-5">
+		<s:form class="col-lg-5" action="addTopo" namespace="/" method="POST" enctype="multipart/form-data">
 			<fieldset class="scheduler-border">
 				<legend class="scheduler-border">Topo</legend>
+				
 				<div class="form-group">
-					<label for="exampleInputEmail1">Nom du topo</label> <input
-						type="text" class="form-control" id="exampleInputEmail1"
-						placeholder="nom du topo">
-
-				</div>
-
-				<div class="form-group">
-					<label for="comment">Description:</label>
-					<textarea class="form-control" rows="5" id="comment"></textarea>
+					<s:label for="topo" class="espace">Nom du topo</s:label>
+					<s:textfield name="topo" class="form-control" placeholder="nom du topo"/>
 				</div>
 
 				<div class="form-group">
-					<label for="sel1">Selection du spot:</label> <select
-						class="form-control" id="sel1">
-						<option>Le Verdon</option>
-						<option>Fontainebleau</option>
-						<option>Capetown</option>
-					</select>
+					<s:label for="description" class="espace">Description</s:label>
+					<s:textarea class="form-control" rows="5" id="comment" name="description"></s:textarea>
 				</div>
 
-				<input type="file" class="btn btn-secondary form-group">
+				<div class="form-group">
+			<s:label for="StringSpot" class="espace">Spot</s:label>
+			<s:select headerKey="0" name="StringSpot" class="form-control" list="listSpot" listValue="nom" listKey="id"/>
+			</div>	
 
-				<div class="form-group btn-group" id="status" data-toggle="buttons">
-					<label class="btn btn-default btn-on btn-lg active"> <input
-						type="radio" value="1" name="multifeatured_module"
-						checked="checked">Public
-					</label> <label class="btn btn-default btn-off btn-lg"> <input
-						type="radio" value="0" name="multifeatured_module">Privé
-					</label>
+				
+
+				<div class="form-group">
+				<s:label for="prive" class="">Privé: </s:label>
+				<s:radio name="prive" list="#{'true':'Oui','false':'Non'}" />
 				</div>
 
-				<div id="espace"></div>
+				<div class="form-group">
+				<s:file name="fileUpload" label="Select a File to upload" size="40" />
+				</div>
 				<button type="submit" class="btn btn-primary center-block">Valider
 					le topo</button>
 			</fieldset>

@@ -47,39 +47,75 @@
 
 	<!-- Page Content -->
 	<div class="container content">
-	<s:if test="%{listTopo==null}">
-	<h2>pas de topo</h2>
-	</s:if>
-	<s:else>
-  <fieldset>
-        <legend class="text-center grossissement">Topo</legend>
-        <div class="row justify-content-lg-center">
-
-			<s:iterator value="listTopo">
-			<div class="list">
-			<div class="produit col-lg-3">
-				<div class="panel panel-default">
-					<div class="panel-heading"><s:property value="nom"/></div>
-					<div class="panel-body">
-					<img alt="img" class="img_list" src="resource_image/<s:property value="photo"/>">
-					<p class="lieu">Pays: <s:property value="spot.pays.nom"/></p>
-					<p class=nom>Ville: <s:property value="spot.ville.nom"/>  </p>
-					<p><p>
-					<s:a action="topo_detail"><s:param name="id" value="id" /><button class="btn btn-default">Voir détails</button></s:a>
-				</div>
-				</div>
-			</div>
-			</div>
-			</s:iterator>
-  
-
-     </div>
-   </fieldset>
+	<s:if test="%{bool==true}">
+		<s:if test="%{listTopo==null}">
+			<fieldset>
+			<legend class="text-center grossissement">Aucun topo n'a été trouvé</legend>
+	</fieldset>
+		</s:if>
+			<s:else>
+		  <fieldset>
+		        <legend class="text-center grossissement">Topo</legend>
+		        <div class="row justify-content-lg-center">
+		
+					<s:iterator value="listTopo">
+					<div class="list">
+					<div class="produit col-lg-3">
+						<div class="panel panel-default">
+							<div class="panel-heading"><s:property value="nom"/></div>
+							<div class="panel-body">
+							<img alt="img" class="img_list" src="resource_image/<s:property value="photo"/>">
+							<p class="lieu">Pays: <s:property value="spot.pays.nom"/></p>
+							<p class=nom>Ville: <s:property value="spot.ville.nom"/>  </p>
+							<p><p>
+							<s:a action="topo_detail"><s:param name="id" value="id" /><button class="btn btn-default">Voir détails</button></s:a>
+						</div>
+						</div>
+					</div>
+					</div>
+					</s:iterator>
+		  
+		
+		     </div>
+		   </fieldset>
 	</s:else>
+</s:if>
 	
-	<s:if test="%{listResultSpot==null}">
-	<h2>pas de spot</h2>
+	<s:if test="%{bool==false}">
+		<s:if test="%{listResultSpot==null}">
+		<fieldset>
+				<legend class="text-center grossissement">Aucun spot n'a été trouvé</legend>
+		</fieldset>
+		</s:if>
+	<s:else>
+		<fieldset>
+			<legend class="text-center grossissement">Spot</legend>
+			<div class="row justify-content-lg-center">
+
+				<s:iterator value="listResultSpot">
+				<div class="list">
+					<div class="produit col-lg-3">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<s:property value="nom" />
+							</div>
+							<div class="panel-body">
+								<img alt="img" class="img_list" src="resource_image/<s:property value="photo"/>">
+								<p class="lieu">Pays:<s:property value="pays.nom" /></p>
+								<p class=nom>Ville:<s:property value="ville.nom" /></p>
+								<p></p>
+								<s:a action="spot_detail"><s:param name="id" value="id" /><button class="btn btn-default">Voir détails</button></s:a>
+							</div>
+						</div>
+					</div>
+				</div>
+				</s:iterator>
+
+			</div>
+		</fieldset>
+	</s:else>
 	</s:if>
+	
 	
 	</div>
 

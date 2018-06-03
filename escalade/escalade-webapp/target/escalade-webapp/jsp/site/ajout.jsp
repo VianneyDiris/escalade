@@ -46,7 +46,7 @@
 
 
 	<div class="container content">
-		<s:form class="col-lg-5 col-lg-offset-1">
+		<s:form class="col-lg-5 col-lg-offset-1" action="resultAction" namespace="/" method="POST" enctype="multipart/form-data">
 			<fieldset class="scheduler-border">
 				<legend class="scheduler-border">Spot</legend>
 				<div class="form-group">
@@ -80,7 +80,7 @@
 
 				</div>
 
-				<input type="file" class="btn btn-secondary">
+				<s:file name="fileUpload" label="Selectionnez le spot" size="40" class="btn btn-secondary"/>
 
 				<div class="form-group">
 					<label for="voie">Nom de la voie</label> <input type="text"
@@ -94,8 +94,7 @@
 					</select>
 				</div>
 
-				<button type="submit" class="btn btn-primary center-block">Valider
-					le spot</button>
+				<s:submit value="submit" name="Valider le spot" class="btn btn-primary center-block" />
 			</fieldset>
 		</s:form>
 

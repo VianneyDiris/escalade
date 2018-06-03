@@ -76,16 +76,16 @@
 
 				<div class="form-inline" id="space-top">
 					<s:label for="listPays" class="espace">Pays</s:label>
-					<s:select headerKey="1"  class="form-control" list="listPays" listValue="nom" name="StringPays" listKey="id"/>
+					<s:select headerKey="1"  class="form-control" list="listPays" listValue="nom" name="StringPays" listKey="id" emptyOption="true"/>
 					
 					<s:label for="listVille" class="espace">Ville</s:label>
-					<s:select headerKey="1"  class="form-control" list="listVilles" listValue="nom" name="StringVille" listKey="id"/>
+					<s:select headerKey="1"  class="form-control" list="listVilles" listValue="nom" name="StringVille" listKey="id" emptyOption="true"/>
 					
 					<s:label for="listSecteur" class="espace">Secteur</s:label>
-					<s:select headerKey="1"  class="form-control" list="listSecteur" listValue="nom" name="StringSecteur" listKey="id"/>
+					<s:select headerKey="1"  class="form-control" list="listSecteur" listValue="nom" name="StringSecteur" listKey="id" emptyOption="true"/>
 					
 					<s:label for="listVoie" class="espace">Voie</s:label>
-					<s:select headerKey="1"  class="form-control" list="listVoies" listValue="nom" name="StringVoie" listKey="id"/>
+					<s:select headerKey="1"  class="form-control" list="listVoies" listValue="nom" name="StringVoie" listKey="id" emptyOption="true"/>
 
 				</div>
 

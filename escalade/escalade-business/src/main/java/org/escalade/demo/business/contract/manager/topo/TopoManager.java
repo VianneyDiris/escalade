@@ -21,6 +21,8 @@ public interface TopoManager {
 	
 	void updateTopo(Topo topo);
 	
+	void addTopo(Topo topo);
+	
 	
 
 }

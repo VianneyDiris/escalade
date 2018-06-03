@@ -53,4 +53,10 @@ public class SpotManagerImpl extends AbstractManagerImpl implements SpotManager 
 		return getDaoFactory().getSpotDao().listSpotByVille(ville);
 	}
 
+	@Override
+	public void addSpot(Spot spot) {
+		// TODO Auto-generated method stub
+		getDaoFactory().getSpotDao().addSpot(spot);
+	}
+
 }

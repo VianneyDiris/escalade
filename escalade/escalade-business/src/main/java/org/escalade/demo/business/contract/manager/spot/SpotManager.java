@@ -22,4 +22,6 @@ public interface SpotManager {
 	void deleteSpot(Integer id)throws NotFoundException;
 	
 	void updateSpot(Spot spot);
+	
+	void addSpot(Spot spot);
 }
