@@ -52,7 +52,7 @@
 				
 				<div class="form-group">
 					<s:label for="spot" class="espace">Nom du spot</s:label>
-					<s:textfield name="spot" class="form-control" placeholder="nom du spot"/>
+					<s:textfield name="nom" class="form-control" placeholder="nom du spot"/>
 				</div>
 
 				<div class="form-group">
@@ -84,7 +84,7 @@
 				
 				<div class="form-group">
 					<s:label for="topo" class="espace">Nom du topo</s:label>
-					<s:textfield name="topo" class="form-control" placeholder="nom du topo"/>
+					<s:textfield name="nom" class="form-control" placeholder="nom du topo"/>
 				</div>
 
 				<div class="form-group">

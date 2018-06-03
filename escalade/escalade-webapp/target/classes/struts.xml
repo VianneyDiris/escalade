@@ -53,12 +53,12 @@
 <!-- ########################### Ajout ############################-->
 		<!-- Action "ajout" -->
 		<action name="ajout"
-			class="org.escalade.demo.webapp.action.AddAction"
+			class="org.escalade.demo.webapp.action.GestionAddAction"
 			method="doAdd">
 			<result name="success">/jsp/site/ajout.jsp</result>
 		</action>
 		
-		<action name="addTopo" class="org.escalade.demo.webapp.action.AddTopoAction" method="doAddTopo">
+		<action name="addTopo" class="org.escalade.demo.webapp.action.GestionAddAction" method="doAddTopo">
 	    <interceptor-ref name="exception"/>
             <interceptor-ref name="i18n"/>
             <interceptor-ref name="fileUpload">
@@ -77,7 +77,7 @@
        	<result type="redirectAction">topo_list</result>
 		</action>
 		
-		<action name="addSpot" class="org.escalade.demo.webapp.action.AddSpotAction" method="doAddSpot">
+		<action name="addSpot" class="org.escalade.demo.webapp.action.AddAction" method="doAddSpot">
 	    <interceptor-ref name="exception"/>
             <interceptor-ref name="i18n"/>
             <interceptor-ref name="fileUpload">
