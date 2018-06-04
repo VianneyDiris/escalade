@@ -40,4 +40,16 @@ public class ReservationManagerImpl extends AbstractManagerImpl implements Reser
 		
 	}
 
+	@Override
+	public List<Reservation> listReservationByTopo(Integer id) throws NotFoundException {
+		// TODO Auto-generated method stub
+		return getDaoFactory().getReservationDao().listReservationByTopo(id);
+	}
+
+	@Override
+	public void addReservation(Reservation reservation) {
+		// TODO Auto-generated method stub
+		getDaoFactory().getReservationDao().addReservation(reservation);
+	}
+
 }

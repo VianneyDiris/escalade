@@ -49,6 +49,12 @@
 		<action name="topo_reserve">
 			<result>/jsp/site/reservation.jsp</result>
 		</action>
+		
+		<action name="reserve_topo"
+			class="org.escalade.demo.webapp.action.GestionReservationAction"
+			method="doReservation">
+		<result name="success" type="redirectAction">topo_list</result>
+		</action>
 
 <!-- ########################### Ajout ############################-->
 		<!-- Action "ajout" -->
@@ -102,9 +108,7 @@
 			class="org.escalade.demo.webapp.action.GestionUtilisateurAction"
 			method="doCreateUser">
 			<result name="input">/jsp/site/enregistrer.jsp</result>
-			<result name="success" type="redirectAction">
-				<param name="actionName">topo_list</param>
-			</result>
+			<result name="success" type="redirectAction">index</result>
 		</action>
 
 		<!-- Actions Login/Logout -->

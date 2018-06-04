@@ -52,8 +52,48 @@
 
 <!-- ########################### Ajout ############################-->
 		<!-- Action "ajout" -->
-		<action name="ajout">
-			<result>/jsp/site/ajout.jsp</result>
+		<action name="ajout"
+			class="org.escalade.demo.webapp.action.GestionAddAction"
+			method="doAdd">
+			<result name="success">/jsp/site/ajout.jsp</result>
+		</action>
+		
+		<action name="addTopo" class="org.escalade.demo.webapp.action.GestionAddAction" method="doAddTopo">
+	    <interceptor-ref name="exception"/>
+            <interceptor-ref name="i18n"/>
+            <interceptor-ref name="fileUpload">
+       		<param name="allowedTypes">image/png,image/gif,image/jpeg</param>
+       		<param name="maximumSize">1024000000</param>
+  	    </interceptor-ref> 
+            <interceptor-ref name="params">
+                <param name="excludeParams">dojo\..*,^struts\..*</param>
+            </interceptor-ref>
+            <interceptor-ref name="validation">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+            </interceptor-ref>
+            <interceptor-ref name="workflow">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+            </interceptor-ref>
+       	<result type="redirectAction">topo_list</result>
+		</action>
+		
+		<action name="addSpot" class="org.escalade.demo.webapp.action.AddAction" method="doAddSpot">
+	    <interceptor-ref name="exception"/>
+            <interceptor-ref name="i18n"/>
+            <interceptor-ref name="fileUpload">
+       		<param name="allowedTypes">image/png,image/gif,image/jpeg</param>
+       		<param name="maximumSize">1024000000</param>
+  	    </interceptor-ref> 
+            <interceptor-ref name="params">
+                <param name="excludeParams">dojo\..*,^struts\..*</param>
+            </interceptor-ref>
+            <interceptor-ref name="validation">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+            </interceptor-ref>
+            <interceptor-ref name="workflow">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+            </interceptor-ref>
+       	<result type="redirectAction">spot_list</result>
 		</action>
 		
 <!-- ########################### Utilisateur ############################-->
@@ -204,35 +244,5 @@
 			<result name="success" type="redirectAction">gestion_comment</result>
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
-		
-		
-		
-		
-		<action name="fileupload" 
-	    class="org.escalade.demo.webapp.action.FileUploadAction" method="display">
-	    <result name="none">/jsp/site/fileupload.jsp</result>
-	</action>
-		
-	<action name="resultAction" class="org.escalade.demo.webapp.action.FileUploadAction">
-	    <interceptor-ref name="exception"/>
-            <interceptor-ref name="i18n"/>
-            <interceptor-ref name="fileUpload">
-       		<param name="allowedTypes">image/png,image/gif,image/jpeg</param>
-       		<param name="maximumSize">1024000000</param>
-  	    </interceptor-ref> 
-            <interceptor-ref name="params">
-                <param name="excludeParams">dojo\..*,^struts\..*</param>
-            </interceptor-ref>
-            <interceptor-ref name="validation">
-                <param name="excludeMethods">input,back,cancel,browse</param>
-            </interceptor-ref>
-            <interceptor-ref name="workflow">
-                <param name="excludeMethods">input,back,cancel,browse</param>
-            </interceptor-ref>
-    
-	    <result name="success">/jsp/site/resultat.jsp</result>
-	    <result name="input">/jsp/site/fileupload.jsp</result>
-			
-	</action>
 	</package>
 </struts>

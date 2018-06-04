@@ -23,7 +23,7 @@
 			<li><s:a action="topo_list">Topo</s:a></li>
 			<li><s:a action="ajout">Ajout</s:a></li>
 			<li><s:a action="search">Recherche</s:a></li>
-			<li><s:a action="fileupload">test file</s:a></li>
+			
 			<s:if test="%{#session.user.role.role=='admin'}">
 				<li><s:a action="gestion_spot">Administration</s:a></li>
 			</s:if>

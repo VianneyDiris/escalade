@@ -33,6 +33,10 @@ public class ReservationDaoImpl extends AbstractDaoImpl implements ReservationDa
 	@Override
 	public void addReservation(Reservation reservation) {
 		// TODO Auto-generated method stub
+		String vsql ="INSERT INTO public.reservation (date_debut,date_fin,topo_id,utilisateur_id) VALUES(?,?,?,?)";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		vJdbcTemplate.query(vsql, reservation.getDateDebut(),reservation.getDateFin(),reservation.getTopo().getId(),reservation.getUtilisateur().getId());
 		
 	}
 
@@ -65,6 +69,18 @@ public class ReservationDaoImpl extends AbstractDaoImpl implements ReservationDa
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 		vJdbcTemplate.update(vsql,new Object[] { id });
+	}
+
+	@Override
+	public List<Reservation> listReservationByTopo(Integer id) {
+		// TODO Auto-generated method stub
+		String vsql="SELECT * FROM public.reservation WHERE topo_id=?";
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		ReservationRM rowReserv = new ReservationRM();
+		
+		List<Reservation> listReservation = vJdbcTemplate.query(vsql,new Object[] { id },rowReserv);
+		
+		return listReservation;
 	}
 
 }

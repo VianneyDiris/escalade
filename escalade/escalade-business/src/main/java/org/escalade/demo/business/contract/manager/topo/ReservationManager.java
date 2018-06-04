@@ -13,8 +13,12 @@ public interface ReservationManager {
 	//renvoie la réservation grâce à son id
 	Reservation getReservation(Integer id) throws NotFoundException;
 	
+	List<Reservation> listReservationByTopo(Integer id) throws NotFoundException;
+	
 	void deleteReservationByTopo(Integer id)throws NotFoundException;
 	
 	void deleteReservationByUser(Integer id)throws NotFoundException;
+	
+	void addReservation(Reservation reservation);
 
 }
