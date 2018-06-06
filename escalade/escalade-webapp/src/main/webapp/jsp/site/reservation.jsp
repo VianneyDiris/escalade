@@ -45,19 +45,19 @@
 
 	  <!-- Page Content -->
 	<div class="container content">
-    <s:form action="reserve_topo" class="col-lg-6 col-lg-offset-3">
+    <s:form action="topo_reserve" class="col-lg-6 col-lg-offset-3">
       <fieldset class="scheduler-border">
         <legend class="scheduler-border">Réservation</legend>
  
   <div class="form-inline">
   	<s:label for="dateDebut" class="espace">Date de début</s:label>
-	<sx:datetimepicker name="dateDebut" displayFormat="dd-MMM-yyyy" value="todayDate" />
+	<sx:datetimepicker name="date1" displayFormat="dd-MMM-yyyy" value="todayDate" />
 	
    	<s:label for="dateFin" class="espace">Date de fin</s:label>
-	<sx:datetimepicker name="dateFin" displayFormat="dd-MMM-yyyy" value="todayDate" />
+	<sx:datetimepicker name="date2" displayFormat="dd-MMM-yyyy" value="todayDate" />
   </div>
   
-
+	<s:hidden name="topo.id" value="id" />
 	<s:submit value="Réserver le topo" id="connecter" class="btn btn-primary center-block"/>
  
 </fieldset>

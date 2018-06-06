@@ -66,6 +66,7 @@
    <div  class="text-center">
    <s:if test="%{topo.prive==true}">
    	<s:if test="#session.user"  >
+   	<s:hidden name="id" value="topo.id" />
    	<s:a action="topo_reserve"><button class="btn btn-primary">Reservation</button></s:a>
    	</s:if>
    	<s:else>
