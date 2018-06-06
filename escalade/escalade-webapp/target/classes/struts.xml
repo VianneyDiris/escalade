@@ -46,11 +46,10 @@
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
 		
-		<action name="topo_reserve">
+		<action name="reserve_topo">
 			<result>/jsp/site/reservation.jsp</result>
 		</action>
-		
-		<action name="reserve_topo"
+		<action name="topo_reserve"
 			class="org.escalade.demo.webapp.action.GestionReservationAction"
 			method="doReservation">
 		<result name="success" type="redirectAction">topo_list</result>

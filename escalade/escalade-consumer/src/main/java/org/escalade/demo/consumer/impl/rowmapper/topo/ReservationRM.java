@@ -14,8 +14,8 @@ public class ReservationRM implements RowMapper<Reservation> {
 		// TODO Auto-generated method stub
 		Reservation reservation = new Reservation();
 		reservation.setId(rs.getInt("id"));
-		reservation.setDateDebut(rs.getDate("dateDebut"));
-		reservation.setDateFin(rs.getDate("dateFin"));
+		reservation.setDateDebut(rs.getDate("date_debut"));
+		reservation.setDateFin(rs.getDate("date_fin"));
 		
 		//rowMapper topo + utilisateur
 		TopoDaoImpl topoDao = new TopoDaoImpl();

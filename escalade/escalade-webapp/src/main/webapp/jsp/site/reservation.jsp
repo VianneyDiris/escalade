@@ -1,11 +1,9 @@
-<%@ taglib prefix="sx" uri="/struts-dojo-tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <%@include file="../_include/head.jsp"%>
-<sx:head />
 </head>
 <body>
 	<nav class="navbar navbar-default"> <!-- Brand and toggle get grouped for better mobile display -->
@@ -51,13 +49,15 @@
  
   <div class="form-inline">
   	<s:label for="dateDebut" class="espace">Date de début</s:label>
-	<sx:datetimepicker name="date1" displayFormat="dd-MMM-yyyy" value="todayDate" />
+	<input type="date" name="dateDebut">
+	
+	
 	
    	<s:label for="dateFin" class="espace">Date de fin</s:label>
-	<sx:datetimepicker name="date2" displayFormat="dd-MMM-yyyy" value="todayDate" />
+	<input type="date"  name="dateFin">
   </div>
   
-	<s:hidden name="topo.id" value="id" />
+<%-- 	<s:hidden name="id" value="id" /> --%>
 	<s:submit value="Réserver le topo" id="connecter" class="btn btn-primary center-block"/>
  
 </fieldset>

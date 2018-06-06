@@ -27,6 +27,9 @@ public class GestionReservationAction extends ActionSupport implements SessionAw
 	private Date dateDebut;
 	private Date dateFin;
 	private Map<String, Object> session;
+	
+	private String dateD;
+	private String dateF;
 		
 	// ==================== Getters/Setters ====================
 	public ManagerFactory getManagerFactory() {
@@ -67,17 +70,36 @@ public class GestionReservationAction extends ActionSupport implements SessionAw
 		
 	}
 	
+	
+	public String getDateD() {
+		return dateD;
+	}
+	public void setDateD(String dateD) {
+		this.dateD = dateD;
+	}
+	public String getDateF() {
+		return dateF;
+	}
+	public void setDateF(String dateF) {
+		this.dateF = dateF;
+	}
 	// ==================== Méthodes ====================
 	public String doReservation() {
 			try {
-				 if(id==null) {
-						this.addActionError("veuillez donner un identifiant de topo");			
-					}
-				 else {
-					Utilisateur user=(Utilisateur) this.session.get("user");
-					logger.info(user.getNom());
+//				 if(id==null) {
+//						this.addActionError("veuillez donner un identifiant de topo");
+//						logger.info("Date de Fin : "+dateFin);
+//						 logger.info("Date de début : "+dateDebut);
+//					}
+//				 else {
+					 logger.info("Date de Fin : "+dateFin);
+					 logger.info("Date de début : "+dateDebut);
+					 logger.info(id);
+					//Utilisateur user=(Utilisateur) this.session.get("user");
+					//logger.info(user.getNom());
 					
 					Topo topo = managerFactory.getTopoManager().getTopo(id);
+					
 					listReservation=managerFactory.getReservationManager().listReservationByTopo(id);
 					boolean[] testReservation = new boolean[listReservation.size()];
 					int i=0;
@@ -108,9 +130,9 @@ public class GestionReservationAction extends ActionSupport implements SessionAw
 						reservation.setDateDebut(dateDebut);
 						reservation.setDateFin(dateFin);
 						reservation.setTopo(topo);
-						reservation.setUtilisateur(user);
+						//reservation.setUtilisateur(user);
 						
-						managerFactory.getReservationManager().addReservation(reservation);
+						//managerFactory.getReservationManager().addReservation(reservation);
 						
 						
 					}
@@ -119,7 +141,7 @@ public class GestionReservationAction extends ActionSupport implements SessionAw
 						this.addActionError("une réservation est en cours pendant la période demandé");
 					}
 				
-				 }
+				// }
 				} catch (NotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
