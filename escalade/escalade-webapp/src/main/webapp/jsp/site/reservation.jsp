@@ -56,13 +56,13 @@
    	<s:label for="dateFin" class="espace">Date de fin</s:label>
 	<input type="date"  name="dateFin">
   </div>
-  
-<%-- 	<s:hidden name="id" value="id" /> --%>
+
 	<s:submit value="Réserver le topo" id="connecter" class="btn btn-primary center-block"/>
- 
+ <div  class="text-center">
+<s:actionmessage/>
+</div>
 </fieldset>
 </s:form>
-
 
     </div>
 

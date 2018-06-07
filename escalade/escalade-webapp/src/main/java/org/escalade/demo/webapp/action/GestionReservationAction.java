@@ -17,7 +17,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
-public class GestionReservationAction extends ActionSupport implements SessionAware {
+public class GestionReservationAction extends ActionSupport implements SessionAware{
 	static final Log logger = LogFactory.getLog(GestionReservationAction.class);
 	// ==================== Attributs ====================
     // ----- Paramètres en entrée
@@ -27,9 +27,7 @@ public class GestionReservationAction extends ActionSupport implements SessionAw
 	private Date dateDebut;
 	private Date dateFin;
 	private Map<String, Object> session;
-	
-	private String dateD;
-	private String dateF;
+	private static Topo topo;
 		
 	// ==================== Getters/Setters ====================
 	public ManagerFactory getManagerFactory() {
@@ -65,90 +63,85 @@ public class GestionReservationAction extends ActionSupport implements SessionAw
 	public Map<String, Object> getSession() {
 		return session;
 	}
-	public void setSession(Map<String, Object> arg0) {
-		// TODO Auto-generated method stub
-		
+	public void setSession(Map<String, Object> pSession) {
+		// TODO Auto-generated method stub	
+		this.session=pSession;
 	}
-	
-	
-	public String getDateD() {
-		return dateD;
+	public Topo getTopo() {
+		return topo;
 	}
-	public void setDateD(String dateD) {
-		this.dateD = dateD;
-	}
-	public String getDateF() {
-		return dateF;
-	}
-	public void setDateF(String dateF) {
-		this.dateF = dateF;
-	}
+
 	// ==================== Méthodes ====================
 	public String doReservation() {
+		String vResult = ActionSupport.INPUT;
+		if(id==null) {
+			logger.info(dateDebut);
+			logger.info(topo.getNom());
+			Utilisateur user=(Utilisateur) session.get("user");
+	        logger.info("nom user : "+user.getNom());
+			
 			try {
-//				 if(id==null) {
-//						this.addActionError("veuillez donner un identifiant de topo");
-//						logger.info("Date de Fin : "+dateFin);
-//						 logger.info("Date de début : "+dateDebut);
-//					}
-//				 else {
-					 logger.info("Date de Fin : "+dateFin);
-					 logger.info("Date de début : "+dateDebut);
-					 logger.info(id);
-					//Utilisateur user=(Utilisateur) this.session.get("user");
-					//logger.info(user.getNom());
-					
-					Topo topo = managerFactory.getTopoManager().getTopo(id);
-					
-					listReservation=managerFactory.getReservationManager().listReservationByTopo(id);
-					boolean[] testReservation = new boolean[listReservation.size()];
-					int i=0;
-					logger.info("Date de début : "+dateDebut);
-					
-					Iterator<Reservation> it = listReservation.iterator();
-					while(it.hasNext()) {
-						Reservation reservation = it.next();
-						if(reservation.getDateFin().compareTo(dateDebut)<0) {
-							//réservation fini
-							testReservation[i]=true;
-						}
-						else if(reservation.getDateDebut().compareTo(dateDebut)>0 && reservation.getDateDebut().compareTo(dateFin)>0){
-							//réservation pas encore commencé
-							testReservation[i]=true;
-						}
-						else {
-							//en plein pendant la période de réservation
-							testReservation[i]=false;
-							
-						}
-						i++;
-					}
-				
-					if(areAllTrue(testReservation)) {
-						// add reservation
-						Reservation reservation = new Reservation();
-						reservation.setDateDebut(dateDebut);
-						reservation.setDateFin(dateFin);
-						reservation.setTopo(topo);
-						//reservation.setUtilisateur(user);
-						
-						//managerFactory.getReservationManager().addReservation(reservation);
-						
-						
-					}
-					
-					else {
-						this.addActionError("une réservation est en cours pendant la période demandé");
-					}
-				
-				// }
-				} catch (NotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				listReservation=managerFactory.getReservationManager().listReservationByTopo(topo.getId());
+			} catch (NotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			boolean[] testReservation = new boolean[listReservation.size()];
+			int i=0;
+			logger.info("Date de début : "+dateDebut);
+			
+			Iterator<Reservation> it = listReservation.iterator();
+			while(it.hasNext()) {
+				Reservation reservation = it.next();
+				if(reservation.getDateFin().compareTo(dateDebut)<0) {
+					//réservation fini
+					testReservation[i]=true;
 				}
+				else if(reservation.getDateDebut().compareTo(dateDebut)>0 && reservation.getDateDebut().compareTo(dateFin)>0){
+					//réservation pas encore commencé
+					testReservation[i]=true;
+				}
+				else {
+					//en plein pendant la période de réservation
+					testReservation[i]=false;
+					
+				}
+				i++;
+			}
+		
+			if(areAllTrue(testReservation)) {
+				// add reservation
+				Reservation reservation = new Reservation();
+				reservation.setDateDebut(dateDebut);
+				reservation.setDateFin(dateFin);
+				reservation.setTopo(topo);
+				reservation.setUtilisateur(user);
+				
+				logger.info(dateDebut);
+				logger.info(dateFin);
+				logger.info(topo.getNom());
+				
+				managerFactory.getReservationManager().addReservation(reservation);
+				return vResult=ActionSupport.SUCCESS;
+				
+				
+			}
 			
-			
-		return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
+			else {
+				this.addActionMessage("une réservation est en cours pendant la période demandé");
+			}
+		}
+		else {
+		try {
+			topo=managerFactory.getTopoManager().getTopo(id);
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			}
+		
+		}
+
+		return vResult;
 	}
 	
 	
@@ -157,6 +150,8 @@ public class GestionReservationAction extends ActionSupport implements SessionAw
 	    for(boolean b : array) if(!b) return false;
 	    return true;
 	}
+	
+	
 
 
 }

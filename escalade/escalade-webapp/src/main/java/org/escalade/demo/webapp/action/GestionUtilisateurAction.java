@@ -77,7 +77,7 @@ public class GestionUtilisateurAction extends ActionSupport {
 		// Par défaut, le result est "input"
         String vResult = ActionSupport.INPUT;
         
-     // ===== Validation de l'ajout de projet (projet != null)
+     // ===== Validation de l'ajout du user
         if (!StringUtils.isAllEmpty(userName,userSurname,pseudo,mail,password,passwordConfirm)) {
         	System.out.println(userName);
         	if(!password.equals(passwordConfirm)) {
