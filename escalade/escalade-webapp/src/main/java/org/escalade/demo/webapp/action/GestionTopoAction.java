@@ -3,6 +3,7 @@ package org.escalade.demo.webapp.action;
 import java.util.List;
 
 import org.escalade.demo.business.impl.ManagerFactoryImpl;
+import org.escalade.demo.model.bean.topo.Commentaire;
 import org.escalade.demo.model.bean.topo.Topo;
 import org.escalade.demo.model.exception.NotFoundException;
 
@@ -23,6 +24,7 @@ public class GestionTopoAction extends ActionSupport {
 	// ----- Eléments en sortie
 	private List<Topo> listTopos;
 	private Topo topo;
+	private List<Commentaire> commentaire;
 
 	
     // ==================== Getters/Setters ====================
@@ -50,6 +52,12 @@ public class GestionTopoAction extends ActionSupport {
 	public void setTopo(Topo topo) {
 		this.topo = topo;
 	}
+	public List<Commentaire> getCommentaire() {
+		return commentaire;
+	}
+	public void setCommentaire(List<Commentaire> commentaire) {
+		this.commentaire = commentaire;
+	}
 	
 	// ==================== Méthodes ====================
 	public String doListTopo() {
@@ -70,6 +78,13 @@ public class GestionTopoAction extends ActionSupport {
             } catch (NotFoundException pE) {
                 this.addActionError("topo non trouvé. ID = " + id);
             }
+            
+            try {
+    			commentaire=managerFactory.getCommentaireManager().getListCommentaireByTopo(id);
+    		} catch(NotFoundException pE) {
+    			
+    			logger.debug(pE.getMessage());
+    		}
         }
         return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
 	}

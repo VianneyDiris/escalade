@@ -7,6 +7,7 @@ import org.escalade.demo.consumer.impl.dao.AbstractDaoImpl;
 import org.escalade.demo.consumer.impl.rowmapper.topo.CommentaireRM;
 import org.escalade.demo.model.bean.topo.Commentaire;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.util.CollectionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -29,7 +30,10 @@ public class CommentaireDaoImpl extends AbstractDaoImpl implements CommentaireDa
 	@Override
 	public void addCommentaire(Commentaire commentaire) {
 		logger.debug("CommentaireDaoImpl méthode addCommentaire()");
-		// TODO Auto-generated method stub
+		String vsql ="INSERT INTO public.commentaire (contenue,date_parution,utilisateur_id,topo_id,spot_id) VALUES(?,?,?,?,?)";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		vJdbcTemplate.update(vsql,commentaire.getContenue(),commentaire.getDate(),commentaire.getUtilisateur().getId(),commentaire.getTopo().getId(),commentaire.getSpot().getId());
 		
 	}
 
@@ -66,29 +70,6 @@ public class CommentaireDaoImpl extends AbstractDaoImpl implements CommentaireDa
 	}
 
 	@Override
-	public Commentaire findCommentbySpotId(Integer id) {
-		logger.debug("CommentaireDaoImpl méthode findCommentbySpotId() "+id);
-		// TODO Auto-generated method stub
-		String vsql ="SELECT * FROM public.commentaire WHERE spot_id= ?";
-		
-		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
-		Commentaire commentaire=(Commentaire)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new CommentaireRM());
-		
-		return commentaire;
-	}
-
-	@Override
-	public Commentaire findCommentbyTopoId(Integer id) {
-		logger.debug("CommentaireDaoImpl méthode findCommentbyTopoId() "+id);
-		String vsql ="SELECT * FROM public.commentaire WHERE topo_id= ?";
-		
-		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
-		Commentaire commentaire=(Commentaire)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new CommentaireRM());
-		
-		return commentaire;
-	}
-
-	@Override
 	public void deleteCommentaireByUser(Integer id) {
 		logger.debug("CommentaireDaoImpl méthode deleteCommentbyUser(Integer id) id = "+id);
 		// TODO Auto-generated method stub
@@ -116,6 +97,36 @@ public class CommentaireDaoImpl extends AbstractDaoImpl implements CommentaireDa
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 		vJdbcTemplate.update(vsql,new Object[] { id });
 		
+	}
+
+	@Override
+	public List<Commentaire> listCommentaireBySpot(Integer id) {
+		// TODO Auto-generated method stub
+		String vsql = "SELECT * FROM public.commentaire WHERE spot_id=?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		CommentaireRM rowCommentaire = new CommentaireRM();
+		
+		List<Commentaire> listCommentaires = vJdbcTemplate.query(vsql,new Object[] { id },rowCommentaire);
+		if(CollectionUtils.isEmpty(listCommentaires)) {
+			return null;
+		}
+		return listCommentaires;
+	}
+
+	@Override
+	public List<Commentaire> listCommentaireByTopo(Integer id) {
+		// TODO Auto-generated method stub
+		String vsql = "SELECT * FROM public.commentaire WHERE topo_id=?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		CommentaireRM rowCommentaire = new CommentaireRM();
+		
+		List<Commentaire> listCommentaires = vJdbcTemplate.query(vsql,new Object[] { id },rowCommentaire);
+		if(CollectionUtils.isEmpty(listCommentaires)) {
+			return null;
+		}
+		return listCommentaires;
 	}
 
 }

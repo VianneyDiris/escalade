@@ -1,5 +1,7 @@
 package org.escalade.demo.model.bean.topo;
 
+import java.util.Date;
+
 import org.escalade.demo.model.bean.spot.Spot;
 
 public class Commentaire {
@@ -8,6 +10,7 @@ public class Commentaire {
 	private Integer id;
 	private String contenue;
 	private Utilisateur utilisateur;
+	private Date date;
 	private Topo topo;
 	private Spot spot;
 	
@@ -19,24 +22,18 @@ public class Commentaire {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	
 	public String getContenue() {
 		return contenue;
 	}
 	public void setContenue(String contenue) {
 		this.contenue = contenue;
 	}
-	
-	
 	public Utilisateur getUtilisateur() {
 		return utilisateur;
 	}
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
 	}
-	
-	
 	public Topo getTopo() {
 		return topo;
 	}
@@ -44,13 +41,19 @@ public class Commentaire {
 		this.topo = topo;
 	}
 	
-	
 	public Spot getSpot() {
 		return spot;
 	}
 	public void setSpot(Spot spot) {
 		this.spot = spot;
 	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
 	
 	
 	// ==================== Méthodes ====================

@@ -13,9 +13,9 @@ public interface CommentaireManager {
 	//renvoie le commentaire grâce à son id
 	Commentaire getCommentaire(Integer id) throws NotFoundException;
 	
-	Commentaire findCommentbySpotId(Integer id) throws NotFoundException;
+	List<Commentaire> getListCommentaireByTopo(Integer id)throws NotFoundException;
 	
-	Commentaire findCommentbyTopoId(Integer id) throws NotFoundException;
+	List<Commentaire> getListCommentaireBySpot(Integer id)throws NotFoundException;
 	
 	void deleteCommentaire(Integer id)throws NotFoundException;
 	
@@ -26,6 +26,8 @@ public interface CommentaireManager {
 	void deleteCommentaireBySpot(Integer id)throws NotFoundException;
 	
 	void updateCommentaire(Commentaire commentaire);
+	
+	void addCommentaire(Commentaire commentaire);
 	
 
 }

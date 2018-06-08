@@ -19,13 +19,13 @@ public class CommentaireRM implements RowMapper<Commentaire> {
 		commentaire.setContenue(rs.getString("contenue"));
 		
 		//rowMapper utilisateur, topo,spot
-//		DaoFactoryImpl daoFactory = new DaoFactoryImpl();
 		UtilisateurDaoImpl userDao = new UtilisateurDaoImpl();
 		TopoDaoImpl topoDao = new TopoDaoImpl();
 		SpotDaoImpl spotDao = new SpotDaoImpl();
 		commentaire.setUtilisateur(userDao.find(rs.getInt("utilisateur_id")));
 		commentaire.setTopo(topoDao.find(rs.getInt("topo_id")));
 		commentaire.setSpot(spotDao.find(rs.getInt("spot_id")));
+		commentaire.setDate(rs.getDate("date_parution"));
 		
 		
 		return commentaire;

@@ -25,7 +25,7 @@ public class GestionSpotAction extends ActionSupport {
 	// ----- Eléments en sortie
 	private List<Spot> listSpots;
 	private Spot spot;
-	private Commentaire commentaire;
+	private List<Commentaire> commentaire;
 
 
 	// ==================== Getters/Setters ====================
@@ -53,12 +53,13 @@ public class GestionSpotAction extends ActionSupport {
 	public void setSpot(Spot spot) {
 		this.spot = spot;
 	}
-	public Commentaire getCommentaire() {
+	public List<Commentaire> getCommentaire() {
 		return commentaire;
 	}
-	public void setCommentaire(Commentaire commentaire) {
+	public void setCommentaire(List<Commentaire> commentaire) {
 		this.commentaire = commentaire;
 	}
+	
 	// ==================== Méthodes ====================
 	public String doListSpot() {
 		logger.debug("GestionSpotAction méthode doListSpot()");
@@ -82,7 +83,7 @@ public class GestionSpotAction extends ActionSupport {
 			}
 		}
 		try {
-			commentaire=managerFactory.getCommentaireManager().findCommentbySpotId(id);
+			commentaire=managerFactory.getCommentaireManager().getListCommentaireBySpot(id);
 		} catch(NotFoundException pE) {
 			
 			logger.debug(pE.getMessage());

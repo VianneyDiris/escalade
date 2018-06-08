@@ -10,15 +10,15 @@ public interface CommentaireDao {
 	
 	Commentaire find(int id);
 	
+	List<Commentaire> listCommentaireBySpot(Integer id);
+	
+	List<Commentaire> listCommentaireByTopo(Integer id);	
+	
 	void addCommentaire(Commentaire commentaire);
 	
 	void updateCommentaire(Commentaire commentaire);
 	
 	void deleteCommentaire(Integer id);
-	
-	Commentaire findCommentbySpotId(Integer id);
-	
-	Commentaire findCommentbyTopoId(Integer id);
 	
 	void deleteCommentaireByUser(Integer id);
 	

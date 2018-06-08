@@ -27,20 +27,6 @@ public class CommentaireManagerImpl extends AbstractManagerImpl implements Comme
 	}
 
 	@Override
-	public Commentaire findCommentbySpotId(Integer id) throws NotFoundException {
-		logger.debug("CommentaireManagerImpl méthode findCommentbySpotId(id) "+id);
-		// TODO Auto-generated method stub
-		return getDaoFactory().getCommentaireDao().findCommentbySpotId(id);
-	}
-
-	@Override
-	public Commentaire findCommentbyTopoId(Integer id) throws NotFoundException {
-		logger.debug("CommentaireManagerImpl méthode findCommentbyTopoId(id) "+id);
-		// TODO Auto-generated method stub
-		return getDaoFactory().getCommentaireDao().findCommentbyTopoId(id);
-	}
-
-	@Override
 	public void deleteCommentaire(Integer id) throws NotFoundException{
 		logger.debug("CommentaireManagerImpl méthode deleteCommentaire(id) "+id);
 		// TODO Auto-generated method stub
@@ -78,6 +64,24 @@ public class CommentaireManagerImpl extends AbstractManagerImpl implements Comme
 		// TODO Auto-generated method stub
 		getDaoFactory().getCommentaireDao().deleteCommentaireBySpot(id);
 		
+	}
+
+	@Override
+	public List<Commentaire> getListCommentaireByTopo(Integer id) throws NotFoundException {
+		// TODO Auto-generated method stub
+		return getDaoFactory().getCommentaireDao().listCommentaireByTopo(id);
+	}
+
+	@Override
+	public List<Commentaire> getListCommentaireBySpot(Integer id) throws NotFoundException {
+		// TODO Auto-generated method stub
+		return getDaoFactory().getCommentaireDao().listCommentaireBySpot(id);
+	}
+
+	@Override
+	public void addCommentaire(Commentaire commentaire) {
+		// TODO Auto-generated method stub
+		getDaoFactory().getCommentaireDao().addCommentaire(commentaire);
 	}
 
 }
