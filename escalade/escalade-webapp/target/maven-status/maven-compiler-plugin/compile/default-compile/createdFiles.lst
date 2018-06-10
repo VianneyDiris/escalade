@@ -1,8 +1,9 @@
-org\escalade\demo\webapp\action\GestionReservation.class
 org\escalade\demo\webapp\action\LoginAction.class
+org\escalade\demo\webapp\action\GestionCommentaireAction.class
 org\escalade\demo\webapp\action\BackGestionSpotAction.class
 org\escalade\demo\webapp\action\BackGestionUserAction.class
 org\escalade\demo\webapp\action\GestionAddAction.class
+org\escalade\demo\webapp\action\GestionReservationAction.class
 org\escalade\demo\webapp\action\GestionSearchAction.class
 org\escalade\demo\webapp\action\GestionSpotAction.class
 org\escalade\demo\webapp\action\GestionUtilisateurAction.class

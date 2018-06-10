@@ -7,6 +7,7 @@ import org.escalade.demo.consumer.impl.dao.AbstractDaoImpl;
 import org.escalade.demo.consumer.impl.rowmapper.topo.TopoRM;
 import org.escalade.demo.model.bean.spot.Spot;
 import org.escalade.demo.model.bean.topo.Topo;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
@@ -68,7 +69,14 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 		String vsql ="SELECT * FROM public.topo WHERE spot_id= ?";
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
-		Topo topo=(Topo)vJdbcTemplate.queryForObject(vsql, new Object[] { spot.getId() }, new TopoRM());
+		Topo topo = new Topo();
+		try {
+		topo=(Topo)vJdbcTemplate.queryForObject(vsql, new Object[] { spot.getId() }, new TopoRM());
+		}
+		catch(EmptyResultDataAccessException e) {
+			return null;
+		}
+		
 		
 		return topo;
 	}

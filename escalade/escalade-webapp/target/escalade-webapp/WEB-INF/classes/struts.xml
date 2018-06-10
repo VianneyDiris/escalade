@@ -29,6 +29,13 @@
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
 		
+		<action name="spot_commentaire"
+			class="org.escalade.demo.webapp.action.GestionCommentaireAction"
+			method="doSpotCommentaire">
+			<result name="success" type="redirectAction">spot_list</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
+		
 
 <!-- ########################### Topo ############################-->
 		<!-- Action listant les topos -->
@@ -46,10 +53,20 @@
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
 		
-		<action name="topo_reserve">
-			<result>/jsp/site/reservation.jsp</result>
+		<action name="topo_reserve"
+			class="org.escalade.demo.webapp.action.GestionReservationAction"
+			method="doReservation">
+		<result name="input">/jsp/site/reservation.jsp</result>
+		<result name="success" type="redirectAction">topo_list</result>
+		<result name="error">/jsp/site/error.jsp</result>
 		</action>
 
+		<action name="topo_commentaire"
+			class="org.escalade.demo.webapp.action.GestionCommentaireAction"
+			method="doTopoCommentaire">
+			<result name="success" type="redirectAction">topo_list</result>
+			<result name="error">/jsp/site/error.jsp</result>
+		</action>
 <!-- ########################### Ajout ############################-->
 		<!-- Action "ajout" -->
 		<action name="ajout"
@@ -102,9 +119,7 @@
 			class="org.escalade.demo.webapp.action.GestionUtilisateurAction"
 			method="doCreateUser">
 			<result name="input">/jsp/site/enregistrer.jsp</result>
-			<result name="success" type="redirectAction">
-				<param name="actionName">topo_list</param>
-			</result>
+			<result name="success" type="redirectAction">index</result>
 		</action>
 
 		<!-- Actions Login/Logout -->

@@ -3,7 +3,6 @@ package org.escalade.demo.webapp.action;
 import java.util.Date;
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.SessionAware;
 import org.escalade.demo.business.impl.ManagerFactoryImpl;
 import org.escalade.demo.model.bean.spot.Spot;

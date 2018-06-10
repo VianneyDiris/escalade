@@ -143,19 +143,56 @@ public class BackGestionSpotAction extends ActionSupport {
 						Secteur secteur = itSecteur.next();
 						managerFactory.getSecteurManager().deleteSecteur(secteur);
 					}
-					Spot spot = managerFactory.getSpotManager().getSpot(id);
-					Topo topo = managerFactory.getTopoManager().getTopoBySpot(spot);
 					
-					managerFactory.getCommentaireManager().deleteCommentaireByTopo(topo.getId());
-					managerFactory.getReservationManager().deleteReservationByTopo(topo.getId());
-					managerFactory.getTopoManager().deleteTopo(topo.getId());
-					
-					managerFactory.getSpotManager().deleteSpot(id);
 				}
 				catch(NotFoundException pE) {
 					logger.debug(pE.getMessage());
 				}
 			}
+		Spot spot = new Spot();
+		try {
+			spot = managerFactory.getSpotManager().getSpot(id);
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Topo topo = null;
+		try {
+			topo = managerFactory.getTopoManager().getTopoBySpot(spot);
+			logger.info(topo);
+			
+			if(topo!=null) {
+				try {
+					managerFactory.getCommentaireManager().deleteCommentaireByTopo(topo.getId());
+				} catch (NotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				try {
+					managerFactory.getReservationManager().deleteReservationByTopo(topo.getId());
+				} catch (NotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				try {
+					managerFactory.getTopoManager().deleteTopo(topo.getId());
+				} catch (NotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			managerFactory.getSpotManager().deleteSpot(id);
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 			
 		return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
 	}

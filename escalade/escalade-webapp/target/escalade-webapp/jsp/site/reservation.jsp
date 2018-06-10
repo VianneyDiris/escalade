@@ -4,7 +4,6 @@
 <html>
 <head>
 <%@include file="../_include/head.jsp"%>
-
 </head>
 <body>
 	<nav class="navbar navbar-default"> <!-- Brand and toggle get grouped for better mobile display -->
@@ -44,24 +43,26 @@
 
 	  <!-- Page Content -->
 	<div class="container content">
-    <s:form action="login" class="col-lg-6 col-lg-offset-3">
+    <s:form action="topo_reserve" class="col-lg-6 col-lg-offset-3">
       <fieldset class="scheduler-border">
         <legend class="scheduler-border">Réservation</legend>
  
-  <div class="form-inline" id="space-top">
-  	<s:label for="pseudo" class="espace">Date de début</s:label>
+  <div class="form-inline">
+  	<s:label for="dateDebut" class="espace">Date de début</s:label>
+	<input type="date" name="dateDebut">
 	
 	
-   	<s:label for="password"  class="espace">Mot de passe</s:label>
-	<s:password name="password" class="form-control" placeholder="*********"/>
+	
+   	<s:label for="dateFin" class="espace">Date de fin</s:label>
+	<input type="date"  name="dateFin">
   </div>
-  
 
-	<s:submit value="Connecter" id="connecter" class="btn btn-primary center-block"/>
- 
+	<s:submit value="Réserver le topo" id="connecter" class="btn btn-primary center-block"/>
+ <div  class="text-center">
+<s:actionmessage/>
+</div>
 </fieldset>
 </s:form>
-
 
     </div>
 

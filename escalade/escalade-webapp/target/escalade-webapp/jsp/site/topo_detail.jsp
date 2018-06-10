@@ -65,14 +65,51 @@
    
    <div  class="text-center">
    <s:if test="%{topo.prive==true}">
-   	<s:if test="#session.user"  >
-   	<s:a action="topo_reserve"><button class="btn btn-primary">Reservation</button></s:a>
-   	</s:if>
-   	<s:else>
-   		<h3>Vous devez être connecté pour réservé ce topo</h3>
-   	</s:else>
+	   	<s:if test="#session.user"  >
+	   	<s:a action="topo_reserve"><s:param value="topo.id" name="id"/><button class="btn btn-primary">Reservation</button></s:a>
+	   	</s:if>
+	   	<s:else>
+	   		<h3>Vous devez être connecté pour réservé ce topo</h3>
+	   	</s:else>
    </s:if>
     </div>
+    
+    
+    	<s:if test="%{commentaire != null}">
+	<div class="col-lg-8 col-lg-offset-2">
+	<div class="table-responsive">
+  		<table class="table table-hover table-border">
+  		 <thead>
+	      <tr>
+	        <th>Pseudo</th>
+	        <th>Contenue</th>
+	      </tr>
+   		</thead>
+   		  <tbody>
+		<s:iterator value="commentaire">
+		 <tr>
+		        <td><s:property value="utilisateur.pseudo"/></td>
+		        <td><s:property value="contenue"/></td>
+		 </tr>
+		</s:iterator>
+		<tbody>
+		</table>
+		</div>
+		</div>
+	</s:if>
+
+	
+	 <s:if test="#session.user">
+	  <s:form action="topo_commentaire" class="col-lg-8 col-lg-offset-3">
+	  <s:hidden name="id" value="%{topo.id}"/>
+	  	<div class="form-inline">
+			<s:label for="newComment" class="espace">Commentaire</s:label>
+			<s:textfield name="newComment" class="form-control" value=""/>
+			  <s:submit value="poster commentaire" class="btn btn-primary"/>
+			</div>
+	
+	  </s:form>
+	 </s:if>
     </div>
 
 
