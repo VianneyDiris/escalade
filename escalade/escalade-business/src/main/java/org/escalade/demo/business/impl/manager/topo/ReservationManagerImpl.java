@@ -19,6 +19,7 @@ public class ReservationManagerImpl extends AbstractManagerImpl implements Reser
 	static final Log logger = LogFactory.getLog(ReservationManagerImpl.class);
 	
     private PlatformTransactionManager transactionManager;
+    
     public void setTransactionManager(PlatformTransactionManager transactionManager) {
         this.transactionManager = transactionManager;
      }

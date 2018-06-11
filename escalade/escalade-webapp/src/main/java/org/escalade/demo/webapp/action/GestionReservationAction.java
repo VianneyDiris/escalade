@@ -122,6 +122,7 @@ public class GestionReservationAction extends ActionSupport implements SessionAw
 				logger.info(topo.getNom());
 				
 				managerFactory.getReservationManager().addReservation(reservation);
+				this.addActionMessage("une réservation effectuée");
 				return vResult=ActionSupport.SUCCESS;
 				
 				
@@ -134,6 +135,12 @@ public class GestionReservationAction extends ActionSupport implements SessionAw
 		else {
 		try {
 			topo=managerFactory.getTopoManager().getTopo(id);
+			try {
+				listReservation=managerFactory.getReservationManager().listReservationByTopo(topo.getId());
+			} catch (NotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (NotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

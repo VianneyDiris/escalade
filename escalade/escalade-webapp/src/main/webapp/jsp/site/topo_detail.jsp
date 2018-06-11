@@ -73,9 +73,9 @@
 	   	</s:else>
    </s:if>
     </div>
+    <div class="form-group"></div>
     
-    
-    	<s:if test="%{commentaire != null}">
+    <s:if test="%{commentaire != null}">
 	<div class="col-lg-8 col-lg-offset-2">
 	<div class="table-responsive">
   		<table class="table table-hover table-border">

@@ -55,6 +55,19 @@
 					<p class="lieu">Pays: <s:property value="spot.pays.nom"/></p>
 					<p class=nom>Ville: <s:property value="spot.ville.nom"/>  </p>
 					<p class="description">Description: <s:property value="spot.description"/><p>
+					
+					
+					<s:if test="%{listSecteurs != null}">
+					<p></p>
+					<s:label for="secteur" class="espace">Secteurs</s:label>
+					<s:select name="secteur" class="form-control" list="listSecteurs" listValue="nom"/>
+					<p></p>
+					<s:label for="description" class="espace">Voies</s:label>
+					<s:select class="form-control" list="listVoies" listValue="nom"/>
+					
+					</s:if>
+					
+					<p></p>
 					<s:a action="spot_list"><button class="btn btn-default">Retour</button></s:a>
 					</div>
 				</div>

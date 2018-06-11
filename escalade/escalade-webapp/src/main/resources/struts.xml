@@ -32,7 +32,10 @@
 		<action name="spot_commentaire"
 			class="org.escalade.demo.webapp.action.GestionCommentaireAction"
 			method="doSpotCommentaire">
-			<result name="success" type="redirectAction">spot_list</result>
+			<result name="success" type="redirectAction">
+			<param name="actionName">spot_detail</param>
+			<param name="id">${stringid}</param>
+			</result>
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
 		
@@ -57,14 +60,17 @@
 			class="org.escalade.demo.webapp.action.GestionReservationAction"
 			method="doReservation">
 		<result name="input">/jsp/site/reservation.jsp</result>
-		<result name="success" type="redirectAction">topo_list</result>
+		<result name="success">/jsp/site/reservation.jsp</result>
 		<result name="error">/jsp/site/error.jsp</result>
 		</action>
 
 		<action name="topo_commentaire"
 			class="org.escalade.demo.webapp.action.GestionCommentaireAction"
 			method="doTopoCommentaire">
-			<result name="success" type="redirectAction">topo_list</result>
+			<result name="success" type="redirectAction">
+			<param name="actionName">topo_detail</param>
+			<param name="id">${stringid}</param>
+			</result>
 			<result name="error">/jsp/site/error.jsp</result>
 		</action>
 <!-- ########################### Ajout ############################-->

@@ -26,6 +26,7 @@ public class GestionCommentaireAction extends ActionSupport implements SessionAw
 	private Spot spot;
 	private Topo topo;
 	private Map<String, Object> session;
+	private String stringid;
 
 	// ==================== Getters/Setters ====================
 	public ManagerFactoryImpl getManagerFactory() {
@@ -65,10 +66,17 @@ public class GestionCommentaireAction extends ActionSupport implements SessionAw
 	public void setNewComment(String newComment) {
 		this.newComment = newComment;
 	}
-
+	public String getStringid() {
+		return stringid;
+	}
+	public void setStringid(String stringid) {
+		this.stringid = stringid;
+	}
+	
 	// ==================== Méthodes ====================
 	public String doSpotCommentaire() {
 		try {
+			setStringid(String.valueOf(id));
 			spot=managerFactory.getSpotManager().getSpot(id);
 			} catch (NotFoundException e) {
 				// TODO Auto-generated catch block
@@ -103,6 +111,7 @@ public class GestionCommentaireAction extends ActionSupport implements SessionAw
 	}
 	
 	public String doTopoCommentaire() {
+		setStringid(String.valueOf(id));
 		try {
 			topo = managerFactory.getTopoManager().getTopo(id);
 			} catch (NotFoundException e) {

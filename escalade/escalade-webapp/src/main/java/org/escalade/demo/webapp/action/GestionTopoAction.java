@@ -25,7 +25,6 @@ public class GestionTopoAction extends ActionSupport {
 	private List<Topo> listTopos;
 	private Topo topo;
 	private List<Commentaire> commentaire;
-
 	
     // ==================== Getters/Setters ====================
 	public ManagerFactoryImpl getManagerFactory() {
@@ -58,7 +57,7 @@ public class GestionTopoAction extends ActionSupport {
 	public void setCommentaire(List<Commentaire> commentaire) {
 		this.commentaire = commentaire;
 	}
-	
+
 	// ==================== Méthodes ====================
 	public String doListTopo() {
 		logger.debug("GestionTopoAction méthode doListTopo()");

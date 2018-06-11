@@ -94,6 +94,7 @@ public class BackGestionTopoAction extends ActionSupport{
 	public void setStringSpot(String stringSpot) {
 		StringSpot = stringSpot;
 	}
+	
 	// ==================== Méthodes ====================
 	public String doListTopo() {
 		logger.debug("BackGestionTopoAction méthode doListTopo()");
@@ -167,4 +168,5 @@ public class BackGestionTopoAction extends ActionSupport{
 		
 		return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
 	}
+	
 }

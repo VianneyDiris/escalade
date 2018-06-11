@@ -1,11 +1,16 @@
 package org.escalade.demo.webapp.action;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.escalade.demo.business.impl.ManagerFactoryImpl;
+import org.escalade.demo.model.bean.spot.Secteur;
 import org.escalade.demo.model.bean.spot.Spot;
+import org.escalade.demo.model.bean.spot.Voie;
 import org.escalade.demo.model.bean.topo.Commentaire;
 import org.escalade.demo.model.exception.NotFoundException;
+import org.springframework.util.CollectionUtils;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
@@ -26,7 +31,8 @@ public class GestionSpotAction extends ActionSupport {
 	private List<Spot> listSpots;
 	private Spot spot;
 	private List<Commentaire> commentaire;
-
+	private List<Secteur> listSecteurs;
+	private List<Voie> listVoies =new ArrayList<Voie>();
 
 	// ==================== Getters/Setters ====================
 	public ManagerFactoryImpl getManagerFactory() {
@@ -59,6 +65,18 @@ public class GestionSpotAction extends ActionSupport {
 	public void setCommentaire(List<Commentaire> commentaire) {
 		this.commentaire = commentaire;
 	}
+	public List<Secteur> getListSecteurs() {
+		return listSecteurs;
+	}
+	public void setListSecteurs(List<Secteur> listSecteurs) {
+		this.listSecteurs = listSecteurs;
+	}
+	public List<Voie> getListVoies() {
+		return listVoies;
+	}
+	public void setListVoies(List<Voie> listVoies) {
+		this.listVoies = listVoies;
+	}
 	
 	// ==================== Méthodes ====================
 	public String doListSpot() {
@@ -77,7 +95,6 @@ public class GestionSpotAction extends ActionSupport {
 		} else {
 			try {
 				spot = managerFactory.getSpotManager().getSpot(id);
-				
 			} catch (NotFoundException pE) {
 				this.addActionError("Spot non trouvé. ID = " + id);
 			}
@@ -88,6 +105,34 @@ public class GestionSpotAction extends ActionSupport {
 			
 			logger.debug(pE.getMessage());
 		}
+		try {
+			listSecteurs=managerFactory.getSecteurManager().listSecteurBySpot(id);
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+		if(!CollectionUtils.isEmpty(listSecteurs)) {
+			Iterator<Secteur> it = listSecteurs.iterator();
+			while(it.hasNext()) {
+				Secteur secteur = it.next();
+				
+				try {
+					List<Voie> temp = managerFactory.getVoieManager().listVoieBySecteur(secteur);
+					logger.info(temp);
+					Iterator<Voie> its = temp.iterator();
+					while(its.hasNext()) {
+						Voie voie = its.next();
+						listVoies.add(voie);
+					}
+				} catch (NotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
 		return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
 	}
 

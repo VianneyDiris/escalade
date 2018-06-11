@@ -58,11 +58,40 @@
   </div>
 
 	<s:submit value="Réserver le topo" id="connecter" class="btn btn-primary center-block"/>
- <div  class="text-center">
+ <div>
 <s:actionmessage/>
 </div>
 </fieldset>
 </s:form>
+
+
+<!-- mettre liste réservation -->
+ <s:if test="%{listReservation != null}">
+
+	<div class="col-lg-6 col-lg-offset-3">
+	 <div class="text-center">
+ <h3>Liste des réservations</h3>
+ </div>
+	<div class="table-responsive">
+  		<table class="table table-hover table-border">
+  		 <thead>
+	      <tr>
+	        <th>date début</th>
+	        <th>date fin</th>
+	      </tr>
+   		</thead>
+   		  <tbody>
+		<s:iterator value="listReservation">
+		 <tr>
+		        <td><s:property value="dateDebut"/></td>
+		        <td><s:property value="dateFin"/></td>
+		 </tr>
+		</s:iterator>
+		<tbody>
+		</table>
+		</div>
+		</div>
+	</s:if>
 
     </div>
 
