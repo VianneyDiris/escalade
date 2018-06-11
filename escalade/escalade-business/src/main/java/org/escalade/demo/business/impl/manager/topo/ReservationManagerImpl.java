@@ -2,15 +2,26 @@ package org.escalade.demo.business.impl.manager.topo;
 
 import java.util.List;
 
+//import javax.inject.Inject;
+//import javax.inject.Named;
+
 import org.escalade.demo.business.contract.manager.topo.ReservationManager;
 import org.escalade.demo.business.impl.AbstractManagerImpl;
 import org.escalade.demo.model.bean.topo.Reservation;
 import org.escalade.demo.model.exception.NotFoundException;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 public class ReservationManagerImpl extends AbstractManagerImpl implements ReservationManager {
 	static final Log logger = LogFactory.getLog(ReservationManagerImpl.class);
+	
+    private PlatformTransactionManager transactionManager;
+    public void setTransactionManager(PlatformTransactionManager transactionManager) {
+        this.transactionManager = transactionManager;
+     }
 
 	@Override
 	public List<Reservation> getListReservation() {
@@ -49,7 +60,15 @@ public class ReservationManagerImpl extends AbstractManagerImpl implements Reser
 	@Override
 	public void addReservation(Reservation reservation) {
 		// TODO Auto-generated method stub
-		getDaoFactory().getReservationDao().addReservation(reservation);
+		logger.info(transactionManager);
+        TransactionStatus vTransactionStatus = transactionManager.getTransaction(new DefaultTransactionDefinition());
+    try {
+    	getDaoFactory().getReservationDao().addReservation(reservation);
+    } catch (Throwable vEx) {
+        transactionManager.rollback(vTransactionStatus);
+        throw vEx;
+    }
+    transactionManager.commit(vTransactionStatus);
 	}
 
 }

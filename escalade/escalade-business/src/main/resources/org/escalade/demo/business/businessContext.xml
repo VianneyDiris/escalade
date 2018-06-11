@@ -15,7 +15,10 @@
 	<bean id="cotationManager" class="org.escalade.demo.business.impl.manager.spot.CotationManagerImpl"/>
 	
 	<bean id="commentaireManager" class="org.escalade.demo.business.impl.manager.topo.CommentaireManagerImpl"/>
-	<bean id="reservationManager" class="org.escalade.demo.business.impl.manager.topo.ReservationManagerImpl"/>
+	<bean id="reservationManager" class="org.escalade.demo.business.impl.manager.topo.ReservationManagerImpl">
+	<property name="transactionManager" ref="transactionManager" />
+	</bean>
+	
 	<bean id="roleManager" class="org.escalade.demo.business.impl.manager.topo.RoleManagerImpl"/>
 	<bean id="topoManager" class="org.escalade.demo.business.impl.manager.topo.TopoManagerImpl"/>
 	<bean id="utilisateurManager" class="org.escalade.demo.business.impl.manager.topo.UtilisateurManagerImpl"/>
@@ -45,7 +48,7 @@
 		<property name="arguments" ref="daoFactory" />
 	</bean>
 	
-<!-- 	<bean id="txManagerTicket" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> -->
-<!--     <property name="dataSource" ref="dataSourceEscalade"/> -->
-<!-- </bean> -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSourceEscalade"/>
+</bean>
 </beans>
